@@ -33,7 +33,7 @@ sudo apt install git
 ```
 
 
-**• Npm e NodeJS**
+**• Npm e Node.js**
 
 ArchLinux
 
@@ -117,8 +117,6 @@ Aguarde a instalação finalizar
 ```bash
 npm run dev
 ```
-
-Claro, vou criar um tutorial no estilo do markdown que você está construindo. Aqui vai um exemplo de como criar uma branch no Git:
 
 ---
 
