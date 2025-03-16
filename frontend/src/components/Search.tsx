@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { Icon } from '@iconify-icon/react';
 
 const SearchBar = () => {
@@ -37,13 +37,15 @@ const SearchBar = () => {
         className="me-2"
         style={{ 
             borderRadius: '12px',
-            width: '320px',
+            maxWidth: '380px',
+            minWidth: '140px',
+            width: '380px',
             height: '35px',
             paddingLeft: '40px',
             paddingRight: '40px',
             backgroundColor: '#E7ECE6',
             border: 'none',
-            fontSize: '14px',
+            fontSize: '15px',
         }}
       />
     <Icon 
