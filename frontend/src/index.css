@@ -71,6 +71,6 @@ input[type="search"]::-webkit-search-cancel-button {
   border-radius: 8px;
   border: 0;
   padding: 5px 10px;
-  font-size: 15px;
+  font-size: 14px;
   text-decoration: none;
 }
