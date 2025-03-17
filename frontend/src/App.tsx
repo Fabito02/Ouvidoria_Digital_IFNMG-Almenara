@@ -4,7 +4,7 @@ import Header from './components/Header';
 import RouterComponent from './Router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <Router>
       <Header />

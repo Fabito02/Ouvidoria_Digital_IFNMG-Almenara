@@ -107,9 +107,38 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .carousel-indicators button {
-  background-color: #007bff;
   border-radius: 50%;
   width: 8px !important;
   height: 8px !important;
 }
 
+/* uma animação de carregamento pra quando a página tiver carregando */
+
+.loading-screen {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: rgba(219, 219, 219, 0.574);
+  backdrop-filter: blur(5px);
+}
+
+.c-loader {
+  animation: is-rotating 1s infinite;
+  border: 6px solid #c3c3c3;
+  border-radius: 50%;
+  border-top-color: #4E9E54;
+  height: 50px;
+  width: 50px;
+}
+
+@keyframes is-rotating {
+  to {
+    transform: rotate(1turn);
+  }
+}

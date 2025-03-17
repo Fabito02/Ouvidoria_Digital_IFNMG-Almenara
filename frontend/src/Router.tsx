@@ -1,15 +1,16 @@
-// src/Router.tsx
-import React, { Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import NotFound from "./pages/NotFound";
+import Loading from "./components/loading/Loading";
 
-const pageModules = import.meta.glob('./pages/**/*.tsx');
+const pageModules = import.meta.glob("./pages/**/*.tsx");
 
 const Router: React.FC = () => {
   const routes = Object.entries(pageModules).map(([path, module]) => {
     const routePath = path
-      .replace('./pages', '')
-      .replace(/\.tsx$/, '')
-      .replace(/\/index$/, '')
+      .replace("./pages", "")
+      .replace(/\.tsx$/, "")
+      .replace(/\/index$/, "")
       .toLowerCase();
 
     const Component = React.lazy(() => module() as Promise<{ default: React.ComponentType }>);
@@ -19,7 +20,7 @@ const Router: React.FC = () => {
         key={routePath}
         path={routePath}
         element={
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Loading></Loading>}>
             <Component />
           </Suspense>
         }
@@ -27,7 +28,12 @@ const Router: React.FC = () => {
     );
   });
 
-  return <Routes>{routes}</Routes>;
+  return (
+    <Routes>
+      {routes}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
 };
 
 export default Router;

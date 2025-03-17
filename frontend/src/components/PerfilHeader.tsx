@@ -45,14 +45,14 @@ const PerfilHeader = () => {
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item href="#">
+          <Dropdown.Item href="/perfil">
             <Icon
               icon={"material-symbols:settings-rounded"}
               style={{ marginRight: "5px" }}
             />{" "}
             Configurações
           </Dropdown.Item>
-          <Dropdown.Item href="#">
+          <Dropdown.Item href="/minhas-reclamacoes">
             <Icon
               icon={"material-symbols:feedback-rounded"}
               style={{ marginRight: "5px" }}
