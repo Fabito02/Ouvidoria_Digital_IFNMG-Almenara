@@ -6,16 +6,23 @@ import { Link } from 'react-router-dom';
 const NavbarComponent = () => {
   return (
     <Navbar expand="lg" style={{ backgroundColor: '#ffffff' }} className='lineBottom'>
-      <Container className="d-flex justify-content-center">
+      <Container className="d-flex ">
+        <Navbar.Toggle 
+        aria-controls="basic-navbar-nav" 
+        style={{
+          position:"relative",
+          borderRadius:'8px',
+          marginBottom:'5px',
+          border:'none',
+          outline:'none',
+        }} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav
             className="d-flex justify-content-center"
             style={{
               display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              gap: '15px',
               width: '100%',
+              gap: '15px',
             }}
           >
             <Link className="link-navbar active" to="/" style={{ backgroundColor: '#ffffff' }}>PÁGINA INICIAL</Link>

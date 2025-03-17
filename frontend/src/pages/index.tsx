@@ -1,8 +1,17 @@
+import Slider from "../components/Slider";
+import ConteudoHome from "../components/home/ConteudoHome"
+
+const imagens = [
+  "/slider_testes.png",
+  "/slider_testes.png",
+  "/slider_testes.png",
+]
+
 const Home = () => {
   return (
     <div>
-      <h1>Bem-vindo à Página Inicial</h1>
-      <p>Esta é a página inicial do nosso site.</p>
+      <Slider imagens={imagens} />
+      <ConteudoHome />
     </div>
   );
 };

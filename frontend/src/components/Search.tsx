@@ -15,48 +15,48 @@ const SearchBar = () => {
   };
 
   return (
-    <Form onSubmit={handleSearchSubmit} className="d-flex" style={{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-    }}>
-    <Icon 
-    icon="material-symbols:search"
-    style={{
-        fontSize: '22px',
-        transform: 'translateX(30px)',
-        color: '#00000066',
-    }}
-    />
+    <Form 
+      onSubmit={handleSearchSubmit} 
+      className="d-flex align-items-center position-relative"
+      style={{ width: '100%', maxWidth: '400px' }}
+    >
+      <Icon 
+        icon="material-symbols:search"
+        className="position-absolute"
+        style={{
+          fontSize: '22px',
+          left: '10px',
+          color: '#00000066',
+        }}
+      />
+      
       <Form.Control
         type="search"
         placeholder="Pesquisar..."
         value={searchQuery}
         onChange={handleSearchChange}
-        className="me-2"
-        style={{ 
-            borderRadius: '12px',
-            maxWidth: '380px',
-            minWidth: '140px',
-            width: '380px',
-            height: '35px',
-            paddingLeft: '40px',
-            paddingRight: '40px',
-            backgroundColor: '#E7ECE6',
-            border: 'none',
-            fontSize: '15px',
+        className="flex-grow-1"
+        style={{
+          borderRadius: '14px',
+          paddingLeft: '38px',
+          paddingRight: '38px',
+          backgroundColor: '#E7ECE6',
+          border: 'none',
+          fontSize: '15px',
+          minWidth: '140px',
+          height: '38px',
         }}
       />
-    <Icon 
-    icon="material-symbols:mic"
-    style={{
-        fontSize: '22px',
-        transform: 'translateX(-40px)',
-        color: '#00000066',
-        cursor: 'pointer',
-    }}
-    />
+      <Icon 
+        icon="material-symbols:mic"
+        className="position-absolute"
+        style={{
+          fontSize: '22px',
+          right: '10px',
+          color: '#00000066',
+          cursor: 'pointer',
+        }}
+      />
     </Form>
   );
 }

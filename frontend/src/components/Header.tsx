@@ -7,7 +7,7 @@ const Header = () => {
       className="lineBottom"
       style={{
         width: "100%",
-        height: "70px",
+        height: "auto",
         padding: "5px",
         position: "fixed",
         backgroundColor: "white",
@@ -15,14 +15,14 @@ const Header = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        zIndex: 1,
+        zIndex: 10,
       }}
     >
       <img
         className="ifnmg-imagem"
         src="/IFNMG - Almenara.png"
         alt="IFNMG - Almenara"
-        style={{ height: "100%" }}
+        style={{ height: '100%', maxHeight: '55px' }}
       ></img>
       <Search />
       <PerfilHeader />
