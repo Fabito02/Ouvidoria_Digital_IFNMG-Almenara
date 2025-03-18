@@ -2,8 +2,29 @@ import { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { Icon } from '@iconify-icon/react';
 
+declare global {
+  interface Window {
+    SpeechRecognition: any;
+    webkitSpeechRecognition: any;
+  }
+
+  interface SpeechRecognitionEvent {
+    results: SpeechRecognitionResultList;
+  }
+
+  interface SpeechRecognitionError {
+    error: string;
+    message: string;
+  }
+}
+
+export {};
+
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [isListening, setIsListening] = useState(false);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
@@ -12,6 +33,34 @@ const SearchBar = () => {
   const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Pesquisando por:', searchQuery);
+  };
+
+  const startListening = () => {
+    if (SpeechRecognition) {
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'pt-BR';
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.start();
+
+      recognition.onresult = (event: SpeechRecognitionEvent) => {
+        const transcript = event.results[0][0].transcript;
+        setSearchQuery(transcript);
+      };
+
+      recognition.onerror = (event: SpeechRecognitionError) => {
+        console.error('Erro no reconhecimento de fala:', event.error);
+      };
+
+      recognition.onend = () => {
+        setIsListening(false);
+      };
+
+      setIsListening(true);
+    } else {
+      console.error('A API de reconhecimento de fala não é suportada neste navegador.');
+    }
   };
 
   return (
@@ -48,7 +97,7 @@ const SearchBar = () => {
         }}
       />
       <Icon 
-        icon="material-symbols:mic"
+        icon={isListening ? "material-symbols:mic-off" : "material-symbols:mic"}
         className="position-absolute"
         style={{
           fontSize: '22px',
@@ -56,6 +105,7 @@ const SearchBar = () => {
           color: '#00000066',
           cursor: 'pointer',
         }}
+        onClick={startListening}
       />
     </Form>
   );
