@@ -1,0 +1,11 @@
+.button-outline {
+    border-radius: 10px !important;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .button-outline:hover {
+    background-color: #4E9E54 !important;
+    color: white !important;
+    border-color: #4E9E54 !important;
+  }
+  

@@ -1,4 +1,5 @@
 import { Carousel } from "react-bootstrap";
+import "./Slider.css";
 
 interface SliderProps {
   imagens: string[];
