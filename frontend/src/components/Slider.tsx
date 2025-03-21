@@ -3,12 +3,13 @@ import "./Slider.css";
 
 interface SliderProps {
   imagens: string[];
+  indicadores?: boolean;
 }
 
-const Slider = ({ imagens }: SliderProps) => {
+const Slider = ({ imagens, indicadores }: SliderProps) => {
   return (
     <div className="slider-container">
-      <Carousel indicators={true} interval={3000}>
+      <Carousel indicators={indicadores} interval={3000}>
         {imagens.map((imagem, index) => (
           <Carousel.Item key={index}>
             <img className="slider-img" src={imagem} alt={`Slide ${index + 1}`} />
