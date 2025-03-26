@@ -23,4 +23,10 @@
     background-color: white;
     border-color: white;
     width: calc(60px + 25vw);
+    transition: transform 0.2s ease-out;
+    max-width: 400px;
+}
+
+.card:hover {
+    transform: scale(1.02);
 }

@@ -1,10 +1,10 @@
 import './LoginERegistrar.css'
-import { Row, Col, Container, Card, Form } from "react-bootstrap";
+import { Row, Col, Container, Form } from "react-bootstrap";
 import ButtonBootstrap from 'react-bootstrap/Button';
 import Button from '../components/buttons/Button';
 import { Icon } from "@iconify-icon/react";
 
-const Regulamento = () => {
+const Registrar = () => {
     return (
         <Container>
             <Row>
@@ -58,5 +58,5 @@ const Regulamento = () => {
     );
   };
   
-  export default Regulamento;
+  export default Registrar;
   

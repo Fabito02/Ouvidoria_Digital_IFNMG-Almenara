@@ -25,7 +25,7 @@ const Reclamacao = () => {
           </Col>
 
           <Col>
-            <a href="/fale-conosco/elogio">
+            <a href="/fale-conosco/sugestao">
               <img className="card" src="/fale-conosco/cards/sugestão.svg" alt="Card Sugestão" />
             </a>
           </Col>
