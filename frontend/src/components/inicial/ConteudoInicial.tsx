@@ -7,7 +7,7 @@ import { useEffect } from "react";
 const ConteudoHome = () => {
   useEffect(() => {
     const animar = document.querySelectorAll(".animar");
-    const desiredPixels = 700;
+    const desiredPixels = 100;
     const thresholdPercentage = desiredPixels / window.innerHeight;
 
     const observer = new IntersectionObserver(

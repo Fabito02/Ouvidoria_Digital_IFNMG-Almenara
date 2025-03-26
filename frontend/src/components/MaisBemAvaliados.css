@@ -1,61 +1,61 @@
 .box-avaliacoes {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    width: calc(200px + 32vw);
-    max-width: 550px;
-    border-radius: 24px;
-    padding: 22px;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: calc(200px + 32vw);
+  max-width: 550px;
+  border-radius: 24px;
+  padding: 22px;
+  gap: 12px;
 }
 
 .avaliacao {
-    display: flex;
-    align-items: center;
-    background-color: #EAEAEA;
-    border-radius: 14px;
-    position: relative;
-    height: 55px;
-    padding-left: 35px;
-    padding-right: 20px;
+  display: flex;
+  align-items: center;
+  background-color: #eaeaea;
+  border-radius: 14px;
+  position: relative;
+  height: 55px;
+  padding-left: 35px;
+  padding-right: 20px;
 }
 
 .avaliacao * {
-    display: inline;
+  display: inline;
 }
 
 .top {
-    left: -8px;
-    top: -8px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 23px;
-    font-weight: 700;
-    background-color: #4E9E54;
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+  left: -8px;
+  top: -8px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  font-weight: 700;
+  background-color: #12af51;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 .right {
-    display: inline-block;
-    white-space: nowrap;
-    text-overflow: clip;
-    max-width: 100%;
-    box-sizing: border-box;
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: clip;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .nome {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height: 100%;
-    margin-top: 45px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 100%;
+  margin-top: 45px;
 }
 
 .numeroFavoritados {
-    margin-left: 5px;
+  margin-left: 5px;
 }

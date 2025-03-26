@@ -4,19 +4,19 @@
 }
 
 .button-outline:hover {
-  background-color: #4e9e54 !important;
+  background-color: #12af51 !important;
   color: white !important;
-  border-color: #4e9e54 !important;
+  border-color: #12af51 !important;
 }
 
 .button {
   border-radius: 10px !important;
-  background-color: #4e9e54 !important;
+  background-color: #12af51 !important;
   transition: all 0.3s ease-in-out;
-  border-color: #4e9e54 !important;
+  border-color: #12af51 !important;
 }
 
 .button:hover {
-  background-color: #428a47 !important;
-  border-color: #428a47 !important;
+  background-color: #08a045 !important;
+  border-color: #08a045 !important;
 }
