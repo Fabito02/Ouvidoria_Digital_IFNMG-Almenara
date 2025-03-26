@@ -92,7 +92,7 @@ const SearchBar = () => {
           backgroundColor: '#E7ECE6',
           border: 'none',
           fontSize: '15px',
-          minWidth: '140px',
+          minWidth: '120px',
           height: '38px',
         }}
       />

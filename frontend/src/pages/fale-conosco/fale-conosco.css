@@ -1,0 +1,26 @@
+.row {
+    height: 30vh;
+    gap: 30px;
+
+}
+
+.container-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: calc(5vw);
+}
+
+.col {
+    position: relative;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: white;
+    border-color: white;
+    width: calc(60px + 25vw);
+}
