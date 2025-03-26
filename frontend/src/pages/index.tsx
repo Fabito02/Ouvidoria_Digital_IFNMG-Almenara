@@ -1,16 +1,15 @@
 import Slider from "../components/Slider";
-import ConteudoHome from "../components/home/ConteudoHome"
+import ConteudoHome from "../components/inicial/ConteudoInicial"
 
-const imagens = [
-  "/slider_testes.png",
-  "/slider_testes.png",
-  "/slider_testes.png",
-]
+// const imagens = [
+//   "/slider_testes.png",
+//   "/slider_testes.png",
+//   "/slider_testes.png",
+// ]
 
 const Home = () => {
   return (
     <div>
-      <Slider imagens={imagens} />
       <ConteudoHome />
     </div>
   );

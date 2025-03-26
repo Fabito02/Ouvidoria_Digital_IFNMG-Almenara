@@ -1,10 +1,10 @@
-import Search from "./Search";
-import PerfilHeader from "./PerfilHeader";
+import Search from "../components/Search";
+import PerfilHeader from "../components/PerfilHeader";
 
 const Header = () => {
   return (
     <header
-      className="lineBottom"
+      className="lineBottom classeParaOcultar"
       style={{
         width: "100%",
         height: "auto",
@@ -22,7 +22,7 @@ const Header = () => {
         className="ifnmg-imagem"
         src="/IFNMG - Almenara.png"
         alt="IFNMG - Almenara"
-        style={{ height: '100%', maxHeight: '55px' }}
+        style={{ height: "100%", maxHeight: "55px" }}
       ></img>
       <Search />
       <PerfilHeader />

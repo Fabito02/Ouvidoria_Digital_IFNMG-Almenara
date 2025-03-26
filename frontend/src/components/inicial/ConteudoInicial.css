@@ -1,0 +1,112 @@
+body {
+    padding-top: 0;
+}
+
+.row {
+    height: 100vh;
+    max-height: 1200px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-cinza {
+    background-color: #f3f3f3;
+}
+
+.classeParaOcultar {
+    display: none !important;
+}
+
+.imagemCol {
+    width: calc(200px + 32vw);
+    max-width: 700px;
+    max-height: 700px;
+}
+
+.login-btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    border-radius: 200px !important;
+}
+
+.logo-auris {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    height: 55px;
+}
+
+.textos {
+    padding-right: 20px;
+    flex-direction: column;
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5em;
+    color: #23703A;
+    font-weight: 300;
+}
+
+.complemento {
+    margin-top: 30px;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.plataforma-btn {
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.column .button {
+    margin-top: 40px;
+}
+
+.animar {
+    opacity: 0;
+    transform: translateY(50px);
+}
+.animar.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+@media (max-width: 992px){
+    body {
+        margin-top: 50px;
+    }
+    .textos {
+        text-align: center !important;
+    }
+    .title {
+        font-size: 2.8em;
+    }
+    .complemento {
+        font-size: 1.4em;
+    }
+    .col-inverso {
+        order: 2;
+    }
+    .textos {
+        padding-right: 0;
+    }
+}
