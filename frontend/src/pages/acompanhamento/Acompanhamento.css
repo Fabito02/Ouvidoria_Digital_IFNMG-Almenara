@@ -1,0 +1,96 @@
+.corpoDoSite {
+    display: flex;
+    height: calc(100vh - 120px);
+    padding-left: 0;
+  }
+  
+  .barraLateral {
+    position: relative;
+    background-color: #23BC60;
+    color: white;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: width 0.3s;
+    width: 90px;
+    padding-top: 55px;
+  }
+  
+  .barraLateral.expandido {
+    width: 200px;
+  }
+  
+  .toggle-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #39852c51;
+    border: 0;
+    font-size: 25px;
+  }
+
+  .toggle-button:hover {
+    background-color: #9ddb925d;
+  }
+  
+  .opcao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #39852c51;
+    margin: 5px 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .opcao:hover {
+    background-color: #9ddb925d;
+  }
+  
+  .opcao.expandido {
+    width: 90%;
+    height: 50px;
+    justify-content: flex-start;
+    padding-left: 10px;
+  }
+  
+  .icone {
+    font-size: 30px;
+  }
+  
+  .opcao.expandido .icone {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .label {
+    font-size: 16px;
+  }
+  
+  .conteudo {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: scroll;
+    margin: 0;
+    gap: 40px;
+    padding: 1.5rem;
+  }
+  
+  .graphic-box {
+    max-width: fit-content;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: #00000010;
+  }

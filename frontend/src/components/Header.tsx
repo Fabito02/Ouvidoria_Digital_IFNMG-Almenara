@@ -18,12 +18,14 @@ const Header = () => {
         zIndex: 10,
       }}
     >
-      <img
-        className="ifnmg-imagem"
-        src="/IFNMG - Almenara.png"
-        alt="IFNMG - Almenara"
-        style={{ height: "100%", maxHeight: "55px" }}
-      ></img>
+      <a href="/">
+        <img
+          className="ifnmg-imagem"
+          src="/IFNMG - Almenara.png"
+          alt="IFNMG - Almenara"
+          style={{ height: "100%", maxHeight: "55px" }}
+        ></img>
+      </a>
       <Search />
       <PerfilHeader />
     </header>
