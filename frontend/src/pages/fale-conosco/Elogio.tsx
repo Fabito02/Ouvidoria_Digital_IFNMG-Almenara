@@ -112,7 +112,7 @@ const Elogio = () => {
                 </Row>
 
                 <Form.Group controlId="formElogio" className="mb-3">
-                    <Form.Label>Descreva sua reclamação</Form.Label>
+                    <Form.Label>Descreva seu elogio</Form.Label>
                     <div id="editor" style={{ minHeight: '200px', padding: '5px',  borderRadius: '0px 0px 12px 12px'}} className='inputElogio shadow-sm'></div>
                 </Form.Group>
 
