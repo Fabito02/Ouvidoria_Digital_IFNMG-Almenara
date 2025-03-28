@@ -1,17 +1,15 @@
-.row {
-    height: 30vh;
-    gap: 30px;
-
+.linha {
+    max-height: fit-content;
+    margin-top: 50px;
 }
 
-.container-cards {
+.container-card {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: calc(5vw);
 }
 
-.col {
+.coluna {
     position: relative;
     height: auto;
     display: flex;
@@ -19,14 +17,15 @@
     align-items: center;
 }
 
-.card {
+.tipoManifestacao {
     background-color: white;
     border-color: white;
-    width: calc(60px + 25vw);
+    width: calc(90px + 20vw);
     transition: transform 0.2s ease-out;
-    max-width: 400px;
+    max-width: 350px;
+    margin: 20px;
 }
 
-.card:hover {
+.tipoManifestacao:hover {
     transform: scale(1.02);
 }

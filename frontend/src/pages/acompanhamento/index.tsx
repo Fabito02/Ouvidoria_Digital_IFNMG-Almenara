@@ -60,7 +60,11 @@ const Acompanhamento = () => {
   return (
     <Container fluid className="corpoDoSite">
       <div className={`barraLateral ${expandido ? "expandido" : ""}`}>
-        <Button variant="dark" onClick={toggleSidebar} className="toggle-button">
+        <Button
+          variant="dark"
+          onClick={toggleSidebar}
+          className="toggle-button"
+        >
           <Icon
             icon={
               expandido
@@ -78,77 +82,92 @@ const Acompanhamento = () => {
       </div>
 
       <Container className="conteudo">
-          <div className="graphic-box">
-            <LineChart width={400} height={300} data={data}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Line
-                type="monotone"
-                dataKey="pv"
-                stroke="#8884d8"
-                activeDot={{ r: 8 }}
-              />
-              <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-            </LineChart>
-          </div>
+        <div className="graphic-box">
+          <LineChart width={400} height={300} data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line
+              type="monotone"
+              dataKey="pv"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+            <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+          </LineChart>
+        </div>
 
-          <div className="graphic-box">
-            <BarChart width={400} height={300} data={data}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Bar dataKey="pv" fill="#8884d8" />
-              <Bar dataKey="uv" fill="#82ca9d" />
-            </BarChart>
-          </div>
+        <div className="graphic-box">
+          <BarChart width={400} height={300} data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="pv" fill="#8884d8" />
+            <Bar dataKey="uv" fill="#82ca9d" />
+          </BarChart>
+        </div>
 
-          <div className="graphic-box">
-            <PieChart width={400} height={300}>
-              <Pie
-                data={data}
-                cx="50%"
-                cy="50%"
-                labelLine={false}
-                outerRadius={80}
-                fill="#8884d8"
-                dataKey="pv"
-                label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-              >
-                {data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
-              <Legend />
-              <Tooltip />
-            </PieChart>
-          </div>
+        <div className="graphic-box">
+          <PieChart width={400} height={300}>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              labelLine={false}
+              outerRadius={80}
+              fill="#8884d8"
+              dataKey="pv"
+              label={({ name, percent }) =>
+                `${name} ${(percent * 100).toFixed(0)}%`
+              }
+            >
+              {data.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
+              ))}
+            </Pie>
+            <Legend />
+            <Tooltip />
+          </PieChart>
+        </div>
 
-          <div className="graphic-box">
-            <AreaChart width={400} height={300} data={data}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Area type="monotone" dataKey="pv" stroke="#8884d8" fill="#8884d8" />
-              <Area type="monotone" dataKey="uv" stroke="#82ca9d" fill="#82ca9d" />
-            </AreaChart>
-          </div>
+        <div className="graphic-box">
+          <AreaChart width={400} height={300} data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Area
+              type="monotone"
+              dataKey="pv"
+              stroke="#8884d8"
+              fill="#8884d8"
+            />
+            <Area
+              type="monotone"
+              dataKey="uv"
+              stroke="#82ca9d"
+              fill="#82ca9d"
+            />
+          </AreaChart>
+        </div>
 
-          <div className="graphic-box">
-            <ScatterChart width={400} height={300}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="x" name="stature" unit="cm" />
-              <YAxis dataKey="y" name="weight" unit="kg" />
-              <Tooltip />
-              <Scatter name="A school" data={scatterData} fill="#8884d8" />
-            </ScatterChart>
-          </div>
+        <div className="graphic-box">
+          <ScatterChart width={400} height={300}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="x" name="stature" unit="cm" />
+            <YAxis dataKey="y" name="weight" unit="kg" />
+            <Tooltip />
+            <Scatter name="A school" data={scatterData} fill="#8884d8" />
+          </ScatterChart>
+        </div>
       </Container>
     </Container>
   );

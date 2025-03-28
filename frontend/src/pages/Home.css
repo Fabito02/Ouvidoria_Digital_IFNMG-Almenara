@@ -1,0 +1,16 @@
+.frase-impactante {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.iconeCard {
+    color: #12AF51;
+}
+
+.iconeInfo {
+    color: #c4c62c;
+}
+
+.radius-card {
+    border-radius: 20px;
+}
