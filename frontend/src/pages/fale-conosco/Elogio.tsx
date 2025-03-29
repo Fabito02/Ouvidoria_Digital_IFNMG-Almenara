@@ -7,6 +7,7 @@ import 'quill/dist/quill.snow.css';
 
 const Elogio = () => {
     const [anonimo, setAnonimo] = useState(false);
+    const [tipoReclamacao, setTipoReclamacao] = useState("");
 
     const editorRef = useRef<Quill | null>(null);
 
@@ -40,7 +41,7 @@ const Elogio = () => {
     };
 
     return (
-        <Container className="mt-5">
+        <Container className="mt-5 mb-5">
             <h1 className="mb-5 title">ELOGIO</h1>
             <Form onSubmit={handleSubmit}>
                 <span>Deseja fazer o elogio de forma anônima?</span>
@@ -81,42 +82,68 @@ const Elogio = () => {
 
                 <Row className="mb-3">
                     <Col md={6}>
-                        <Form.Group controlId="formAreaCampus">
-                            <Form.Label>Área do Campus</Form.Label>
-                            <Form.Select className='shadow-sm' defaultValue="">
-                                <option value="">Selecione...</option>
-                                <option value="administracao">Administração</option>
-                                <option value="secretaria">Secretaria</option>
-                                <option value="biblioteca">Biblioteca</option>
-                                <option value="laboratorios">Laboratórios</option>
-                                <option value="sala-aula">Salas de Aula</option>
-                                <option value="restaurante">Lanchonete</option>
-                                <option value="portaria">Portaria</option>
-                                <option value="outros">Outros</option>
-                            </Form.Select>
-                        </Form.Group>
-                    </Col>
-                    <Col md={6}>
-                        <Form.Group controlId="formTipoElogio">
+                        <Form.Group controlId="formTipoReclamacao">
                             <Form.Label>Tipo de Elogio</Form.Label>
-                            <Form.Select className='shadow-sm' defaultValue="">
+                            <Form.Select className='shadow-sm' defaultValue="" onChange={(e) => setTipoReclamacao(e.target.value)}>
                                 <option value="">Selecione...</option>
+                                <option value="infraestrutura">Estrutura e Espaços</option>
                                 <option value="atendimento">Atendimento</option>
-                                <option value="infraestrutura">Infraestrutura</option>
                                 <option value="servico">Serviço</option>
                                 <option value="seguranca">Segurança</option>
+                                <option value="higiene">Higiene</option>
+                                <option value="alimentacao">Alimentação</option>
+                                <option value="equipamentos">Equipamentos</option>
+                                <option value="docentes">Docentes</option>
+                                <option value="servidores">Servidores</option>
+                                <option value="acessibilidade">Acessibilidade</option>
+                                <option value="eventos">Eventos</option>
+                                <option value="burocracia">Burocracia</option>
                                 <option value="outros">Outros</option>
                             </Form.Select>
                         </Form.Group>
                     </Col>
                 </Row>
 
+                {tipoReclamacao === "infraestrutura" && (
+                    <Row className="mb-3">
+                        <Col md={6}>
+                            <Form.Group controlId="formAreaCampus">
+                                <Form.Label>Área do Campus</Form.Label>
+                                <Form.Select className='shadow-sm' defaultValue="">
+                                    <option value="">Selecione...</option>
+                                    <option value="portaria">Portaria</option>
+                                    <option value="biblioteca">Biblioteca</option>
+                                    <option value="setor-administrativo">Setor Administrativo</option>
+                                    <option value="predio-pedagogico-1">Prédio Pedagógico I</option>
+                                    <option value="auditório">Auditório</option>
+                                    <option value="semirresidencial">Semirresidencial</option>
+                                    <option value="nucleo-assuntos-estudantis">Núcleo de Assuntos Estudantis</option>
+                                    <option value="lanchonete">Lanchonete</option>
+                                    <option value="refeitorio">Refeitório</option>
+                                    <option value="nucleo-estudos-agroecologia">Núcleo de Estudos em Agroecologia</option>
+                                    <option value="predio-pedagogico-2">Prédio Pedagógico II</option>
+                                    <option value="moradia-estudantil">Moradia Estudantil - Residencial</option>
+                                    <option value="laboratorio-solos">Laboratório de Solos</option>
+                                    <option value="ginasio">Ginásio</option>
+                                    <option value="suinocultura">Suinocultura</option>
+                                    <option value="casa-racao">Casa de Ração</option>
+                                    <option value="laboratorio-campo">Laboratório de Campo</option>
+                                    <option value="bovinocultura">Bovinocultura</option>
+                                    <option value="avicultura">Avicultura</option>
+                                    <option value="casa-maquinas">Casa de Máquinas</option>
+                                    <option value="outros">Outros</option>
+                                </Form.Select>
+                            </Form.Group>
+                        </Col>
+                    </Row>
+                )}
+
                 <Form.Group controlId="formElogio" className="mb-3">
                     <Form.Label>Descreva seu elogio</Form.Label>
                     <div id="editor" style={{ minHeight: '200px', padding: '5px',  borderRadius: '0px 0px 12px 12px'}} className='inputElogio shadow-sm'></div>
                 </Form.Group>
 
-                <Button type="submit" texto="Enviar elogio" className='mb-3' />
+                <Button type="submit" texto="Enviar elogio" className='mb-5' />
             </Form>
         </Container>
     );

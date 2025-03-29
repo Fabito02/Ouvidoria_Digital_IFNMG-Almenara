@@ -40,7 +40,7 @@ const Denuncia = () => {
     };
 
     return (
-        <Container className="mt-5">
+        <Container className="mt-5 mb-5">
             <h1 className="mb-5 title">Denúncia</h1>
             <Form onSubmit={handleSubmit}>
                 <span>Deseja fazer a denúncia de forma anônima?</span>
@@ -81,30 +81,24 @@ const Denuncia = () => {
 
                 <Row className="mb-3">
                     <Col md={6}>
-                        <Form.Group controlId="formAreaCampus">
-                            <Form.Label>Área do Campus</Form.Label>
-                            <Form.Select className='shadow-sm' defaultValue="">
-                                <option value="">Selecione...</option>
-                                <option value="administracao">Administração</option>
-                                <option value="secretaria">Secretaria</option>
-                                <option value="biblioteca">Biblioteca</option>
-                                <option value="laboratorios">Laboratórios</option>
-                                <option value="sala-aula">Salas de Aula</option>
-                                <option value="restaurante">Lanchonete</option>
-                                <option value="portaria">Portaria</option>
-                                <option value="outros">Outros</option>
-                            </Form.Select>
-                        </Form.Group>
-                    </Col>
-                    <Col md={6}>
                         <Form.Group controlId="formTipoDenuncia">
                             <Form.Label>Tipo de Denúncia</Form.Label>
                             <Form.Select className='shadow-sm' defaultValue="">
                                 <option value="">Selecione...</option>
-                                <option value="atendimento">Atendimento</option>
-                                <option value="infraestrutura">Infraestrutura</option>
-                                <option value="servico">Serviço</option>
-                                <option value="seguranca">Segurança</option>
+                                <option value="assedio-moral">Assédio Moral</option>
+                                <option value="assedio-sexual">Assédio Sexual</option>
+                                <option value="discriminacao">Discriminação (Racial, de Gênero, etc.)</option>
+                                <option value="violencia">Violência ou Agressão Física</option>
+                                <option value="ameaça">Ameaça ou Intimidação</option>
+                                <option value="bullying">Bullying ou Cyberbullying</option>
+                                <option value="negligencia">Negligência ou Abuso de Autoridade</option>
+                                <option value="corrupcao">Corrupção, Fraude ou Irregularidades</option>
+                                <option value="abuso-poder">Abuso de Poder</option>
+                                <option value="desvios-eticos">Desvios de Conduta ou Ética</option>
+                                <option value="infraestrutura-perigosa">Infraestrutura Perigosa ou Insegura</option>
+                                <option value="conduta-inadequada">Conduta Inadequada de Docentes ou Servidores</option>
+                                <option value="higiene">Falta de Higiene em Ambientes Críticos</option>
+                                <option value="descarte-irregular">Descarte Irregular de Resíduos</option>
                                 <option value="outros">Outros</option>
                             </Form.Select>
                         </Form.Group>
@@ -116,7 +110,7 @@ const Denuncia = () => {
                     <div id="editor" style={{ minHeight: '200px', padding: '5px',  borderRadius: '0px 0px 12px 12px'}} className='inputDenuncia shadow-sm'></div>
                 </Form.Group>
 
-                <Button type="submit" texto="Enviar Denúncia" className='mb-3' />
+                <Button type="submit" texto="Enviar Denúncia" className='mb-5' />
             </Form>
         </Container>
     );

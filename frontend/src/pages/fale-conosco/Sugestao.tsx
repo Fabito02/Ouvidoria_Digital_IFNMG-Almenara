@@ -40,7 +40,7 @@ const Sugestao = () => {
     };
 
     return (
-        <Container className="mt-5">
+        <Container className="mt-5 mb-5">
             <h1 className="mb-5 title">SUGESTÃO</h1>
             <Form onSubmit={handleSubmit}>
                 <span>Deseja fazer a sugestão de forma anônima?</span>
@@ -81,30 +81,18 @@ const Sugestao = () => {
 
                 <Row className="mb-3">
                     <Col md={6}>
-                        <Form.Group controlId="formAreaCampus">
-                            <Form.Label>Área do Campus</Form.Label>
-                            <Form.Select className='shadow-sm' defaultValue="">
-                                <option value="">Selecione...</option>
-                                <option value="administracao">Administração</option>
-                                <option value="secretaria">Secretaria</option>
-                                <option value="biblioteca">Biblioteca</option>
-                                <option value="laboratorios">Laboratórios</option>
-                                <option value="sala-aula">Salas de Aula</option>
-                                <option value="restaurante">Lanchonete</option>
-                                <option value="portaria">Portaria</option>
-                                <option value="outros">Outros</option>
-                            </Form.Select>
-                        </Form.Group>
-                    </Col>
-                    <Col md={6}>
                         <Form.Group controlId="formTipoSugestao">
                             <Form.Label>Tipo de Sugestão</Form.Label>
                             <Form.Select className='shadow-sm' defaultValue="">
                                 <option value="">Selecione...</option>
-                                <option value="atendimento">Atendimento</option>
-                                <option value="infraestrutura">Infraestrutura</option>
-                                <option value="servico">Serviço</option>
-                                <option value="seguranca">Segurança</option>
+                                <option value="melhoria-infraestrutura">Melhoria na Infraestrutura</option>
+                                <option value="novos-servicos">Novos Serviços</option>
+                                <option value="processos-burocraticos">Otimização de Processos</option>
+                                <option value="eventos-atividades">Sugestão de Eventos e Atividades</option>
+                                <option value="tecnologia-sistemas">Aprimoramento Tecnológico</option>
+                                <option value="alimentacao">Sugestões para Alimentação</option>
+                                <option value="espacos-estudo">Melhoria nos Espaços de Estudo</option>
+                                <option value="sustentabilidade">Ações de Sustentabilidade</option>
                                 <option value="outros">Outros</option>
                             </Form.Select>
                         </Form.Group>
@@ -116,7 +104,7 @@ const Sugestao = () => {
                     <div id="editor" style={{ minHeight: '200px', padding: '5px',  borderRadius: '0px 0px 12px 12px'}} className='inputSugestao shadow-sm'></div>
                 </Form.Group>
 
-                <Button type="submit" texto="Enviar sugestão" className='mb-3' />
+                <Button type="submit" texto="Enviar sugestão" className='mb-5' />
             </Form>
         </Container>
     );
