@@ -3,6 +3,7 @@ import "./ConteudoInicial.css";
 import Button from "../buttons/Button";
 import MaisBemAvaliados from "../MaisBemAvaliados";
 import { useEffect } from "react";
+import { BlankLayout } from "../BlankLayout/BlankLayout";
 
 const ConteudoHome = () => {
   useEffect(() => {
@@ -29,14 +30,14 @@ const ConteudoHome = () => {
   }, []);
 
   return (
-    <>
+    <BlankLayout>
       <a href="/login">
         <Button texto="login" className="login-btn" />
       </a>
       <img src="/home/auris.svg" alt="Logo Auris" className="logo-auris" />
       <Container className="px-4 animar">
-        <Row>
-          <Col className="textos">
+        <Row className="tela">
+          <Col className="textos coluna-tela">
             <div className="textos text-right">
               <h1 className="title">Auris – Ouvir para transformar!</h1>
               <p className="complemento">
@@ -47,7 +48,7 @@ const ConteudoHome = () => {
               </a>
             </div>
           </Col>
-          <Col className="imagem">
+          <Col className="imagem coluna-tela">
             <img src="/home/img1.svg" alt="Homem utilizando o computador" className="imagemCol" />
           </Col>
         </Row>
@@ -55,14 +56,14 @@ const ConteudoHome = () => {
 
       <div className="bg-cinza">
         <Container className="px-4 animar">
-          <Row>
-            <Col className="textos text-right">
+          <Row className="tela">
+            <Col className="textos text-right coluna-tela">
               <h1 className="title">Locais mais bem avaliados do campus:</h1>
               <p className="complemento">
                 Descubra e valorize os locais mais bem avaliados do campus.
               </p>
             </Col>
-            <Col className="imagem">
+            <Col className="imagem coluna-tela">
               <MaisBemAvaliados />
             </Col>
           </Row>
@@ -70,11 +71,11 @@ const ConteudoHome = () => {
       </div>
 
       <Container className="px-4 animar">
-        <Row>
-          <Col className="imagem col-inverso">
+        <Row className="tela">
+          <Col className="imagem col-inverso coluna-tela">
             <img src="/home/img2.svg" alt="Homem utilizando o computador" className="imagemCol" />
           </Col>
-          <Col className="textos">
+          <Col className="textos coluna-tela">
             <h1 className="title">O elogio é combustível para a excelência!</h1>
             <p className="complemento">
               Conte-nos sobre aquela experiência positiva que merece ser celebrada.
@@ -84,14 +85,14 @@ const ConteudoHome = () => {
       </Container>
 
       <Container className="px-4 animar">
-        <Row>
-          <Col className="textos text-right">
+        <Row className="tela">
+          <Col className="textos text-right coluna-tela">
             <h1 className="title">Escutamos agora para melhorar sempre!</h1>
             <p className="complemento">
               Seja para valorizar o que dá certo ou ajustar o que pode ser melhorado.
             </p>
           </Col>
-          <Col className="imagem">
+          <Col className="imagem coluna-tela">
             <img src="/home/img3.svg" alt="Homem utilizando o computador" className="imagemCol" />
           </Col>
         </Row>
@@ -99,8 +100,8 @@ const ConteudoHome = () => {
 
       <div className="bg-cinza">
         <Container className="px-4 animar">
-          <Row>
-            <Col className="column textos">
+          <Row className="tela">
+            <Col className="column textos coluna-tela">
               <div className="title">Venha fazer parte da mudança!</div>
               <p className="complemento">
                 Acesse a plataforma, compartilhe sua opinião e ajude a construir um ambiente ainda melhor.
@@ -112,7 +113,7 @@ const ConteudoHome = () => {
           </Row>
         </Container>
       </div>
-    </>
+    </BlankLayout>
   );
 };
 

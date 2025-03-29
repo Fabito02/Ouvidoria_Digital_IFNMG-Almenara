@@ -3,9 +3,11 @@ import { Row, Col, Container, Form } from "react-bootstrap";
 import ButtonBootstrap from 'react-bootstrap/Button';
 import Button from '../components/buttons/Button';
 import { Icon } from "@iconify-icon/react";
+import { BlankLayout } from '../components/BlankLayout/BlankLayout';
 
 const Login = () => {
     return (
+      <BlankLayout showFooter={false} showHeader={false} showNavbar={false} removeBodyPadding>
         <Container>
             <Row>
                 <Col lg={'5'}>
@@ -44,6 +46,7 @@ const Login = () => {
                 </Col>
             </Row>
         </Container>
+      </BlankLayout>
     );
   };
   

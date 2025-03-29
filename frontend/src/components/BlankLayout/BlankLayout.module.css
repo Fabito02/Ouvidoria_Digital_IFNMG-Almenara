@@ -1,0 +1,16 @@
+/* BlankLayout.module.css */
+.container {
+  width: 100%;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.defaultLayout {
+  display: block;
+  min-height: auto;
+}

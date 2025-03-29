@@ -3,21 +3,23 @@ import "./Buttons.css";
 import { ReactNode } from 'react';
 
 interface ButtonProps {
-  texto: string;
+  texto?: string | "";
   className?: string;
   type?: "button" | "submit" | "reset";
   children?: ReactNode;
+  href?: string;
 }
 
-export default function ButtonNormal({ texto, className, type, children }: ButtonProps) {
+export default function ButtonNormal({ texto, className, type, children, href }: ButtonProps) {
   return (
     <Button
       variant="success"
       className={`button ${className || ""}`}
       type={type}
+      href={href}
     >
       {children}
-      {texto.toUpperCase()}
+      {texto ? texto.toUpperCase() : ""}
     </Button>
   );
 }

@@ -4,7 +4,7 @@ import PerfilHeader from "../components/PerfilHeader";
 const Header = () => {
   return (
     <header
-      className="lineBottom classeParaOcultar"
+      className="lineBottom"
       style={{
         width: "100%",
         height: "auto",

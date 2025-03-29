@@ -3,11 +3,11 @@
     left: 20px;
     top: 50%;
     height: 70%;
-    width: 4px;
+    width: 5px;
     border-radius: 3px;
     margin-right: 20px;
     background-color: #28a745;
-    transform: translateY(-50%);
+    transform: translateY(-50%) translateX(25px);
 }
 
 .title {

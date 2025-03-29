@@ -6,7 +6,7 @@ import './NavbarComponent.css';
 
 const NavbarComponent = () => {
   return (
-    <Navbar expand="lg" style={{ backgroundColor: '#ffffff' }} className='lineBottom classeParaOcultar'>
+    <Navbar expand="lg" style={{ backgroundColor: '#ffffff' }} className='lineBottom'>
       <Container className="d-flex ">
         <Navbar.Toggle 
         aria-controls="basic-navbar-nav" 
