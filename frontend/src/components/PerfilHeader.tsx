@@ -22,7 +22,6 @@ const PerfilHeader = () => {
       <Dropdown>
         <Dropdown.Toggle
           as={"div"}
-          id="dropdown-basic"
           style={{
             cursor: "pointer",
             width: "40px",

@@ -15,6 +15,10 @@ body {
   border-bottom: 1px solid #bbbbbb;
 }
 
+::selection {
+  background-color: #c5f5c9;
+}
+
 /* input:focus, select:focus, textarea:focus {
   border: 1px solid #4fae66 !important;
   box-shadow: 0 0 0 0.3em rgba(40, 167, 70, 0.151) !important;

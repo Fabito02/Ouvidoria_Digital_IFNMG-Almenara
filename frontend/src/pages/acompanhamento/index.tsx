@@ -63,7 +63,6 @@ const Acompanhamento = () => {
       <Container fluid className="corpoDoSite">
         <div className={`barraLateral ${expandido ? "expandido" : ""}`}>
           <Button
-            variant="dark"
             onClick={toggleSidebar}
             className="toggle-button"
           >

@@ -19,7 +19,7 @@ const Footer = () => {
     <footer className="py-5">
       <Row>
         <Col md={2}>
-          <img src="/Logo - Footer.svg" alt="Logo Auris" className='logo-footer' />
+          <img src="/Logo - Footer.svg" alt="Logo Auris" className='logo-footer p-3' />
         </Col>
         {sections.map((section, index) => (
           <Col key={index} md={2} className='mb-3'>

@@ -8,18 +8,22 @@
     position: relative;
     background-color: #23BC60;
     color: white;
-    padding: 1rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: width 0.3s;
+    transition: all 0.3s ease;
     width: 90px;
+    min-width: 78px;
     padding-top: 55px;
-  }
-  
-  .barraLateral.expandido {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.barraLateral.expandido {
     width: 200px;
-  }
+    min-width: 200px;
+    
+}
   
   .toggle-button {
     display: flex;
@@ -33,6 +37,11 @@
     background-color: #39852c51;
     border: 0;
     font-size: 25px;
+    border-radius: 10px;
+  }
+
+  .toggle-button:active {
+    background-color: #2c682151 !important;
   }
 
   .toggle-button:hover {
@@ -45,22 +54,28 @@
     align-items: center;
     background-color: #39852c51;
     margin: 5px 0;
-    width: 70px;
-    height: 70px;
+    width: calc(100% - 20px);
+    max-width: 70px;
+    aspect-ratio: 1 / 1;
     border-radius: 10px;
-    transition: all 0.3s;
+    transition: all 0.2s ease;
     cursor: pointer;
   }
 
   .opcao:hover {
     background-color: #9ddb925d;
   }
+
+  .opcao:active {
+    background-color: #2c682151;
+  }
   
   .opcao.expandido {
-    width: 90%;
+    aspect-ratio: unset;
     height: 50px;
     justify-content: flex-start;
     padding-left: 10px;
+    max-width: unset;
   }
   
   .icone {
