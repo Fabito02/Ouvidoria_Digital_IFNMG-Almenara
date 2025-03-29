@@ -15,7 +15,7 @@ const Home = () => {
           Compartilhe aqui sua voz: críticas, ideias, celebrações ou necessidades.
           </p>
           <div className="d-flex gap-3 justify-content-center mt-5">
-            <Link to="/manifestacao">
+            <Link to="/fale-conosco">
               <Button texto="Enviar Manifestação">
                 <Icon icon="material-symbols:edit-document" className="me-2" />
               </Button>
