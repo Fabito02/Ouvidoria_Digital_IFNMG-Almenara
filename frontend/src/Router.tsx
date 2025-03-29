@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import NotFound from "./pages/NotFound";
+import NotFound from "./pages/errors/404";
 import Loading from "./components/loading/Loading";
 
 const pageModules = import.meta.glob("./pages/**/*.tsx");
@@ -13,7 +13,9 @@ const Router: React.FC = () => {
       .replace(/\/index$/, "")
       .toLowerCase();
 
-    const Component = React.lazy(() => module() as Promise<{ default: React.ComponentType }>);
+    const Component = React.lazy(
+      () => module() as Promise<{ default: React.ComponentType }>
+    );
 
     return (
       <Route

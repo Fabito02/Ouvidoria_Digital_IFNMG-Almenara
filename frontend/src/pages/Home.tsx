@@ -9,12 +9,12 @@ const Home = () => {
   return (
     <div className="ouvidoria-home">
       <section className="hero-banner bg-light py-5">
-        <div className="container text-center">
+        <div className="container text-center mb-3">
           <h1 className="display-4 mb-3 frase-impactante">Sua voz é importante!</h1>
-          <p className="lead mb-4">
+          <p className="lead mb-5">
           Compartilhe aqui sua voz: críticas, ideias, celebrações ou necessidades.
           </p>
-          <div className="d-flex gap-3 justify-content-center">
+          <div className="d-flex gap-3 justify-content-center mt-5">
             <Link to="/manifestacao">
               <Button texto="Enviar Manifestação">
                 <Icon icon="material-symbols:edit-document" className="me-2" />

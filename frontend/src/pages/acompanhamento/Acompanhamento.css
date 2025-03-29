@@ -82,7 +82,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    overflow: scroll;
+    overflow-y: scroll;
     margin: 0;
     gap: 40px;
     padding: 1.5rem;

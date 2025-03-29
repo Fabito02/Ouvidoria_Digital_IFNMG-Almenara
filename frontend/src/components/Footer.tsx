@@ -4,11 +4,7 @@ import {
   Col, 
   Nav,
 } from 'react-bootstrap';
-import { 
-  Youtube, 
-  Instagram, 
-  Facebook 
-} from 'react-bootstrap-icons';
+import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
 import './Footer.css';
 import Button from './buttons/Button';
 
@@ -19,7 +15,7 @@ const Footer = () => {
   ];
 
   return (
-    <Container className='footer-container footer-container'>
+    <Container className='footer-container'>
     <footer className="py-5">
       <Row>
         <Col md={2}>
@@ -52,17 +48,17 @@ const Footer = () => {
         <ul className="list-unstyled d-flex">
           <li className="ms-3">
             <a href="https://www.youtube.com/c/IFNMGCampusAlmenara" className="link-light" aria-label="YouTube">
-              <Youtube width={24} height={24} color="white" />
+              <Icon icon={"mingcute:youtube-fill"} width="24" height="24" />
             </a>
           </li>
           <li className="ms-3">
             <a href="https://www.instagram.com/almenara_ifnmg/" className="link-light" aria-label="Instagram">
-              <Instagram width={24} height={24} color="white" />
+              <Icon icon={"ri:instagram-fill"} width="24" height="24" />
             </a>
           </li>
           <li className="ms-3">
             <a href="https://www.facebook.com/IFNMGoficial" className="link-light" aria-label="Facebook">
-              <Facebook width={24} height={24} color="white" />
+              <Icon icon={"ic:baseline-facebook"} width="24" height="24" />
             </a>
           </li>
         </ul>
