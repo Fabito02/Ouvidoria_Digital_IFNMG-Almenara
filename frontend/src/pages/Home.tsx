@@ -14,18 +14,18 @@ const Home = () => {
           <p className="lead mb-5">
             Compartilhe aqui suas críticas, elogios, denúncias, sugestões ou necessidades.
           </p>
-          <div className="d-flex gap-3 justify-content-center mt-5">
+            <div className="d-flex flex-wrap gap-3 justify-content-center mt-5">
             <Link to="/fale-conosco">
               <Button texto="Enviar Manifestação">
-                <Icon icon="material-symbols:edit-document" className="me-2" />
+              <Icon icon="material-symbols:edit-document" className="me-2" />
               </Button>
             </Link>
             <Link to="/regulamento">
               <ButtonOutline texto="Regulamento">
-                <Icon icon="material-symbols:list-alt" className="me-2" />
+              <Icon icon="material-symbols:list-alt" className="me-2" />
               </ButtonOutline>
             </Link>
-          </div>
+            </div>
         </div>
       </section>
 
