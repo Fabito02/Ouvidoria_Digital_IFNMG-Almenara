@@ -21,7 +21,7 @@
     padding: 0;
     position: absolute;
     right: -40px;
-    background-color: #0000003c !important;
+    background-color: #00000052 !important;
     display: flex !important;
     justify-content: center;
     align-items: center;
@@ -33,7 +33,7 @@
   }
   
 .submit-button:hover {
-    background-color: #00000052 !important;
+    background-color: #00000042 !important;
   }
   
 @media (max-width: 680px) {
