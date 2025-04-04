@@ -10,7 +10,7 @@ const PerfilHeader = () => {
         flexDirection: "row",
         justifyContent: "right",
         alignItems: "center",
-        width: "175px"
+        width: "175px",
       }}
     >
       <div className="botao-notificacao active">
@@ -44,7 +44,7 @@ const PerfilHeader = () => {
           </div>
         </Dropdown.Toggle>
 
-        <Dropdown.Menu>
+        <Dropdown.Menu className="shadow">
           <div className="topDropdown lineBottom">
             <div 
               className="user_icon" 

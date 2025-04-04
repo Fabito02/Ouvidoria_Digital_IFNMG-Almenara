@@ -84,7 +84,7 @@ const Acompanhamento = () => {
 
         <Container className="conteudo">
           <div className="graphic-box">
-            <LineChart width={400} height={300} data={data}>
+            <LineChart width={330} height={270} data={data}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
               <YAxis />
@@ -101,7 +101,7 @@ const Acompanhamento = () => {
           </div>
 
           <div className="graphic-box">
-            <BarChart width={400} height={300} data={data}>
+            <BarChart width={330} height={270} data={data}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
               <YAxis />
@@ -113,7 +113,7 @@ const Acompanhamento = () => {
           </div>
 
           <div className="graphic-box">
-            <PieChart width={400} height={300}>
+            <PieChart width={330} height={270}>
               <Pie
                 data={data}
                 cx="50%"
@@ -139,7 +139,7 @@ const Acompanhamento = () => {
           </div>
 
           <div className="graphic-box">
-            <AreaChart width={400} height={300} data={data}>
+            <AreaChart width={330} height={270} data={data}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
               <YAxis />
@@ -161,7 +161,7 @@ const Acompanhamento = () => {
           </div>
 
           <div className="graphic-box">
-            <ScatterChart width={400} height={300}>
+            <ScatterChart width={330} height={270}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="x" name="stature" unit="cm" />
               <YAxis dataKey="y" name="weight" unit="kg" />

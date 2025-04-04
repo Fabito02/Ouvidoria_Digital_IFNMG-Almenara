@@ -6,7 +6,7 @@ import './NavbarComponent.css';
 
 const NavbarComponent = () => {
   return (
-    <Navbar expand="lg" style={{ backgroundColor: '#ffffff' }} className='lineBottom'>
+    <Navbar expand="lg" style={{ backgroundColor: '#ffffff' }} className='lineBottom lineTop'>
       <Container className="d-flex ">
         <Navbar.Toggle 
         aria-controls="basic-navbar-nav" 
@@ -26,11 +26,11 @@ const NavbarComponent = () => {
               gap: '15px',
             }}
           >
-            <Link className="link-navbar active" to="/home" style={{ backgroundColor: '#ffffff' }}>HOME</Link>
-            <Link className="link-navbar active" to="/fale-conosco" style={{ backgroundColor: '#ffffff' }}>FALE CONOSCO</Link>
-            <Link className="link-navbar active" to="/acompanhamento" style={{ backgroundColor: '#ffffff' }}>ACOMPANHAMENTO</Link>
-            <Link className="link-navbar active" to="/informacoes" style={{ backgroundColor: '#ffffff' }}>INFORMAÇÕES E FAQs</Link>
-            <Link className="link-navbar active" to="/regulamento" style={{ backgroundColor: '#ffffff' }}>POLÍTICAS E REGULAMENTOS</Link>
+            <Link className="link-navbar" to="/home" style={{ backgroundColor: '#ffffff' }}>HOME</Link>
+            <Link className="link-navbar" to="/fale-conosco" style={{ backgroundColor: '#ffffff' }}>FALE CONOSCO</Link>
+            <Link className="link-navbar" to="/acompanhamento" style={{ backgroundColor: '#ffffff' }}>ACOMPANHAMENTO</Link>
+            <Link className="link-navbar" to="/informacoes" style={{ backgroundColor: '#ffffff' }}>INFORMAÇÕES E FAQs</Link>
+            <Link className="link-navbar" to="/regulamento" style={{ backgroundColor: '#ffffff' }}>POLÍTICAS E REGULAMENTOS</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

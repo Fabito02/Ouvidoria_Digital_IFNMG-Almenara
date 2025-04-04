@@ -12,7 +12,7 @@ const Home = () => {
         <div className="container text-center mb-3">
           <h1 className="display-4 mb-3 frase-impactante">Sua voz é importante!</h1>
           <p className="lead mb-5">
-          Compartilhe aqui sua voz: críticas, ideias, celebrações ou necessidades.
+            Compartilhe aqui suas críticas, elogios, denúncias, sugestões ou necessidades.
           </p>
           <div className="d-flex gap-3 justify-content-center mt-5">
             <Link to="/fale-conosco">
@@ -33,7 +33,7 @@ const Home = () => {
         <div className="container">
           <div className="row g-4">
             <div className="col-md-4">
-              <div className="card h-100 shadow-sm radius-card">
+              <div className="card h-100 shadow radius-card">
                 <div className="card-body text-center p-4">
                   <Icon icon="material-symbols:add-box" className="iconeCard mb-3" width="48" height="48" />
                   <h3 className="h5 fw-bold">Nova Manifestação</h3>
@@ -46,7 +46,7 @@ const Home = () => {
             </div>
 
             <div className="col-md-4">
-              <div className="card h-100 shadow-sm radius-card">
+              <div className="card h-100 shadow radius-card">
                 <div className="card-body text-center p-4">
                   <Icon icon="material-symbols:help-center" className="iconeCard mb-3" width="48" height="48" />
                   <h3 className="h5 fw-bold">Dúvidas Frequentes</h3>
@@ -59,7 +59,7 @@ const Home = () => {
             </div>
 
             <div className="col-md-4">
-              <div className="card h-100 shadow-sm radius-card">
+              <div className="card h-100 shadow radius-card">
                 <div className="card-body text-center p-4">
                   <Icon icon="material-symbols:list-alt" className="iconeCard mb-3" width="48" height="48" />
                   <h3 className="h5 fw-bold">Regulamento</h3>

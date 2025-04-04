@@ -4,7 +4,6 @@ import PerfilHeader from "../components/PerfilHeader";
 const Header = () => {
   return (
     <header
-      className="lineBottom"
       style={{
         width: "100%",
         height: "auto",
@@ -22,9 +21,9 @@ const Header = () => {
       <a href="/">
         <img
           className="ifnmg-imagem"
-          src="/IFNMG - Almenara.png"
+          src={window.innerWidth <= 768 ? "/IFNMG.png" : "/IFNMG - Almenara.png"}
           alt="IFNMG - Almenara"
-          style={{ height: "100%", maxHeight: "55px" }}
+          style={{ maxHeight: "55px", height: "100%", marginRight: "10px" }}
         ></img>
       </a>
       <Search />

@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Form } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import { Icon } from '@iconify-icon/react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import CustomToast from './CustomToast';
+import './Search.css';
 
 const SearchBar = () => {
   const {
@@ -14,8 +15,8 @@ const SearchBar = () => {
   } = useSpeechRecognition();
   
   const [searchQuery, setSearchQuery] = useState('');
-  const [showToast, setShowToast] = useState<boolean>(false);
-  const [toastMessage, setToastMessage] = useState<string>('');
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
   const [toastVariant, setToastVariant] = useState<'primary' | 'success' | 'danger' | 'warning' | 'info'>('primary');
 
   useEffect(() => {
@@ -27,11 +28,11 @@ const SearchBar = () => {
   useEffect(() => {
     if (!browserSupportsSpeechRecognition) {
       setToastMessage('Seu navegador não suporta reconhecimento de voz.');
-      setToastVariant('danger');
+      setToastVariant('info');
       setShowToast(true);
     } else if (!isMicrophoneAvailable) {
-      setToastMessage('Microfone não disponível. Por favor, verifique as permissões.');
-      setToastVariant('warning');
+      setToastMessage('Microfone não disponível. Você ainda pode digitar sua pesquisa.');
+      setToastVariant('info');
       setShowToast(true);
     }
   }, [browserSupportsSpeechRecognition, isMicrophoneAvailable]);
@@ -55,19 +56,19 @@ const SearchBar = () => {
         language: 'pt-BR'
       }).catch((error) => {
         console.error('Erro ao iniciar reconhecimento de voz:', error);
-        setToastMessage('Erro ao acessar o microfone. Verifique as permissões.');
-        setToastVariant('danger');
+        setToastMessage('Erro ao acessar o microfone. Você ainda pode digitar sua pesquisa.');
+        setToastVariant('info');
         setShowToast(true);
       });
     }
   };
 
   return (
-    <>
+    <div className='container-search'>
       <Form 
         onSubmit={handleSearchSubmit} 
-        className="d-flex align-items-center position-relative"
-        style={{ width: '100%', maxWidth: '400px' }}
+        className="d-flex align-items-center position-relative search-bar-customizado"
+        style={{marginRight: '45px'}}
       >
         <Icon 
           icon="material-symbols:search"
@@ -88,15 +89,25 @@ const SearchBar = () => {
           style={{
             borderRadius: '14px',
             paddingLeft: '38px',
-            paddingRight: browserSupportsSpeechRecognition && isMicrophoneAvailable ? '38px' : '38px',
-            backgroundColor: '#E7ECE6',
+            paddingRight: '38px',
             border: 'none',
             fontSize: '15px',
-            minWidth: '120px',
             height: '38px',
           }}
-          disabled={!browserSupportsSpeechRecognition || !isMicrophoneAvailable}
         />
+
+          <Button
+            type="submit"
+            variant="link"
+            className='submit-button'
+          >
+            <Icon 
+              icon="material-symbols:search"
+              style={{
+                fontSize: '22px',
+              }}
+            />
+          </Button>
         
         {browserSupportsSpeechRecognition && isMicrophoneAvailable && (
           <Icon 
@@ -114,6 +125,7 @@ const SearchBar = () => {
             tabIndex={0}
           />
         )}
+        
       </Form>
       
       <CustomToast
@@ -122,7 +134,7 @@ const SearchBar = () => {
         message={toastMessage}
         variant={toastVariant}
       />
-    </>
+    </div>
   );
 }
 

@@ -13,4 +13,5 @@
 
 .radius-card {
     border-radius: 20px;
+    border: 0;
 }
