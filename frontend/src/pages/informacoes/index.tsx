@@ -19,7 +19,9 @@ const Informacoes = [
     title: "Quanto tempo leva para receber uma resposta da Ouvidoria?",
     content: (
       <>
-        O prazo máximo para resposta é de 20 dias corridos, prorrogáveis por mais 10 dias mediante justificativa, conforme estabelece o <a className="link" href="https://www.in.gov.br/en/web/dou/-/decreto-n-10.153-de-3-de-dezembro-de-2019-229947066">Decreto nº 10.153/2019</a>. Ainda assim, buscamos responder o mais rápido possível, geralmente em até 3 dias úteis.
+        O prazo máximo para resposta é de 20 dias corridos, prorrogáveis por mais 10 dias mediante justificativa, conforme estabelece o <a className="link" href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/decreto/d10153.htm">Decreto nº 10.153/2019</a>, posteriormente alterado pelo decreto <a className="link" href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/decreto/d10890.htm">Decreto nº 10.890/2021
+
+</a>. Ainda assim, buscamos responder o mais rápido possível, geralmente em até 3 dias úteis.
       </>
     ),
   },
