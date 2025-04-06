@@ -11,7 +11,7 @@ import Button from './buttons/Button';
 const Footer = () => {
   const sections = [
     { title: "Páginas", opcoes: [{ name: "Página Inicial", link: "/" }, { name: "Home", link: "/home" }, { name: "Fale Conosco", link: "/fale-conosco" }, { name: "Informações e FAQs", link: "/informacoes" }, { name: "Políticas e Regulamentos", link: "/regulamento" }] },
-    { title: "Desenvolvedores", opcoes: [{ name: "Fabiano Júnior", link: "https://github.com/Fabito02/" }, { name: "Francisco Rodrigues", link: "https://github.com/FranSRodrigues/" }, { name: "Pablo Messias", link: "https://github.com/PabloMessias007/" }, { name: "Bruno Araújo", link: "https://github.com/EoBrunin/" }] }
+    { title: "Desenvolvedores", opcoes: [{ name: "Fabiano Júnior - Design/Frontend", link: "https://github.com/Fabito02/" }, { name: "Francisco Rodrigues - Design", link: "https://github.com/FranSRodrigues/" }, { name: "Pablo Messias - Design", link: "https://github.com/PabloMessias007/" }, { name: "Bruno Araújo - Design", link: "https://github.com/EoBrunin/" }] }
   ];
 
   return (
@@ -22,7 +22,7 @@ const Footer = () => {
           <img src="/Logo - Footer.svg" alt="Logo Auris" className='logo-footer p-3' />
         </Col>
         {sections.map((section, index) => (
-          <Col key={index} md={2} className='mb-3'>
+          <Col key={index} md={3} className='mb-3'>
             <h5 className="text-white">{section.title}</h5>
             <Nav className="flex-column">
               {section.opcoes.map((opcao, i) => (
@@ -36,7 +36,7 @@ const Footer = () => {
           </Col>
         ))}
 
-        <Col md={4} className="offset-md-1">
+        <Col md={4}>
           <h5 className="text-white">Visite o site oficial do IFNMG - Campus Almenara</h5>
           <p className="text-white">Encontre informações acadêmicas, administrativas e as últimas notícias do campus Almenara.</p>
           <Button href="https://almenara.ifnmg.edu.br/">Visitar Site</Button>
