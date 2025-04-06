@@ -1,5 +1,5 @@
 .button-outline {
-  border-radius: 10px !important;
+  border-radius: 11px !important;
   transition: all 0.3s ease-in-out;
 }
 
@@ -10,7 +10,7 @@
 }
 
 .button {
-  border-radius: 10px !important;
+  border-radius: 11px !important;
   background-color: #12af51 !important;
   transition: all 0.3s ease-in-out;
   border-color: #12af51 !important;
