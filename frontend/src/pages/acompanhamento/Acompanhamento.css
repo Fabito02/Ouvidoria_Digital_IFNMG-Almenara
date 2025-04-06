@@ -37,7 +37,7 @@
     background-color: #39852c51;
     border: 0;
     font-size: 25px;
-    border-radius: 10px;
+    border-radius: 12px;
   }
 
   .toggle-button:active {
@@ -57,7 +57,7 @@
     width: calc(100% - 20px);
     max-width: 70px;
     aspect-ratio: 1 / 1;
-    border-radius: 10px;
+    border-radius: 12px;
     transition: all 0.2s ease;
     cursor: pointer;
   }
