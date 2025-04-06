@@ -70,15 +70,6 @@ const SearchBar = () => {
         className="d-flex align-items-center position-relative search-bar-customizado"
         style={{marginRight: '45px'}}
       >
-        <Icon 
-          icon="material-symbols:search"
-          className="position-absolute"
-          style={{
-            fontSize: '22px',
-            left: '10px',
-            color: '#00000066',
-          }}
-        />
         
         <Form.Control
           type="search"
@@ -88,7 +79,7 @@ const SearchBar = () => {
           className="flex-grow-1"
           style={{
             borderRadius: '14px',
-            paddingLeft: '38px',
+            paddingLeft: '20px',
             paddingRight: '38px',
             border: 'none',
             fontSize: '15px',

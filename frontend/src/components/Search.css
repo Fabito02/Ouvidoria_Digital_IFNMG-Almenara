@@ -13,7 +13,7 @@
 }
 
 .search-bar-customizado input:focus {
-    background-color: #00ff1115 !important;
+    background-color: #00ff3c1f !important;
     box-shadow: 0 0 0 0.25em rgba(40, 167, 70, 0.262) !important;
   }
 
@@ -21,7 +21,7 @@
     padding: 0;
     position: absolute;
     right: -40px;
-    background-color: #00000052 !important;
+    background-color: #12af51 !important;
     display: flex !important;
     justify-content: center;
     align-items: center;
@@ -33,7 +33,7 @@
   }
   
 .submit-button:hover {
-    background-color: #00000042 !important;
+    background-color: #08a045 !important;
   }
   
 @media (max-width: 680px) {
