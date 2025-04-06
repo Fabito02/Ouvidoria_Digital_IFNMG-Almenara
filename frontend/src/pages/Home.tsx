@@ -80,7 +80,7 @@ const Home = () => {
             <div className="col-md-4 text-center mb-4 mb-md-0">
               <Icon icon="material-symbols:calendar-clock" width="40" height="40" className=" mb-2 iconeInfo" />
               <h3 className="h5 fw-bold">Prazos de Resposta</h3>
-              <p className="text-muted">Atendemos em até 5 dias úteis.</p>
+              <p className="text-muted">Atendemos em até 3 dias úteis.</p>
             </div>
             <div className="col-md-4 text-center mb-4 mb-md-0">
               <Icon icon="material-symbols:lock" width="40" height="40" className="mb-2 iconeInfo" />

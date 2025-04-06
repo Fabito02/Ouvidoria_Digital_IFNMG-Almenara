@@ -1,16 +1,27 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 import "./Informacoes.css";
+import { Link } from "react-router-dom";
 
 const Informacoes = [
   {
     title: "Como posso entrar em contato com a Ouvidoria do IFNMG Almenara?",
-    content:
-      "Você pode entrar em contato através do formulário online disponível no site da ouvidoria, por e-mail (ouvidoria.almenara@ifnmg.edu.br) ou pessoalmente no setor da Ouvidoria no campus, de segunda a sexta-feira, das 8h às 17h.",
+    content: (
+      <>
+        Você pode entrar em contato através do{" "}
+        <Link className="link" to="/fale-conosco">formulário online</Link> disponível no site da
+        ouvidoria, por e-mail (<a className="link" href="mailto:6n9GK@example.com">ouvidoria.almenara@ifnmg.edu.br</a>), por telefone (<a className="link" href="tel: +55 33 4402-8922">+55 33 4402-8922</a>) ou pessoalmente
+        no setor da Ouvidoria no campus, de segunda a sexta-feira, das 8h às
+        17h.
+      </>
+    ),
   },
   {
     title: "Quanto tempo leva para receber uma resposta da Ouvidoria?",
-    content:
-      "O prazo máximo para resposta é de 30 dias úteis, conforme estabelecido pela Lei nº 12.527/2011 (Lei de Acesso à Informação). No entanto, buscamos responder o mais rápido possível, geralmente em até 5 dias úteis.",
+    content: (
+      <>
+        O prazo máximo para resposta é de 20 dias corridos, prorrogáveis por mais 10 dias mediante justificativa, conforme estabelece o <a className="link" href="https://www.in.gov.br/en/web/dou/-/decreto-n-10.153-de-3-de-dezembro-de-2019-229947066">Decreto nº 10.153/2019</a>. Ainda assim, buscamos responder o mais rápido possível, geralmente em até 3 dias úteis.
+      </>
+    ),
   },
   {
     title: "Posso fazer denúncias anônimas?",
@@ -20,17 +31,20 @@ const Informacoes = [
   {
     title: "Quais tipos de manifestações a Ouvidoria pode receber?",
     content:
-      "A Ouvidoria aceita reclamações, denúncias, sugestões, elogios e solicitações de informação sobre serviços e processos do IFNMG Campus Almenara. Todas as manifestações são tratadas com sigilo e encaminhadas aos setores responsáveis.",
+      "A Ouvidoria aceita reclamações, denúncias, sugestões e elogios. Todas as manifestações são tratadas com sigilo e encaminhadas aos setores responsáveis.",
   },
   {
-    title: "Minha reclamação não apareceu no sistema. O que aconteceu?",
+    title: "Como devo escrever a minha manifestação?",
     content:
-      "Todas as manifestações passam por análise prévia. Reclamações que contenham linguagem inadequada, informações pessoais sensíveis sem necessidade, ofensas ou que não estejam relacionadas ao âmbito de atuação do IFNMG podem não ser publicadas. Garanta que sua manifestação seja clara, objetiva e respeitosa.",
+      "Sua manifestação deve ser clara, objetiva e respeitosa, evitando linguagem inadequada, informações pessoais sensíveis sem necessidade, ofensas ou casos que não estejam relacionadas ao âmbito de atuação do IFNMG.",
   },
   {
-    title: "Como acompanho o andamento do meu protocolo?",
-    content:
-      "Ao registrar sua manifestação, você receberá um número de protocolo. Com esse número, você pode acompanhar o andamento através do sistema de ouvidoria online ou entrar em contato diretamente com a Ouvidoria para solicitar informações.",
+    title: "Como acompanho o andamento da minha manifestação?",
+    content: (
+      <>
+        Ao registrar sua manifestação, você pode acompanhar o andamento através do sistema, em <a href="/minhas-manifestacoes" className="link">Minhas manifestações</a> ou entrar em contato diretamente com a Ouvidoria para solicitar informações."
+      </>
+    ),
   },
   {
     title: "A Ouvidoria pode resolver problemas acadêmicos individuais?",
@@ -40,7 +54,7 @@ const Informacoes = [
   {
     title: "Quais são os horários de funcionamento da Ouvidoria presencial?",
     content:
-      "O atendimento presencial ocorre de segunda a sexta-feira, das 8h às 12h e das 14h às 17h, no prédio administrativo do campus, sala da Ouvidoria. Recomendamos agendar previamente por e-mail ou telefone.",
+      "O atendimento presencial ocorre de segunda a sexta-feira, das 8h às 12h e das 14h às 17h, no prédio administrativo do campus, sala da Ouvidoria.",
   },
 ];
 
