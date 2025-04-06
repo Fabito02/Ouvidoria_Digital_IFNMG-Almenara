@@ -1,6 +1,6 @@
 .dropdown-menu {
-  border-radius: 18px !important;
-  margin-top: 5px !important;
+  border-radius: 16px !important;
+  margin-top: 10px !important;
   display: flex;
   align-items: center;
   border: 0 !important;
@@ -8,7 +8,6 @@
 
 .dropdown-menu .dropdown-item {
   color: rgb(102, 102, 102) !important;
-  border-radius: 14px;
   margin: 5px;
   width: auto;
   display: flex;
@@ -17,6 +16,10 @@
   padding: 10px;
   height: 35px;
   margin: 0 8px 0 8px !important;
+  border-radius: 12px;
+  width: 210px;
+  text-wrap: wrap;
+  line-height: 1;
 }
 
 .dropdown-menu .dropdown-item:hover {
@@ -29,6 +32,7 @@
 
 .dropdown-menu .dropdown-item .iconMenu {
   aspect-ratio: 1 / 1;
+  margin-right: 10px !important;
 }
 
 .dropdown-menu {
@@ -74,7 +78,7 @@
   display: flex;
   padding-top: 5px;
   padding-bottom: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .nome {

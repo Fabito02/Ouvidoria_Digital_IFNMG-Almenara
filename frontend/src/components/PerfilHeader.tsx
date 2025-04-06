@@ -82,7 +82,7 @@ const PerfilHeader = () => {
               icon={"material-symbols:feedback-rounded"}
               style={{ marginRight: "5px" }}
             />
-            Minhas reclamações
+            Minhas manifestações
           </Dropdown.Item>
           <Dropdown.Item href="#">
             <Icon
