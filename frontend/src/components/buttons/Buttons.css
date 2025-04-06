@@ -1,6 +1,7 @@
 .button-outline {
   border-radius: 11px !important;
-  transition: all 0.3s ease-in-out;
+  display: table;
+  margin: 0 auto;
 }
 
 .button-outline:hover {
@@ -12,11 +13,28 @@
 .button {
   border-radius: 11px !important;
   background-color: #12af51 !important;
-  transition: all 0.3s ease-in-out;
   border-color: #12af51 !important;
+  display: table;
+  margin: 0 auto;
+}
+
+.button-outline > .icon-button, .button > .icon-button {
+  vertical-align: middle;
 }
 
 .button:hover {
   background-color: #08a045 !important;
   border-color: #08a045 !important;
+}
+
+.icon-button {
+  font-size: 20px;
+}
+
+.icon-button.left {
+  margin-right: 5px;
+}
+
+.icon-button.right {
+  margin-left: 5px;
 }

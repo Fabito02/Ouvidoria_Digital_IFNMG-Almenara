@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Button from "../../components/buttons/ButtonOutline";
+import Button from "../../components/buttons/Button";
 import { BlankLayout } from "../../components/BlankLayout/BlankLayout";
 
 export default function Erro404() {
@@ -15,7 +15,7 @@ export default function Erro404() {
         <h1>404 - Página não encontrada</h1>
         <p>A página que você tentou acessar não existe.</p>
         <Link to="/">
-          <Button texto="página inicial" />
+          <Button texto="página inicial" outline />
         </Link>
       </div>
     </BlankLayout>

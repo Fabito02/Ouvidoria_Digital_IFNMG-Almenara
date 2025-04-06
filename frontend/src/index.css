@@ -1,17 +1,17 @@
-:root {
-}
-
 * {
   font-family: 'Inter', sans-serif;
 }
 
 .link {
   color: #12af51 !important;
-  text-decoration: none !important;
 }
 
 .link:hover {
   color: #5ad58b !important;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 body {

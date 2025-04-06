@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Button from "../../components/buttons/ButtonOutline";
+import Button from "../../components/buttons/Button";
 import { BlankLayout } from "../../components/BlankLayout/BlankLayout";
 
 export default function Erro401() {
@@ -15,7 +15,7 @@ export default function Erro401() {
         <h1>401 - Autenticação necessária</h1>
         <p>Para acessar esta página, você precisa fazer login.</p>
         <Link to="/login">
-          <Button texto="Login" />
+          <Button texto="Login" outline />
         </Link>
       </div>
     </BlankLayout>

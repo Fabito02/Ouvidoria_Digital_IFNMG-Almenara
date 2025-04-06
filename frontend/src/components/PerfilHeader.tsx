@@ -76,7 +76,7 @@ const PerfilHeader = () => {
             />{" "}
             Configurações
           </Dropdown.Item>
-          <Dropdown.Item href="/minhas-reclamacoes">
+          <Dropdown.Item href="/minhas-manifestacoes">
             <Icon
               className="iconMenu"
               icon={"material-symbols:feedback-rounded"}
