@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
 import "./Acompanhamento.css";
 import {

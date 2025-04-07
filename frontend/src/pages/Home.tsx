@@ -23,7 +23,7 @@ const Home = () => {
                 icon="material-symbols:add-box"
               />
             </Link>
-            <Link to="/regulamento">
+            <Link to="/minhas-manifestacoes">
               <Button
                 outline
                 texto="minhas manifestações"
@@ -129,7 +129,7 @@ const Home = () => {
                 className="mb-2 iconeInfo"
               />
               <h3 className="h5 fw-bold">Contato Alternativo</h3>
-              <p className="text-muted">ouvidoria@ifnmg.edu.br</p>
+              <p className="text-muted">ouvidoria.almenara@ifnmg.edu.br</p>
             </div>
           </div>
         </div>

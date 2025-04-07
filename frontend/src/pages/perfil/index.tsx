@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Form, Button, Card, Row, Col, Image, Alert } from 'react-bootstrap';
+import { Container, Card, Row, Col, Image } from 'react-bootstrap';
 import './Perfil.css';
 import { BlankLayout } from '../../components/BlankLayout/BlankLayout';
 
