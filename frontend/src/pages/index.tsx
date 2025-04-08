@@ -1,9 +1,9 @@
-import ConteudoHome from "../components/inicial/ConteudoInicial"
+import ConteudoInicial from "../components/inicial/ConteudoInicial"
 
 const Home = () => {
   return (
     <div>
-      <ConteudoHome />
+      <ConteudoInicial />
     </div>
   );
 };
