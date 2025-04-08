@@ -3,10 +3,25 @@ import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
 import Button from "../components/buttons/Button";
+import Slider from "../components/Slider";
+
+const slides = [
+  "/home/slides/1.png",
+  "/home/slides/2.png",
+  "/home/slides/3.png",
+  "/home/slides/4.png",
+  "/home/slides/5.png",
+  "/home/slides/6.png",
+  "/home/slides/7.png",
+  "/home/slides/8.png",
+  "/home/slides/9.png",
+  "/home/slides/10.png"
+]
 
 const Home = () => {
   return (
     <div className="ouvidoria-home">
+
       <section className="hero-banner bg-light py-5">
         <div className="container text-center mb-3">
           <h1 className="display-4 mb-3 frase-impactante">
@@ -33,6 +48,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <Slider imagens={slides} />
 
       <section className="action-cards py-5">
         <div className="container">
