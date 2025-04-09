@@ -31,14 +31,14 @@ const Login = () => {
                     </div>
                     <p className="text-center mb-4">ou use seu e-mail para entrar</p>
                     <Form>
-                        <Form.Group className="mb-3 shadow-sm" controlId="formEmail" style={{position: 'relative'}}>
+                        <Form.Group className="mb-3" controlId="formEmail" style={{position: 'relative'}}>
                             <Icon className='iconeForm' icon="material-symbols:stacked-email-rounded" />
-                            <Form.Control type="email" placeholder="E-mail ou usuário" className='custom-input' />
+                            <Form.Control type="email" placeholder="E-mail ou usuário" className='custom-input shadow-sm' />
                         </Form.Group>
 
-                        <Form.Group className="mb-3 shadow-sm" controlId="formPassword" style={{position: 'relative'}}>
+                        <Form.Group className="mb-3" controlId="formPassword" style={{position: 'relative'}}>
                         <Icon className='iconeForm' icon="material-symbols:password-rounded" />
-                            <Form.Control type="password" placeholder="Senha" className='custom-input' />
+                            <Form.Control type="password" placeholder="Senha" className='custom-input shadow-sm' />
                         </Form.Group>
 
                         <Button texto='login' className='bt-login'/>

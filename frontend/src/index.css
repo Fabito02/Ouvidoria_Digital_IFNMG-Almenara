@@ -41,11 +41,11 @@ body {
 }
 
 .lineBottom {
-  border-bottom: 0.5px solid #bbbbbb;
+  border-bottom: 0.5px solid #c3c3c3;
 }
 
 .lineTop {
-  border-top: 0.5px solid #bbbbbb;
+  border-top: 0.5px solid #c3c3c3;
 }
 
 ::selection {

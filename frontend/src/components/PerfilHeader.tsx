@@ -1,6 +1,9 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import { Icon } from "@iconify-icon/react";
 import "./PerfilHeader.css";
+import { useNavigate } from "react-router-dom";
+
+const navigate = useNavigate();
 
 const PerfilHeader = () => {
   return (
@@ -68,7 +71,7 @@ const PerfilHeader = () => {
             </div>
             <p className="nome">PrimeiroNome</p>
           </div>
-          <Dropdown.Item href="/perfil">
+          <Dropdown.Item onClick={() => navigate("/perfil")}>
             <Icon
               className="iconMenu"
               icon={"material-symbols:settings-rounded"}
@@ -76,7 +79,7 @@ const PerfilHeader = () => {
             />{" "}
             Configurações
           </Dropdown.Item>
-          <Dropdown.Item href="/minhas-manifestacoes">
+          <Dropdown.Item onClick={() => navigate("/minhas-manifestacoes")}>
             <Icon
               className="iconMenu"
               icon={"material-symbols:feedback-rounded"}
@@ -84,7 +87,7 @@ const PerfilHeader = () => {
             />
             Minhas manifestações
           </Dropdown.Item>
-          <Dropdown.Item href="#">
+          <Dropdown.Item>
             <Icon
               className="iconMenu"
               icon={"material-symbols:logout-rounded"}

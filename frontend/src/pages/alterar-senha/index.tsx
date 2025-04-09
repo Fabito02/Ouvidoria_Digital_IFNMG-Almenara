@@ -58,7 +58,7 @@ const AlterarSenha = () => {
                 <div className="text-end">
                     <Button
                     texto="Salvar Nova Senha"
-                    icon="material-symbols-light:lock"
+                    icon="material-symbols:lock"
                     type="submit"
                     />
                 </div>

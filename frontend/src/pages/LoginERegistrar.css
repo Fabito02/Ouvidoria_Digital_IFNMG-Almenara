@@ -72,12 +72,6 @@
   margin-bottom: 15px !important;
   transition: all 0.3s !important;
   padding-left: 50px !important;
-  border: 0 !important;
-}
-
-.custom-input:focus {
-  outline: none !important;
-  border: none !important;
 }
 
 .iconeForm {
