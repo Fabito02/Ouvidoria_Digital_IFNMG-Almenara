@@ -1,5 +1,5 @@
 .col-lg-5 {
-  background-color: #12af51;
+  background-color: var(--color-primary);
   height: 100vh;
 }
 
@@ -8,11 +8,11 @@
 }
 
 .formulario {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 .container {
@@ -28,7 +28,7 @@
 }
 
 .botaoBranco:hover {
-    color: #12af51 !important;
+  color: var(--color-primary) !important;
 }
 
 .box {
@@ -47,13 +47,14 @@
   font-family: "Poppins", sans-serif;
   font-size: 3em;
   font-weight: 600;
+  color: white;
 }
 
 .title2 {
   font-family: "Poppins", sans-serif;
   font-size: 3em;
   font-weight: 600;
-  color: #12af51;
+  color: var(--color-primary);
 }
 
 .subtitle {
@@ -61,24 +62,22 @@
 }
 
 .bt-login {
-    border-radius: 100px !important;
-    width: 200px;
+  border-radius: 100px !important;
+  width: 200px;
 }
 
 .custom-input {
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 15px;
-    transition: all 0.3s;
-    padding-left: 50px;
-    background-color: #F0F0F0;
-    border: 0;
+  border-radius: 10px !important;
+  padding: 10px !important;
+  margin-bottom: 15px !important;
+  transition: all 0.3s !important;
+  padding-left: 50px !important;
+  border: 0 !important;
 }
 
 .custom-input:focus {
-    background-color: #d5ffd8;
-    border-color: #d5ffd8;
-    outline: none;
+  outline: none !important;
+  border: none !important;
 }
 
 .iconeForm {
@@ -94,8 +93,8 @@
 }
 
 @media (max-width: 992px) {
-    .col-lg-5 {
-        background-color: #12af51;
-        height: 500px;
-      }
+  .col-lg-5 {
+    background-color: var(--color-primary);
+    height: 500px;
+  }
 }

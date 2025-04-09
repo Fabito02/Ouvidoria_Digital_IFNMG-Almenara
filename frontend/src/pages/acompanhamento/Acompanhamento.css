@@ -1,12 +1,12 @@
 .corpoDoSite {
     display: flex;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 114px);
     padding-left: 0;
   }
   
   .barraLateral {
     position: relative;
-    background-color: #23BC60;
+    background-color: var(--color-primary);
     color: white;
     display: flex;
     flex-direction: column;
@@ -17,6 +17,7 @@
     padding-top: 55px;
     overflow: hidden;
     white-space: nowrap;
+    overflow-y: auto;
 }
 
 .barraLateral.expandido {

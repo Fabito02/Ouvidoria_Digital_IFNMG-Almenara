@@ -54,7 +54,7 @@ const SearchBar = () => {
       SpeechRecognition.startListening({
         continuous: false,
         language: 'pt-BR'
-      }).catch((error) => {
+      }).catch((error?: unknown) => {
         console.error('Erro ao iniciar reconhecimento de voz:', error);
         setToastMessage('Erro ao acessar o microfone. Você ainda pode digitar sua pesquisa.');
         setToastVariant('info');

@@ -13,23 +13,23 @@ interface CustomToastProps {
 const toastConfig = {
   primary: {
     icon: 'mdi:information',
-    color: '#4e73df'
+    color: 'var(--color-primary)'
   },
   success: {
     icon: 'mdi:check-circle',
-    color: '#1cc88a'
+    color: 'var(--color-success)'
   },
   danger: {
     icon: 'mdi:alert-circle',
-    color: '#e74a3b'
+    color: 'var(--color-danger)'
   },
   warning: {
     icon: 'mdi:alert',
-    color: '#f6c23e'
+    color: 'var(--color-warning)'
   },
   info: {
-    icon: 'mdi:information-variant-circle',
-    color: '#36b9cc'
+    icon: 'mdi:information',
+    color: 'var(--color-info)'
   }
 };
 

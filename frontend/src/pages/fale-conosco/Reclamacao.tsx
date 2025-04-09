@@ -3,7 +3,6 @@ import { Row, Col, Container, Form } from "react-bootstrap";
 import Button from "../../components/buttons/Button";
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
-import "./Form.css";
 
 const Reclamacao = () => {
   const [anonimo, setAnonimo] = useState(false);

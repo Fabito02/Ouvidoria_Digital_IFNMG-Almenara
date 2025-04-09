@@ -64,20 +64,15 @@ export default function Faq() {
   return (
     <Container className="py-5">
       <h1 className="text-center title">FAQ</h1>
-      <p className="text-center text-muted subtitle">Perguntas Frequentes</p>
+      <p className="text-center text-muted subtitle mb-5">Perguntas Frequentes</p>
 
-      <Row className="gy-4">
+      <Row className="gy-4 mt-1">
         {Informacoes.map((faq, index) => (
           <Col key={index} md={6} className="position-relative">
-            <Card className="p-3 border-0 w-100">
-              <Row>
-                <Col xs={10} className="mx-auto">
-                  <h5 className="fw-bold">{faq.title}</h5>
-                  <p className="text-muted mb-0">{faq.content}</p>
-                </Col>
-              </Row>
+            <Card className="p-4 faq-card shadow-sm">
+              <h5 className="fw-bold">{faq.title}</h5>
+              <p className="text-muted mb-0">{faq.content}</p>
             </Card>
-            <div className="traco"></div>
           </Col>
         ))}
       </Row>

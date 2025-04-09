@@ -35,7 +35,7 @@ const ConteudoHome = () => {
         <Button texto="login" className="login-btn" />
       </a>
       <img src="/home/auris.svg" alt="Logo Auris" className="logo-auris" />
-      <Container className="px-4 animar">
+      <Container className=" animar">
         <Row className="tela">
           <Col className="textos coluna-tela">
             <div className="textos text-right">
@@ -55,7 +55,7 @@ const ConteudoHome = () => {
       </Container>
 
       <div className="bg-cinza">
-        <Container className="px-4 animar">
+        <Container className="animar">
           <Row className="tela">
             <Col className="textos text-right coluna-tela">
               <h1 className="title">Locais mais bem avaliados do campus:</h1>
@@ -70,7 +70,7 @@ const ConteudoHome = () => {
         </Container>
       </div>
 
-      <Container className="px-4 animar">
+      <Container className="animar">
         <Row className="tela">
           <Col className="imagem col-inverso coluna-tela">
             <img src="/home/img2.svg" alt="Homem utilizando o computador" className="imagemCol" />
@@ -84,7 +84,7 @@ const ConteudoHome = () => {
         </Row>
       </Container>
 
-      <Container className="px-4 animar">
+      <Container className="animar">
         <Row className="tela">
           <Col className="textos text-right coluna-tela">
             <h1 className="title">Escutamos agora para melhorar sempre!</h1>
@@ -99,7 +99,7 @@ const ConteudoHome = () => {
       </Container>
 
       <div className="bg-cinza">
-        <Container className="px-4 animar">
+        <Container className="animar">
           <Row className="tela">
             <Col className="column textos coluna-tela">
               <div className="title">Venha fazer parte da mudança!</div>

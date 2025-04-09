@@ -1,4 +1,3 @@
-import "./Form.css";
 import { Row, Col, Container, Form } from "react-bootstrap";
 import Button from "../../components/buttons/Button";
 import { useEffect, useState, useRef } from "react";

@@ -38,6 +38,7 @@
 .textos {
     padding-right: 20px;
     flex-direction: column;
+    padding-left: 0 !important;
 }
 
 .title {
@@ -51,9 +52,6 @@
     margin-top: 30px;
     font-size: 1.5em;
     font-weight: 300;
-}
-
-.plataforma-btn {
 }
 
 .text-left {

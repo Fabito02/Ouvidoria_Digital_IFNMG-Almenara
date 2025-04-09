@@ -1,13 +1,33 @@
+:root {
+  --color-primary: #12af51;
+  --color-primary-hover: #16b75a;
+
+  --color-secondary: #e1d54e;
+  --color-secondary-hover: #e9dd5e;
+
+  --color-info: #0dcaf0;
+  --color-info-hover: #1acff5;
+
+  --color-danger: #dc3545;
+  --color-danger-hover: #df4755;
+
+  --color-warning: #ffc107;
+  --color-warning-hover: #ffcd3a;
+
+  --color-success: #198754;
+  --color-success-hover: #1fa25f;
+}
+
 * {
   font-family: 'Inter', sans-serif;
 }
 
 .link {
-  color: #12af51 !important;
+  color: var(--color-secondary) !important;
 }
 
 .link:hover {
-  color: #5ad58b !important;
+  color: var(--color-secondary-hover) !important;
 }
 
 a {
@@ -34,4 +54,8 @@ body {
 
 input[type="search"]::-webkit-search-cancel-button {
   filter: brightness(0) opacity(0.4);
+}
+
+.float-card {
+  border-radius: 16px !important;
 }

@@ -12,6 +12,8 @@ interface ButtonProps {
   icon?: string;
   outline?: boolean;
   iconPosition?: "left" | "right" | undefined;
+  onClick?: () => void;
+  color?: "primary" | "secondary" | "success" | "danger" | "warning" | "info";
 }
 
 const iconSeExistir = (icon: string | undefined, iconPosition?: "left" | "right" | undefined) => {
@@ -21,13 +23,14 @@ const iconSeExistir = (icon: string | undefined, iconPosition?: "left" | "right"
   return null;
 }
 
-export default function ButtonNormal({ texto, className, type, children, href, icon, outline, iconPosition }: ButtonProps) {
+export default function ButtonNormal({ texto, className, type, children, href, icon, outline, iconPosition, onClick, color = "primary" }: ButtonProps) {
   return (
     <Button
-      variant={outline ? "outline-success" : "success"}
-      className={`${outline ? "button-outline" : "button"} ${className || ""}`}
+      variant={outline ? "outline-" + color : color}
+      className={`${outline ? "button-outline" : "button"} ${color?  color : "primary"} ${className || ""}`}
       type={type}
       href={href}
+      onClick={onClick}
     >
       {(iconPosition === "left" || iconPosition === undefined) && iconSeExistir(icon, iconPosition)}
       {children}
@@ -36,3 +39,4 @@ export default function ButtonNormal({ texto, className, type, children, href, i
     </Button>
   );
 }
+

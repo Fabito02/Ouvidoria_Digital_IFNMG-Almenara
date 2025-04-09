@@ -1,30 +1,157 @@
+.button-outline.primary {
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
+}
+
+.button-outline.primary:hover {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: white !important;
+}
+
+.button-outline.secondary {
+  border-color: var(--color-secondary) !important;
+  color: var(--color-secondary) !important;
+}
+
+.button-outline.secondary:hover {
+  background-color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
+  color: white !important;
+}
+
+.button-outline.info {
+  border-color: var(--color-info) !important;
+  color: var(--color-info) !important;
+}
+
+.button-outline.info:hover {
+  background-color: var(--color-info) !important;
+  border-color: var(--color-info) !important;
+  color: white !important;
+}
+
+.button-outline.danger {
+  border-color: var(--color-danger) !important;
+  color: var(--color-danger) !important;
+}
+
+.button-outline.danger:hover {
+  background-color: var(--color-danger) !important;
+  border-color: var(--color-danger) !important;
+  color: white !important;
+}
+
+.button-outline.warning {
+  border-color: var(--color-warning) !important;
+  color: var(--color-warning) !important;
+}
+
+.button-outline.warning:hover {
+  background-color: var(--color-warning) !important;
+  border-color: var(--color-warning) !important;
+  color: white !important;
+}
+
+.button-outline.success {
+  border-color: var(--color-success) !important;
+  color: var(--color-success) !important;
+}
+
+.button-outline.success:hover {
+  background-color: var(--color-success) !important;
+  border-color: var(--color-success) !important;
+  color: white !important;
+}
+
+.button.primary {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: white !important;
+}
+
+.button.primary:hover {
+  background-color: var(--color-primary-hover) !important;
+  border-color: var(--color-primary-hover) !important;
+  color: white !important;
+}
+
+.button.secondary {
+  background-color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
+  color: white !important;
+}
+
+.button.secondary:hover {
+  background-color: var(--color-secondary-hover) !important;
+  border-color: var(--color-secondary-hover) !important;
+  color: white !important;
+}
+
+.button.info {
+  background-color: var(--color-info) !important;
+  border-color: var(--color-info) !important;
+  color: white !important;
+}
+
+.button.info:hover {
+  background-color: var(--color-info-hover) !important;
+  border-color: var(--color-info-hover) !important;
+  color: white !important;
+}
+
+.button.danger {
+  background-color: var(--color-danger) !important;
+  border-color: var(--color-danger) !important;
+  color: white !important;
+}
+
+.button.danger:hover {
+  background-color: var(--color-danger-hover) !important;
+  border-color: var(--color-danger-hover) !important;
+  color: white !important;
+}
+
+.button.warning {
+  background-color: var(--color-warning) !important;
+  border-color: var(--color-warning) !important;
+  color: white !important;
+}
+
+.button.warning:hover {
+  background-color: var(--color-warning-hover) !important;
+  border-color: var(--color-warning-hover) !important;
+  color: white !important;
+}
+
+.button.success {
+  background-color: var(--color-success) !important;
+  border-color: var(--color-success) !important;
+  color: white !important;
+}
+
+.button.success:hover {
+  background-color: var(--color-success-hover) !important;
+  border-color: var(--color-success-hover) !important;
+  color: white !important;
+}
+
 .button-outline {
   border-radius: 11px !important;
   display: table;
   margin: 0 auto;
 }
 
-.button-outline:hover {
-  background-color: #12af51 !important;
-  color: white !important;
-  border-color: #12af51 !important;
-}
-
 .button {
   border-radius: 11px !important;
-  background-color: #12af51 !important;
-  border-color: #12af51 !important;
   display: table;
   margin: 0 auto;
+  color: white !important;
 }
 
-.button-outline > .icon-button, .button > .icon-button {
+.button-outline > .icon-button,
+.button > .icon-button {
   vertical-align: middle;
-}
-
-.button:hover {
-  background-color: #08a045 !important;
-  border-color: #08a045 !important;
 }
 
 .icon-button {
@@ -33,9 +160,9 @@
 }
 
 .icon-button.left {
-  margin-right: 6px;
+  margin-right: 5px;
 }
 
 .icon-button.right {
-  margin-left: 6px;
+  margin-left: 5px;
 }
