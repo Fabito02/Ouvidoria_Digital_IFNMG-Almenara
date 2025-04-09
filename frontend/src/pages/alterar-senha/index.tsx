@@ -23,7 +23,7 @@ const AlterarSenha = () => {
         <Row className="justify-content-center">
             <Col xs={12} md={8} lg={6}>
             <Card className="shadow-sm p-4 float-card">
-                <h1 className="mb-4 text-center title">Alterar Senha</h1>
+                <h1 className="mb-4 text-center muted">Alterar Senha</h1>
                 <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
                     <Form.Label>Senha Atual</Form.Label>
