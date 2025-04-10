@@ -36,25 +36,21 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #1ea145;
+    background-color: #1b9841;
     border: 0;
     font-size: 25px;
     border-radius: 12px;
   }
 
-  .toggle-button:active {
-    background-color: #1a8f3d !important;
-  }
-
   .toggle-button:hover {
-    background-color: #29b954;
+    background-color: #2bb655;
   }
   
   .opcao {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1ea145;
+    background-color: #1b9841;
     margin: 5px 0;
     width: calc(100% - 20px);
     max-width: 70px;
@@ -65,11 +61,7 @@
   }
 
   .opcao:hover {
-    background-color: #29b954;
-  }
-
-  .opcao:active {
-    background-color: #1a8f3d;
+    background-color: #2bb655;
   }
   
   .opcao.expandido {

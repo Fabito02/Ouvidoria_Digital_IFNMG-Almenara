@@ -1,6 +1,6 @@
 :root {
-  --color-primary: #12af51;
-  --color-primary-hover: #16b75a;
+  --color-primary: #16aa51;
+  --color-primary-hover: #1eb65b;
 
   --color-secondary: #e1d54e;
   --color-secondary-hover: #e9dd5e;
@@ -14,12 +14,14 @@
   --color-warning: #ffc107;
   --color-warning-hover: #ffcd3a;
 
-  --color-success: #198754;
-  --color-success-hover: #1fa25f;
+  --color-success: #32cf5c;
+  --color-success-hover: #36d560;
+
+  --color-cinza-semitransparente-claro: #00000013;
 }
 
 * {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .link {

@@ -3,18 +3,19 @@
   width: 300px !important;
   transition: all 0.3s ease-out !important;
 }
-.search-bar-customizado:hover, .search-bar-customizado:has(input:focus) {
+.search-bar-customizado:hover,
+.search-bar-customizado:has(input:focus) {
   width: 400px !important;
 }
 .search-bar-customizado input {
-  background-color: #00000013;
+  background-color: var(--color-cinza-semitransparente-claro);
   width: 100% !important;
   transition: all 0.3s ease-out !important;
 }
 
 .search-bar-customizado input:focus {
-  background-color: #00ff3c18 !important;
-  box-shadow: 0 0 0px 0em rgba(0, 196, 46, 0.16) !important;
+  background-color: #00000013 !important;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
 }
 
 .submit-button {
