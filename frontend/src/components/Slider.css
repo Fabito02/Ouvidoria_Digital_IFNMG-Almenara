@@ -2,7 +2,7 @@
     width: calc(100vw - 10vw);
     max-width: 800px;
     margin: 60px auto;
-    border-radius: calc(16px + 1vw);
+    border-radius: calc(12px + 1vw);
     overflow: hidden;
   }
   
