@@ -25,18 +25,6 @@ const SearchBar = () => {
     }
   }, [transcript]);
 
-  useEffect(() => {
-    if (!browserSupportsSpeechRecognition) {
-      setToastMessage('Seu navegador não suporta reconhecimento de voz.');
-      setToastVariant('info');
-      setShowToast(true);
-    } else if (!isMicrophoneAvailable) {
-      setToastMessage('Microfone não disponível. Você ainda pode digitar sua pesquisa.');
-      setToastVariant('info');
-      setShowToast(true);
-    }
-  }, [browserSupportsSpeechRecognition, isMicrophoneAvailable]);
-
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
   };
@@ -47,6 +35,17 @@ const SearchBar = () => {
   };
 
   const toggleListening = () => {
+
+    if (!browserSupportsSpeechRecognition) {
+      setToastMessage('Seu navegador não suporta reconhecimento de voz.');
+      setToastVariant('info');
+      setShowToast(true);
+    } else if (!isMicrophoneAvailable) {
+      setToastMessage('Microfone não disponível. Você ainda pode digitar sua pesquisa.');
+      setToastVariant('info');
+      setShowToast(true);
+    }
+
     if (listening) {
       SpeechRecognition.stopListening();
     } else {
@@ -100,10 +99,9 @@ const SearchBar = () => {
             />
           </Button>
         
-        {browserSupportsSpeechRecognition && isMicrophoneAvailable && (
           <Icon 
             icon={listening ? "material-symbols:mic-off" : "material-symbols:mic"}
-            className="position-absolute"
+            className="position-absolute microphone-icon"
             onClick={toggleListening}
             style={{
               fontSize: '22px',
@@ -115,7 +113,6 @@ const SearchBar = () => {
             role="button"
             tabIndex={0}
           />
-        )}
         
       </Form>
       
