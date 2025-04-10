@@ -49,7 +49,7 @@ const Home = () => {
         </div>
       </section>
 
-      <Slider imagens={slides} />
+      <Slider imagens={slides} indicadores={window.innerWidth <= 662 ? false : true} />
 
       <section className="action-cards py-5">
         <div className="container">
