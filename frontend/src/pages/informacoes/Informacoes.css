@@ -13,14 +13,16 @@
 .title {
     font-family: 'Poppins' sans-serif;
     font-weight: 500;
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 
 .subtitle {
-    font-size: 1.4em;
+    font-size: 1.7em;
 }
 
 .faq-card {
     height: 100%;
     border-radius: 16px;
+    border-color: #e1e1e1;
+    border-left: #28a745 5px solid;
 }
