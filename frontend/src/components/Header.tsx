@@ -15,7 +15,7 @@ const Header = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        zIndex: 10,
+        zIndex: 100,
       }}
     >
       <a href="/">
