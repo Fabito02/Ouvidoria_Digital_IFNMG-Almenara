@@ -34,22 +34,22 @@ const Registrar = () => {
                     <Form>
                         <Form.Group className="mb-3" controlId="formPassword" style={{position: 'relative'}}>
                         <Icon className='iconeForm' icon="material-symbols:group-rounded" />
-                            <Form.Control type="password" placeholder="Nome de Usuário" className='custom-input shadow-sm' />
+                            <Form.Control type="password" placeholder="Nome de Usuário" className='custom-input' />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formEmail" style={{position: 'relative'}}>
                             <Icon className='iconeForm' icon="material-symbols:stacked-email-rounded" />
-                            <Form.Control type="email" placeholder="E-mail" className='custom-input shadow-sm' />
+                            <Form.Control type="email" placeholder="E-mail" className='custom-input' />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formPassword" style={{position: 'relative'}}>
                         <Icon className='iconeForm' icon="material-symbols:password-rounded" />
-                            <Form.Control type="password" placeholder="Senha" className='custom-input shadow-sm' />
+                            <Form.Control type="password" placeholder="Senha" className='custom-input' />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formPassword" style={{position: 'relative'}}>
                         <Icon className='iconeForm' icon="material-symbols:password-rounded" />
-                            <Form.Control type="password" placeholder="Confirmar senha" className='custom-input shadow-sm' />
+                            <Form.Control type="password" placeholder="Confirmar senha" className='custom-input' />
                         </Form.Group>
 
                         <Button texto='CRIAR CONTA' className='bt-login'/>

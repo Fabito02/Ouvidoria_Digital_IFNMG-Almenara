@@ -33,12 +33,12 @@ const Login = () => {
                     <Form>
                         <Form.Group className="mb-3" controlId="formEmail" style={{position: 'relative'}}>
                             <Icon className='iconeForm' icon="material-symbols:stacked-email-rounded" />
-                            <Form.Control type="email" placeholder="E-mail ou usuário" className='custom-input shadow-sm' />
+                            <Form.Control type="email" placeholder="E-mail ou usuário" className='custom-input' />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formPassword" style={{position: 'relative'}}>
                         <Icon className='iconeForm' icon="material-symbols:password-rounded" />
-                            <Form.Control type="password" placeholder="Senha" className='custom-input shadow-sm' />
+                            <Form.Control type="password" placeholder="Senha" className='custom-input' />
                         </Form.Group>
 
                         <Button texto='login' className='bt-login'/>

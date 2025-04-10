@@ -58,7 +58,6 @@ const Elogio = () => {
                 <Form.Group controlId="formNome">
                   <Form.Label>Nome</Form.Label>
                   <Form.Control
-                    className="shadow-sm"
                     type="text"
                     placeholder="Digite seu nome"
                     required
@@ -69,7 +68,6 @@ const Elogio = () => {
                 <Form.Group controlId="formEmail">
                   <Form.Label>E-mail</Form.Label>
                   <Form.Control
-                    className="shadow-sm"
                     type="email"
                     placeholder="Digite seu e-mail"
                     required
@@ -82,11 +80,7 @@ const Elogio = () => {
               <Col md={6}>
                 <Form.Group controlId="formTelefone">
                   <Form.Label>Telefone</Form.Label>
-                  <Form.Control
-                    className="shadow-sm"
-                    type="tel"
-                    placeholder="(00) 00000-0000"
-                  />
+                  <Form.Control type="tel" placeholder="(00) 00000-0000" />
                 </Form.Group>
               </Col>
             </Row>
@@ -98,7 +92,6 @@ const Elogio = () => {
             <Form.Group controlId="formTipoReclamacao">
               <Form.Label>Tipo de Elogio</Form.Label>
               <Form.Select
-                className="shadow-sm"
                 defaultValue=""
                 onChange={(e) => setTipoReclamacao(e.target.value)}
               >
@@ -126,7 +119,7 @@ const Elogio = () => {
             <Col md={6}>
               <Form.Group controlId="formAreaCampus">
                 <Form.Label>Área do Campus</Form.Label>
-                <Form.Select className="shadow-sm" defaultValue="">
+                <Form.Select defaultValue="">
                   <option value="">Selecione...</option>
                   <option value="portaria">Portaria</option>
                   <option value="biblioteca">Biblioteca</option>
@@ -178,9 +171,9 @@ const Elogio = () => {
             style={{
               minHeight: "200px",
               padding: "5px",
-              borderRadius: "0px 0px 12px 12px",
+              borderRadius: "0px 0px 11px 11px",
             }}
-            className="inputElogio shadow-sm"
+            className="inputElogio"
           ></div>
         </Form.Group>
 

@@ -56,7 +56,6 @@ const Reclamacao = () => {
               <Form.Group controlId="formNome">
                 <Form.Label>Nome</Form.Label>
                 <Form.Control
-                  className="shadow-sm"
                   type="text"
                   placeholder="Digite seu nome"
                   required
@@ -67,7 +66,6 @@ const Reclamacao = () => {
               <Form.Group controlId="formEmail">
                 <Form.Label>E-mail</Form.Label>
                 <Form.Control
-                  className="shadow-sm"
                   type="email"
                   placeholder="Digite seu e-mail"
                   required
@@ -82,7 +80,6 @@ const Reclamacao = () => {
             <Form.Group controlId="formTipoReclamacao">
               <Form.Label>Tipo de Reclamação</Form.Label>
               <Form.Select
-                className="shadow-sm"
                 defaultValue=""
                 onChange={(e) => setTipoReclamacao(e.target.value)}
               >
@@ -110,7 +107,7 @@ const Reclamacao = () => {
             <Col md={6}>
               <Form.Group controlId="formAreaCampus">
                 <Form.Label>Área do Campus</Form.Label>
-                <Form.Select className="shadow-sm" defaultValue="">
+                <Form.Select defaultValue="">
                   <option value="">Selecione...</option>
                   <option value="portaria">Portaria</option>
                   <option value="biblioteca">Biblioteca</option>
@@ -162,9 +159,9 @@ const Reclamacao = () => {
             style={{
               minHeight: "200px",
               padding: "5px",
-              borderRadius: "0px 0px 12px 12px",
+              borderRadius: "0px 0px 11px 11px",
             }}
-            className="inputReclamacao shadow-sm"
+            className="inputReclamacao"
           ></div>
         </Form.Group>
 

@@ -3,7 +3,7 @@
   width: 300px !important;
   transition: all 0.3s ease-out !important;
 }
-.search-bar-customizado:hover,
+.container-search:hover .search-bar-customizado,
 .search-bar-customizado:has(input:focus) {
   width: 400px !important;
 }

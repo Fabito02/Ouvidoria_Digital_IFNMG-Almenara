@@ -57,7 +57,6 @@ const Sugestao = () => {
                 <Form.Group controlId="formNome">
                   <Form.Label>Nome</Form.Label>
                   <Form.Control
-                    className="shadow-sm"
                     type="text"
                     placeholder="Digite seu nome"
                     required
@@ -68,7 +67,6 @@ const Sugestao = () => {
                 <Form.Group controlId="formEmail">
                   <Form.Label>E-mail</Form.Label>
                   <Form.Control
-                    className="shadow-sm"
                     type="email"
                     placeholder="Digite seu e-mail"
                     required
@@ -81,11 +79,7 @@ const Sugestao = () => {
               <Col md={6}>
                 <Form.Group controlId="formTelefone">
                   <Form.Label>Telefone</Form.Label>
-                  <Form.Control
-                    className="shadow-sm"
-                    type="tel"
-                    placeholder="(00) 00000-0000"
-                  />
+                  <Form.Control type="tel" placeholder="(00) 00000-0000" />
                 </Form.Group>
               </Col>
             </Row>
@@ -96,7 +90,7 @@ const Sugestao = () => {
           <Col md={6}>
             <Form.Group controlId="formTipoSugestao">
               <Form.Label>Tipo de Sugestão</Form.Label>
-              <Form.Select className="shadow-sm" defaultValue="">
+              <Form.Select defaultValue="">
                 <option value="">Selecione...</option>
                 <option value="melhoria-infraestrutura">
                   Melhoria na Infraestrutura
@@ -131,9 +125,9 @@ const Sugestao = () => {
             style={{
               minHeight: "200px",
               padding: "5px",
-              borderRadius: "0px 0px 12px 12px",
+              borderRadius: "0px 0px 11px 11px",
             }}
-            className="inputSugestao shadow-sm"
+            className="inputSugestao"
           ></div>
         </Form.Group>
 
