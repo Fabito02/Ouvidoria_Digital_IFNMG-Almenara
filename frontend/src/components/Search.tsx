@@ -108,7 +108,7 @@ const SearchBar = () => {
             style={{
               fontSize: '22px',
               right: '10px',
-              color: listening ? '#23BC60' : '#00000066',
+              color: listening ? 'var(--color-secondary)' : '#00000066',
               cursor: 'pointer',
             }}
             aria-label={listening ? "Parar gravação" : "Iniciar gravação"}
