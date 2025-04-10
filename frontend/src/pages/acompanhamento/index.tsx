@@ -43,7 +43,7 @@ const Acompanhamento = () => {
         <div className={`barraLateral ${expandido ? "expandido" : ""}`}>
           <Button
             onClick={toggleSidebar}
-            className="toggle-button"
+            className="toggle-expandir"
           >
             <Icon
               icon={
