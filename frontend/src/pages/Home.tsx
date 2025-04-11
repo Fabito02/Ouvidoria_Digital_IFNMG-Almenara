@@ -20,10 +20,10 @@ const slides = [
 ]
 
 const data_cards = [
-  { cor: "danger", icon: "material-symbols:feedback-rounded", total: 32, titulo: "Manifestações" },
-  { cor: "warning", icon: "material-symbols:thumb-up-rounded", total: 15, titulo: "Pendentes" },
-  { cor: "info", icon: "material-symbols:warning-rounded", total: 3, titulo: "Em andamento" },
-  { cor: "success", icon: "material-symbols:lightbulb-rounded", total: 12, titulo: "Concluído" },
+  { cor: "danger", total: 32, titulo: "Manifestações" },
+  { cor: "warning", total: 15, titulo: "Pendentes" },
+  { cor: "info", total: 3, titulo: "Em andamento" },
+  { cor: "success", total: 12, titulo: "Concluído" },
 ]
 
 const Home = () => {

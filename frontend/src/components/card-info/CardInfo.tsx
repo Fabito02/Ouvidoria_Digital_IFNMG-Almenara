@@ -1,13 +1,11 @@
 import { Row, Col, Card, Container } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CardInfo.css";
-import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
 
 type CardInfoProps = {
     conteudo_cards: Array<{
         total: number;
         titulo: string;
-        icon?: string;
         cor?: string;
     }>;
 }
