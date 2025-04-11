@@ -4,12 +4,27 @@ import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
 import "./Acompanhamento.css";
 import { BlankLayout } from "../../components/BlankLayout/BlankLayout";
 import { useEffect } from "react";
+import Geral from "../../components/acompanhamento/Geral";
+import Reclamacoes from "../../components/acompanhamento/Reclamacoes";
+import Elogios from "../../components/acompanhamento/Elogios";
+import Denuncias from "../../components/acompanhamento/Denuncias";
+import Sugestoes from "../../components/acompanhamento/Sugestoes";
 
 const Acompanhamento = () => {
   const [expandido, setExpandido] = useState(false);
   const [abaSelecionada, setAbaSelecionada] = useState("0");
 
   useEffect(() => {
+
+    const handleResize = () => {
+      const nav = document.querySelector("nav");
+      if (nav) {
+        nav.style.paddingLeft = window.innerWidth > 992 ? "90px" : "0";
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
     const handleExibirTab = () => {
       const tabs = document.querySelectorAll(".tabContainer");
       tabs.forEach((tab) => {
@@ -64,19 +79,19 @@ const Acompanhamento = () => {
         <div className={`conteudo ${expandido ? "escurecido" : ""}`} onClick={() => setExpandido(false)}>
           <Container className="conteudoContainer">
             <div className="tabContainer d-none" id="tab-0">
-              <h2>Visão Geral</h2>
+              <Geral />
             </div>
             <div className="tabContainer d-none" id="tab-1">
-              <h2>Reclamações</h2>
+              <Reclamacoes />
             </div>
             <div className="tabContainer d-none" id="tab-2">
-              <h2>Elogios</h2>
+              <Elogios />
             </div>
             <div className="tabContainer d-none" id="tab-3">
-              <h2>Denúncias</h2>
+              <Denuncias />
             </div>
             <div className="tabContainer d-none" id="tab-4">
-              <h2>Sugestões</h2>
+              <Sugestoes />
             </div>
           </Container>
         </div>

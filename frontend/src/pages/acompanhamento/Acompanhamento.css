@@ -5,7 +5,7 @@
 }
 
 .barraLateral {
-  position: absolute;
+  position: fixed;
   background-color: var(--color-primary);
   color: white;
   display: flex;
@@ -16,8 +16,9 @@
   min-width: 78px;
   padding-top: 55px;
   white-space: nowrap;
-  height: calc(100vh - 114px);
-  z-index: 10;
+  top: 65px;
+  height: calc(100vh - 65px);
+  z-index: 2;
 }
 
 .barraLateral.expandido {
@@ -97,11 +98,10 @@
 .conteudoContainer {
   background-color: #fff !important;
   max-width: 100%;
-  height: calc(100vh - 114px);
 }
 
 .conteudo.escurecido {
-  filter: brightness(0.8);
+  filter: brightness(0.65);
 }
 
 @media (max-width: 992px) {
@@ -110,7 +110,7 @@
   }
 
   .conteudoContainer {
-    padding-top: 55px;
+    padding-top: 60px;
   }
 
   .barraLateral {

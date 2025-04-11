@@ -6,17 +6,16 @@ import './NavbarComponent.css';
 
 const NavbarComponent = () => {
   return (
-    <Navbar expand="lg" style={{ backgroundColor: '#ffffff' }} className='lineBottom lineTop'>
-      <Container className="d-flex ">
-        <Navbar.Toggle 
-        aria-controls="basic-navbar-nav" 
-        style={{
-          position:"relative",
-          borderRadius:'8px',
-          marginBottom:'5px',
-          border:'none',
-          outline:'none',
-        }} />
+    <Navbar expand="lg" style={{ zIndex: 2 }} className='lineBottom lineTop'>
+      <Container className="d-flex justify-content-end">
+        <Navbar.Toggle  
+          style={{
+            position:"relative",
+            borderRadius:'8px',
+            marginBottom:'5px',
+            border:'none',
+            outline:'none',
+          }} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav
             className="d-flex justify-content-center"
