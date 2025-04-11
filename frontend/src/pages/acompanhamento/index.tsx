@@ -16,15 +16,6 @@ const Acompanhamento = () => {
 
   useEffect(() => {
 
-    const handleResize = () => {
-      const nav = document.querySelector("nav");
-      if (nav) {
-        nav.style.paddingLeft = window.innerWidth > 992 ? "90px" : "0";
-      }
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
     const handleExibirTab = () => {
       const tabs = document.querySelectorAll(".tabContainer");
       tabs.forEach((tab) => {
@@ -33,11 +24,10 @@ const Acompanhamento = () => {
         } else {
           tab.classList.add("d-none");
         }
-      }
-      );
+      });
     };
     handleExibirTab();
-    setExpandido(false)
+    setExpandido(false);
   }, [abaSelecionada]);
 
   const toggleSidebar = () => {
