@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Row, Col, Card, Container } from 'react-bootstrap';
 import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
 import "./Home.css";
 import Button from "../components/buttons/Button";
