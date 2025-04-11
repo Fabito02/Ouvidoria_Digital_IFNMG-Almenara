@@ -1,6 +1,5 @@
   .carousel {
-    width: calc(100vw - 10vw);
-    max-width: 800px;
+    width: 100%;
     margin: 60px auto;
     border-radius: calc(12px + 1vw);
     overflow: hidden;

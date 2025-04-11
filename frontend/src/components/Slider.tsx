@@ -1,4 +1,4 @@
-import { Carousel } from "react-bootstrap";
+import { Carousel, Container } from "react-bootstrap";
 import "./Slider.css";
 
 interface SliderProps {
@@ -8,7 +8,7 @@ interface SliderProps {
 
 const Slider = ({ imagens, indicadores }: SliderProps) => {
   return (
-    <div className="slider-container">
+    <Container>
       <Carousel indicators={indicadores} interval={3000}>
         {imagens.map((imagem, index) => (
           <Carousel.Item key={index}>
@@ -16,7 +16,7 @@ const Slider = ({ imagens, indicadores }: SliderProps) => {
           </Carousel.Item>
         ))}
       </Carousel>
-    </div>
+    </Container>
   );
 };
 
