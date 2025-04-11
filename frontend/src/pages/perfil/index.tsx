@@ -3,6 +3,8 @@ import { Container, Row, Col, Form, Image, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/buttons/Button";
 import { BlankLayout } from "../../components/BlankLayout/BlankLayout";
+import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
+import "./Perfil.css";
 
 const Perfil = () => {
   const [profilePic, setProfilePic] = useState<string | null>(null);
@@ -37,31 +39,32 @@ const Perfil = () => {
         <Row className="justify-content-center">
           <Col xs={12} md={10} lg={8}>
             <Card className="p-4 border-0">
-              <Row className="align-items-center mb-5">
-                <Col xs="auto">
+            <Row className="align-items-center mb-5">
+              <Col xs={12} className="d-flex justify-content-center mb-3 mb-md-0">
+                <div className="foto-perfil position-relative rounded-circle overflow-hidden">
                   <Image
                     src={profilePic || "/user_placeholder.png"}
-                    roundedCircle
-                    width={100}
-                    height={100}
                     alt="Foto de perfil"
-                    style={{ objectFit: "cover" }}
+                    className="foto-perfil-img"
                   />
-                </Col>
-                <Col>
-                  <Form.Group controlId="formFotoPerfil">
-                    <Form.Label className="fw-semibold">
-                      Foto de Perfil
-                    </Form.Label>
-                    <Form.Control
-                      type="file"
-                      accept="image/*"
-                      onChange={handlePicChange}
-                    />
-                  </Form.Group>
-                </Col>
-              </Row>
 
+                  <label
+                    htmlFor="formFotoPerfil"
+                    className="edit-overlay d-flex align-items-center justify-content-center position-absolute top-0 start-0 w-100 h-100"
+                  >
+                    <Icon icon="mdi:pencil" width={38} className="text-white" />
+                  </label>
+                </div>
+
+                <Form.Control
+                  id="formFotoPerfil"
+                  type="file"
+                  accept="image/*"
+                  onChange={handlePicChange}
+                  className="d-none"
+                />
+              </Col>
+            </Row>
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formNome">
                   <Form.Label className="fw-semibold">Nome</Form.Label>
