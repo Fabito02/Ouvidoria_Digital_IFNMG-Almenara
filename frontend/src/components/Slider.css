@@ -3,11 +3,12 @@
     margin: 60px auto;
     border-radius: calc(12px + 1vw);
     overflow: hidden;
+    max-width: 900px;
   }
   
   .slider-img {
     width: 100%;
-    aspect-ratio: 20 / 9;
+    aspect-ratio: 21 / 10;
     overflow: hidden;
     object-fit: cover;
   }
