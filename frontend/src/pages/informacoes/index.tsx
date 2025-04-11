@@ -71,7 +71,7 @@ export default function Faq() {
           <div className="textoTopo">
             <h1 className="title align-center">Perguntas Frequentes</h1>
             <p className="text-muted subtitle">
-              Aqui voce pode encontrar as principais perguntas frequentes sobre a Ouvidoria do IFNMG Almenara.
+              Aqui você pode encontrar as principais perguntas frequentes sobre a Ouvidoria do IFNMG Almenara.
             </p>
           </div>
         </Col>
