@@ -13,11 +13,11 @@
 .title {
     font-family: 'Poppins' sans-serif;
     font-weight: 500;
-    font-size: 3.5rem;
+    font-size: 3.8rem;
 }
 
 .subtitle {
-    font-size: 1.7em;
+    font-size: 1.3rem;
 }
 
 .faq-card {
@@ -25,4 +25,41 @@
     border-radius: 16px;
     border-color: #e1e1e1;
     border-left: #28a745 5px solid;
+}
+
+.colTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rowFaq {
+    height: 100vh;
+    max-height: 550px;
+    padding: 20px;
+}
+
+.imagemFaq {
+    height: 100%;
+    max-width: 100%;
+}
+
+@media (max-width: 992px) {
+    .colTop {
+        text-align: center;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .textoTopo {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
 }

@@ -63,9 +63,19 @@ const Informacoes = [
 export default function Faq() {
   return (
     <Container className="py-5">
-      <h1 className="text-center title">FAQ</h1>
-      <p className="text-center text-muted subtitle mb-5">Perguntas Frequentes</p>
-
+      <Row className="rowFaq">
+        <Col lg={6} md={12} className="colTop">
+          <img src="/faq/FAQ.svg" alt="Imagem representando o FAQ" className="imagemFaq" />
+        </Col>
+        <Col lg={6} md={12} className="colTop">
+          <div className="textoTopo">
+            <h1 className="title align-center">Perguntas Frequentes</h1>
+            <p className="text-muted subtitle">
+              Aqui voce pode encontrar as principais perguntas frequentes sobre a Ouvidoria do IFNMG Almenara.
+            </p>
+          </div>
+        </Col>
+      </Row>
       <Row className="gy-4 mt-1">
         {Informacoes.map((faq, index) => (
           <Col key={index} md={6} className="position-relative">
