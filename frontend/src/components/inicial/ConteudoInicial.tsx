@@ -41,7 +41,7 @@ const ConteudoHome = () => {
             <div className="textos text-right">
               <h1 className="title">Auris – Ouvidoria Digital</h1>
               <p className="complemento">
-                Aqui, cada voz importa. Suas sugestões e opiniões ajudam a construir um IFNMG - Campus Almenara melhor para todos.
+                 Envie sua manifestação na plataforma para construir um IFNMG - Campus Almenara melhor para todos(as).
               </p>
               <a href="/login">
                 <Button texto="acessar plataforma" className="plataforma-btn" />
