@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Row, Col, Card, Container } from 'react-bootstrap';
 import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
@@ -19,6 +20,7 @@ const slides = [
 ]
 
 const Home = () => {
+
   return (
     <div className="ouvidoria-home">
 
@@ -50,6 +52,37 @@ const Home = () => {
       </section>
 
       <Slider imagens={slides} indicadores={window.innerWidth <= 662 ? false : true} />
+
+      <section className="info-cards py-5">
+        <Container>
+          <Row className="justify-content-center g-4">
+            <Col xs={12} md={6} lg={3} className="d-flex justify-content-center">
+              <Card className="card-info shadow-sm manifestacao w-100">
+                <h2 className="total mt-2">14</h2>
+                <p className="titulo-card-info text-muted">Manifestações</p>
+              </Card>
+            </Col>
+            <Col xs={12} md={6} lg={3} className="d-flex justify-content-center">
+              <Card className="card-info shadow-sm pendente w-100">
+                <h2 className="total mt-2">2</h2>
+                <p className="titulo-card-info text-muted">Pendentes</p>
+              </Card>
+            </Col>
+            <Col xs={12} md={6} lg={3} className="d-flex justify-content-center">
+              <Card className="card-info shadow-sm andamento w-100">
+                <h2 className="total mt-2">5</h2>
+                <p className="titulo-card-info text-muted">Em andamento</p>
+              </Card>
+            </Col>
+            <Col xs={12} md={6} lg={3} className="d-flex justify-content-center">
+              <Card className="card-info shadow-sm concluido w-100">
+                <h2 className="total mt-2">7</h2>
+                <p className="titulo-card-info text-muted">Concluídas</p>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </section>
 
       <section className="action-cards py-5">
         <div className="container">
