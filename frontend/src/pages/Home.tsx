@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { Row, Col, Card, Container } from 'react-bootstrap';
 import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
 import Button from "../components/buttons/Button";
 import Slider from "../components/Slider";
+import CardInfo from "../components/card-info/CardInfo";
 
 const slides = [
   "/home/slides/1.png",
@@ -17,6 +17,13 @@ const slides = [
   "/home/slides/8.png",
   "/home/slides/9.png",
   "/home/slides/10.png"
+]
+
+const data_cards = [
+  { cor: "danger", icon: "material-symbols:feedback-rounded", total: 32, titulo: "Manifestações" },
+  { cor: "warning", icon: "material-symbols:thumb-up-rounded", total: 15, titulo: "Pendentes" },
+  { cor: "info", icon: "material-symbols:warning-rounded", total: 3, titulo: "Em andamento" },
+  { cor: "success", icon: "material-symbols:lightbulb-rounded", total: 12, titulo: "Concluído" },
 ]
 
 const Home = () => {
@@ -53,36 +60,7 @@ const Home = () => {
 
       <Slider imagens={slides} indicadores={window.innerWidth <= 662 ? false : true} />
 
-      <section className="info-cards py-5">
-        <Container>
-          <Row className="justify-content-center g-4">
-            <Col xs={12} md={6} lg={3} className="d-flex justify-content-center">
-              <Card className="card-info shadow-sm manifestacao w-100">
-                <h2 className="total mt-2">14</h2>
-                <p className="titulo-card-info text-muted">Manifestações</p>
-              </Card>
-            </Col>
-            <Col xs={12} md={6} lg={3} className="d-flex justify-content-center">
-              <Card className="card-info shadow-sm pendente w-100">
-                <h2 className="total mt-2">2</h2>
-                <p className="titulo-card-info text-muted">Pendentes</p>
-              </Card>
-            </Col>
-            <Col xs={12} md={6} lg={3} className="d-flex justify-content-center">
-              <Card className="card-info shadow-sm andamento w-100">
-                <h2 className="total mt-2">5</h2>
-                <p className="titulo-card-info text-muted">Em andamento</p>
-              </Card>
-            </Col>
-            <Col xs={12} md={6} lg={3} className="d-flex justify-content-center">
-              <Card className="card-info shadow-sm concluido w-100">
-                <h2 className="total mt-2">7</h2>
-                <p className="titulo-card-info text-muted">Concluídas</p>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      <CardInfo conteudo_cards={data_cards} />
 
       <section className="action-cards py-5">
         <div className="container">
