@@ -39,7 +39,7 @@ const ConteudoHome = () => {
         <Row className="tela">
           <Col className="textos coluna-tela">
             <div className="textos text-right">
-              <h1 className="title">Auris – Ouvir para transformar!</h1>
+              <h1 className="title">Auris – Ouvidoria Digital</h1>
               <p className="complemento">
                 Aqui, cada voz importa. Suas sugestões e opiniões ajudam a construir um IFNMG - Campus Almenara melhor para todos.
               </p>
