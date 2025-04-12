@@ -1,20 +1,17 @@
-import express from "express";
-import cors from "cors";
+import express from 'express';
 import dotenv from 'dotenv';
-import db from "./db";
+import userRoutes from './routes/userRoutes';
 
 dotenv.config();
 
 const app = express();
-const port = Number(process.env.PORT) || 4000;
-app.use(cors());
+
 app.use(express.json());
 
-app.get("/", async (req, res) => {
-      res.send("API do Auris");
-});
+app.use('/api', userRoutes);
+
+const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+    console.log(`Servidor rodando na porta ${port}`);
 });
-
