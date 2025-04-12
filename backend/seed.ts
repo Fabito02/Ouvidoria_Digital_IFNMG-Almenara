@@ -1,4 +1,4 @@
-import connection from './db';
+import connection from './src/db';
 import mysql from 'mysql2/promise';
 import bcrypt from 'bcryptjs';
 
