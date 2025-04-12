@@ -128,6 +128,15 @@ const Denuncia = () => {
           </Col>
         </Row>
 
+        <Form.Group controlId="formTituloDenuncia" className="mb-3">
+          <Form.Label>Título</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Digite o título da denúncia"
+            required
+          />
+        </Form.Group>
+
         <Form.Group controlId="formDenuncia" className="mb-3">
           <Form.Label>Descreva sua denúncia</Form.Label>
           <div

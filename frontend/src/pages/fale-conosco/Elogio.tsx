@@ -164,6 +164,15 @@ const Elogio = () => {
           </Row>
         )}
 
+        <Form.Group controlId="formTituloElogio" className="mb-3">
+          <Form.Label>Título</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Digite o título do elogio"
+            required
+          />
+        </Form.Group>
+
         <Form.Group controlId="formElogio" className="mb-3">
           <Form.Label>Descreva seu elogio</Form.Label>
           <div

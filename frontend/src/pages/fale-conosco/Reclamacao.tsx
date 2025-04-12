@@ -152,6 +152,15 @@ const Reclamacao = () => {
           </Row>
         )}
 
+        <Form.Group controlId="formTituloElogio" className="mb-3">
+          <Form.Label>Título</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Digite o título da reclamação"
+            required
+          />
+        </Form.Group>
+
         <Form.Group controlId="formReclamacao" className="mb-3">
           <Form.Label>Descreva sua reclamação</Form.Label>
           <div

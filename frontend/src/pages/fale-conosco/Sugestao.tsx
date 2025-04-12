@@ -118,6 +118,15 @@ const Sugestao = () => {
           </Col>
         </Row>
 
+        <Form.Group controlId="formTituloSugestao" className="mb-3">
+          <Form.Label>Título</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Digite o título da sugestão"
+            required
+          />
+        </Form.Group>
+
         <Form.Group controlId="formSugestao" className="mb-3">
           <Form.Label>Descreva sua sugestão</Form.Label>
           <div
