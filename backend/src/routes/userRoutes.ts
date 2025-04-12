@@ -1,5 +1,6 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import connection from '../db';
+import bcrypt from 'bcryptjs';
 
 const router = express.Router();
 
@@ -16,16 +17,23 @@ router.get('/users', (req, res) => {
 // Rota para criar um usuário
 router.post('/users', (req, res) => {
     const user = req.body;
-    connection.query(
-        'INSERT INTO Users SET ?',
-        user,
-        (err, results: any) => {
-            if (err) {
-                return res.status(500).json({ error: `Erro ao criar usuário: ${err.message}` });
-            }
-            return res.status(201).json({ message: 'Usuário criado com sucesso', User_ID: results.insertId });
+    bcrypt.hash(user.Senha, 10, (err, hashedPassword) => {
+        if (err) {
+            return res.status(500).json({ error: `Erro ao encriptar a senha: ${err.message}` });
         }
-    );
+        user.Senha = hashedPassword;
+
+        connection.query(
+            'INSERT INTO Users SET ?',
+            user,
+            (err, results: any) => {
+                if (err) {
+                    return res.status(500).json({ error: `Erro ao criar usuário: ${err.message}` });
+                }
+                return res.status(201).json({ message: 'Usuário criado com sucesso', User_ID: results.insertId });
+            }
+        );
+    });
 });
 
 // Rota para obter um usuário pelo ID sem a senha por segurança

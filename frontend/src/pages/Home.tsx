@@ -4,6 +4,8 @@ import "./Home.css";
 import Button from "../components/buttons/Button";
 import Slider from "../components/Slider";
 import CardInfo from "../components/card-info/CardInfo";
+import { getUsuarios } from "../api/api_routes";
+import { useEffect } from "react";
 
 const slides = [
   "/home/slides/1.png",
@@ -26,6 +28,20 @@ const data_cards = [
 ]
 
 const Home = () => {
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const usuarios = await getUsuarios();
+        console.log(usuarios);
+      } catch (error) {
+        console.error("Erro ao buscar usuários:", error);
+      }
+    };
+  
+    fetchData();
+  }
+  , []);
 
   return (
     <div className="ouvidoria-home">
