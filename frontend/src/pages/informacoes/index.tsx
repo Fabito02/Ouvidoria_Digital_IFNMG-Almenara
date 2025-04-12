@@ -76,12 +76,12 @@ export default function Faq() {
           </div>
         </Col>
       </Row>
-      <Row className="gy-4 gx-5 mt-1">
+      <Row className="g-5 mt-1 linha-faq">
         {Informacoes.map((faq, index) => (
           <Col key={index} md={6} className="position-relative">
             <Card className="p-4 faq-card shadow-sm">
               <h5 className="fw-bold">{faq.title}</h5>
-              <p className="text-muted mb-0">{faq.content}</p>
+              <p className="text-muted">{faq.content}</p>
             </Card>
           </Col>
         ))}

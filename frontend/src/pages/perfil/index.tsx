@@ -76,6 +76,21 @@ const Perfil = () => {
                   />
                 </Form.Group>
 
+                <Form.Group className="mb-3" controlId="formRole">
+                  <Form.Label className="fw-semibold">Perfil</Form.Label>
+                  <Form.Select
+                    aria-label="Selecione seu perfil"
+                    onChange={(e) => console.log(e.target.value)} // Substitua por lógica para armazenar o valor selecionado
+                  >
+                    <option value="">Selecione seu perfil</option>
+                    <option value="servidor">Servidor</option>
+                    <option value="discente">Discente</option>
+                    <option value="docente">Docente</option>
+                    <option value="direcao">Direção da Escola</option>
+                    <option value="outro">Outro</option>
+                  </Form.Select>
+                </Form.Group>
+
                 <Form.Group className="mb-3" controlId="formEmail">
                   <Form.Label className="fw-semibold">Email</Form.Label>
                   <Form.Control
