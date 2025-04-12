@@ -62,7 +62,7 @@ const Informacoes = [
 
 export default function Faq() {
   return (
-    <Container className="py-5">
+    <Container className="mb-5">
       <Row className="rowFaq">
         <Col lg={6} md={12} className="colTop">
           <img src="/faq/FAQ.svg" alt="Imagem representando o FAQ" className="imagemFaq" />
@@ -76,7 +76,7 @@ export default function Faq() {
           </div>
         </Col>
       </Row>
-      <Row className="gy-4 mt-1">
+      <Row className="gy-4 gx-5 mt-1">
         {Informacoes.map((faq, index) => (
           <Col key={index} md={6} className="position-relative">
             <Card className="p-4 faq-card shadow-sm">
