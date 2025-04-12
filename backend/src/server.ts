@@ -6,7 +6,7 @@ import db from "./db";
 dotenv.config();
 
 const app = express();
-const port = Number(process.env.PORT) || 3000;
+const port = Number(process.env.PORT) || 4000;
 app.use(cors());
 app.use(express.json());
 
