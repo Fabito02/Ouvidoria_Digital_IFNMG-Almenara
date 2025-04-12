@@ -11,13 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", async (req, res) => {
-  db.query('SELECT 1', (err, results) => {
-    if (err) {
-      res.status(500).send('Erro ao conectar no banco de dados');
-    } else {
       res.send("API do Auris");
-    }
-  });
 });
 
 app.listen(port, () => {
