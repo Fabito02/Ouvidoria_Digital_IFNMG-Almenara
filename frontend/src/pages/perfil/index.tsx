@@ -80,7 +80,7 @@ const Perfil = () => {
                   <Form.Label className="fw-semibold">Perfil</Form.Label>
                   <Form.Select
                     aria-label="Selecione seu perfil"
-                    onChange={(e) => console.log(e.target.value)} // Substitua por lógica para armazenar o valor selecionado
+                    onChange={(e) => console.log(e.target.value)}
                   >
                     <option value="">Selecione seu perfil</option>
                     <option value="servidor">Servidor</option>
