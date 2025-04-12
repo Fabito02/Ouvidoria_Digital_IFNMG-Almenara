@@ -1,5 +1,6 @@
 import connection from './db';
 import mysql from 'mysql2/promise';
+import bcrypt from 'bcryptjs';
 
 async function runSeeds() {
     const promiseConnection = connection.promise();
@@ -43,6 +44,7 @@ async function createTables(conn: mysql.Connection) {
             Foto_Perfil VARCHAR(255),
             SIAPE VARCHAR(50),
             Tipo ENUM('servidor', 'discente', 'docente', 'direção', 'outro') NOT NULL,
+            Senha VARCHAR(255) NOT NULL,
             Data_Criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
             Role ENUM('user', 'admin') DEFAULT 'user'
         ) ENGINE=InnoDB`,
@@ -105,26 +107,32 @@ async function createTables(conn: mysql.Connection) {
 
 async function insertSeeds(conn: mysql.Connection) {
     try {
+        const senhaPadrao = '123456';
+        const hashedSenha = await bcrypt.hash(senhaPadrao, 10);
+
         const users = [
             {
                 Nome: 'Admin Sistema',
                 Email: 'admin@auris.com',
                 Telefone: '(11) 99999-9999',
                 Tipo: 'direção',
-                Role: 'admin'
+                Role: 'admin',
+                Senha: hashedSenha
             },
             {
                 Nome: 'Professor João Silva',
                 Email: 'joao.silva@escola.com',
                 Telefone: '(11) 98888-8888',
                 SIAPE: '1234567',
-                Tipo: 'docente'
+                Tipo: 'docente',
+                Senha: hashedSenha
             },
             {
                 Nome: 'Aluna Maria Souza',
                 Email: 'maria.souza@escola.com',
                 Telefone: '(11) 97777-7777',
-                Tipo: 'discente'
+                Tipo: 'discente',
+                Senha: hashedSenha
             }
         ];
 
