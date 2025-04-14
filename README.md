@@ -127,7 +127,7 @@ npm run dev
 
 ---
 
-## Configurar banco de dados
+### Configurar banco de dados
 
 **• Entre no terminal do Mysql como root**
 
@@ -152,6 +152,20 @@ exit
 ```bash
 cd backend
 ```
+
+**• Crie seu arquivo .env com base no arquivo de exemplo**
+
+```bash
+cp .env_exemplo .env
+```
+
+**• Edite o arquivo trocando "SUA_SENHA_AQUI" pela senha que você configurou no Mysql**
+
+```bash
+nano .env
+```
+
+* CTRL + S para salvar e CTRL + X para sair (isso pode ser feito graficamente utilizando o Vscode ou um editor de texto qualquer)
 
 **• Faça a execução das seeds para povoar o Banco de Dados**
 
