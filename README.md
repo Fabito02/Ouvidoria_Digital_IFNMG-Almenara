@@ -141,6 +141,12 @@ sudo mysql -u root -p
 CREATE DATABASE Auris;
 ```
 
+**• Saia do terminal do Mysql**
+
+```sql
+exit
+```
+
 **• Entre novamente no Backend**
 
 ```bash
