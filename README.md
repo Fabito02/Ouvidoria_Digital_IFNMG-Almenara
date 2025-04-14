@@ -9,7 +9,7 @@
 
 **• Linux**
 
-Utilize alguma um Linux, como ArchLinux, Fedora, ou Ubuntu. Outra opção é utilizar o WSL no Windows, mas se atente ao fato de que, ao utilizar o WSL, será possível notar uma perda significante no desempenho, principalmente em dispositivos de baixo custo em comparação ao sistema operacional nativo, e adicionará mais passos de configuração.
+Utilize alguma distro Linux, como ArchLinux, Fedora, ou Ubuntu. Outra opção é utilizar o WSL no Windows, mas se atente ao fato de que, ao utilizar o WSL, será possível notar uma perda significante no desempenho, principalmente em dispositivos de baixo custo em comparação ao sistema operacional nativo, e adicionará mais passos de configuração.
 
 
 **• Git**
@@ -38,7 +38,7 @@ sudo apt install git
 ArchLinux
 
 ```bash
-sudo pacman -S npm nodejs
+sudo pacman -S nodejs npm
 ```
 
 Fedora
@@ -50,40 +50,38 @@ sudo dnf install nodejs npm
 Ubuntu e derivados
 
 ```bash
-sudo apt install npm nodejs
+sudo apt install nodejs npm
 ```
 
 
-**• Docker**
+**• Mysql**
 
 Arch Linux
 
-sudo pacman -S docker
-sudo systemctl enable --now docker
-sudo usermod -aG docker $USER
+```bash
+sudo pacman -S mysql
+sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+sudo systemctl enable --now mysqld
+```
 
 Fedora
 
 ```bash
-sudo dnf install docker docker-compose
-sudo systemctl enable --now docker
-sudo usermod -aG docker $USER
+sudo dnf install mysql
+sudo systemctl enable --now mysqld
 ```
 
 Ubuntu e derivados
 
 ```bash
-sudo apt install docker.io docker-compose
-sudo systemctl enable --now docker
-sudo usermod -aG docker $USER
+sudo apt install mysql
+sudo systemctl enable --now mysqld
 ```
 
-*Reinicie a sessão para aplicar as permissões.
-
-Teste a instalação:
+Configure sua senha:
 
 ```bash
-docker run hello-world
+sudo mysql_secure_installation
 ```
 
 ### Clonagem do repositório e configuração do ambiente:
@@ -112,7 +110,22 @@ npm install
 
 Aguarde a instalação finalizar
 
-**• Execute a aplicação em um servidor local**
+**• Execute o frontend da aplicação em um servidor local**
+
+```bash
+npm run dev
+```
+
+**• Abra a pasta "backend" e execute a instalação das dependências**
+
+```bash
+cd backend
+npm install
+```
+
+Aguarde a instalação finalizar
+
+**• Execute o frontend da aplicação em um servidor local**
 
 ```bash
 npm run dev
@@ -120,73 +133,36 @@ npm run dev
 
 ---
 
-## Criando uma Branch no Git
+## Configurar banco de dados
 
-### Etapas para criar uma nova branch no Git
-- - -
-
-**Requisitos:**
-
-**• Git**
-
----
-
-### Criando uma Branch no Git
-
-**• Verificar em qual branch você está**
-
-Antes de criar uma nova branch, é bom saber em qual branch você se encontra no momento. Para isso, utilize o comando:
+**• Entre no terminal do Mysql como root**
 
 ```bash
-git branch
+sudo mysql -u root -p
 ```
 
-Antes de seguir para o passo de criação da sua nova branch, certifique-se de estar na branch **main**, pois ela deve ser utilizada como base para a branch que será criada. A branch atual estará marcada com um `*`.
+**• Crie o Banco de Dados**
 
-Caso não esteja na branch **main**, execute o comando:
+```sql
+CREATE DATABASE Auris;
+```
+
+**• Entre novamente no Backend**
 
 ```bash
-git checkout main
+cd backend
 ```
 
-**• Criar uma nova branch**
-
-Para criar uma nova branch, utilize o comando abaixo:
+**• Faça a execução das seeds para povoar o Banco de Dados**
 
 ```bash
-git branch minha-nova-branch
+npm run seed
 ```
 
-Isso cria a nova branch, mas você ainda não mudou para ela. Para mudar para a nova branch, execute o próximo passo.
-
-**• Mudar para a nova branch**
-
-Agora, para mudar para a branch recém-criada, utilize o comando:
-
-```bash
-git checkout minha-nova-branch
-```
-
-Ou, se você quiser criar e já mudar para a nova branch em um único comando:
-
-```bash
-git checkout -b minha-nova-branch
-```
+***Após isso o banco de dados já estará configurado e com dados pré-definidos para a execução de testes.**
 
 
-**• Confirmar a troca de branch**
-
-Para verificar se você está na nova branch, utilize o comando novamente:
-
-```bash
-git branch
-```
-
-Agora o `*` deve estar na sua nova branch!
-
----
-
-### Trabalhando na Nova Branch
+## Enviando alterações
 
 **• Adicionar as alterações**
 
@@ -197,38 +173,13 @@ git add .
 ```
 
 
-**• Comitar as alterações**
+## Comitar as alterações
 
-Depois de adicionar os arquivos, faça o commit com uma mensagem descritiva:
+**• Depois de adicionar os arquivos, faça o commit com uma mensagem descritiva:**
 
+Ex:
 ```bash
-git commit -m "Adicionando minha nova feature"
+git commit -m "feat: Adicionando minha nova feature"
 ```
 
 ***OBS: Esta parte pode ser feita de forma gráfica pelo Visual Studio Code**
-
----
-
-### Enviando a Branch para o Repositório Remoto
-
-**• Enviar a branch para o GitHub**
-
-Para enviar a branch recém-criada para o repositório remoto, utilize:
-
-```bash
-git push -u origin minha-nova-branch
-```
-
-***OBS: Esta parte pode ser feita de forma gráfica pelo Visual Studio Code**
-
----
-
-### Resumo dos Comandos
-
-```bash
-git branch minha-nova-branch        # Cria a branch
-git checkout minha-nova-branch      # Muda para a branch
-git add .                            # Adiciona mudanças
-git commit -m "Mensagem do commit"   # Faz o commit
-git push -u origin minha-nova-branch # Envia a branch para o repositório remoto
-```
