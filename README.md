@@ -6,12 +6,6 @@
 
 ### Requisitos:
 
-
-**• Linux**
-
-Utilize alguma distro Linux, como ArchLinux, Fedora, ou Ubuntu. Outra opção é utilizar o WSL no Windows, mas se atente ao fato de que, ao utilizar o WSL, será possível notar uma perda significante no desempenho, principalmente em dispositivos de baixo custo em comparação ao sistema operacional nativo, e adicionará mais passos de configuração.
-
-
 **• Git**
 
 ArchLinux
@@ -67,15 +61,15 @@ sudo systemctl enable --now mysqld
 Fedora
 
 ```bash
-sudo dnf install mysql
+sudo dnf install mysql-server
 sudo systemctl enable --now mysqld
 ```
 
 Ubuntu e derivados
 
 ```bash
-sudo apt install mysql
-sudo systemctl enable --now mysqld
+sudo apt install mysql-server
+sudo systemctl enable --now mysql
 ```
 
 Configure sua senha:
