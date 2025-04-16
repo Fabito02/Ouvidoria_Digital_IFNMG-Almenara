@@ -1,6 +1,7 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 import "./Informacoes.css";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Informacoes = [
   {
@@ -61,6 +62,10 @@ const Informacoes = [
 ];
 
 export default function Faq() {
+    useEffect(() => {
+      document.title = "Informações e FAQs"
+    })
+
   return (
     <Container className="mb-5">
       <Row className="rowFaq">

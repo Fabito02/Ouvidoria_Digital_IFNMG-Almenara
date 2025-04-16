@@ -5,8 +5,12 @@ import Button from "../../components/buttons/Button";
 import { BlankLayout } from "../../components/BlankLayout/BlankLayout";
 import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
 import "./Perfil.css";
+import { useEffect } from "react";
 
 const Perfil = () => {
+  useEffect(() => {
+    document.title = "Perfil"
+  })
   const [profilePic, setProfilePic] = useState<string | null>(null);
   const [name, setName] = useState("Seu Nome");
   const [email, setEmail] = useState("email@exemplo.com");

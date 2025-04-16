@@ -4,8 +4,12 @@ import ButtonBootstrap from 'react-bootstrap/Button';
 import Button from '../components/buttons/Button';
 import { Icon } from "@iconify-icon/react";
 import { BlankLayout } from '../components/BlankLayout/BlankLayout';
+import { useEffect } from 'react';
 
 const Login = () => {
+    useEffect(() => {
+        document.title = "Login"
+    })
     return (
       <BlankLayout showFooter={false} showHeader={false} showNavbar={false} removeBodyPadding>
         <Container>

@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { Container, Row, Col, Card, Form } from "react-bootstrap";
 import Button from "../../components/buttons/Button";
 import { BlankLayout } from "../../components/BlankLayout/BlankLayout";
+import { useEffect } from "react";
 
 const AlterarSenha = () => {
+  useEffect(() => {
+    document.title = "Alterar Senha"
+  })
   const [senhaAtual, setSenhaAtual] = useState("");
   const [novaSenha, setNovaSenha] = useState("");
   const [confirmacao, setConfirmacao] = useState("");

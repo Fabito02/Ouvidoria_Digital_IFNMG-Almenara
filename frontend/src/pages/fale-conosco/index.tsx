@@ -1,8 +1,12 @@
 import { Container, Row, Col } from "react-bootstrap";
 import './fale-conosco.css'
 import { BlankLayout } from "../../components/BlankLayout/BlankLayout";
+import { useEffect } from "react";
 
-const Reclamacao = () => {
+const FaleConosco = () => {
+  useEffect(() => {
+    document.title = "Fale Conosco"
+  })
     return (
       <BlankLayout showFooter={false} showHeader={true} showNavbar={true} removeBodyPadding={false}>
         <Container className="container-cards mt-5">
@@ -37,5 +41,5 @@ const Reclamacao = () => {
     );
   };
   
-  export default Reclamacao;
+  export default FaleConosco;
   

@@ -10,6 +10,9 @@ const Reclamacao = () => {
   const editorRef = useRef<Quill | null>(null);
 
   useEffect(() => {
+
+    document.title = "Enviar reclamação"
+
     if (!editorRef.current) {
       editorRef.current = new Quill("#editor", {
         theme: "snow",

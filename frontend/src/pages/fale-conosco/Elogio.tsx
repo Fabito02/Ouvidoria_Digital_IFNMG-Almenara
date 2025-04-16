@@ -11,6 +11,9 @@ const Elogio = () => {
   const editorRef = useRef<Quill | null>(null);
 
   useEffect(() => {
+    
+    document.title = "Enviar elogio"
+
     if (!editorRef.current) {
       editorRef.current = new Quill("#editor", {
         theme: "snow",

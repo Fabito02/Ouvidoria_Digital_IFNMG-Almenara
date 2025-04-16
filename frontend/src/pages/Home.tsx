@@ -30,6 +30,7 @@ const data_cards = [
 const Home = () => {
 
   useEffect(() => {
+    document.title = "Home"
     const fetchData = async () => {
       try {
         const usuarios = await getUsuarios();

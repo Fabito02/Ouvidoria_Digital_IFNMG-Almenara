@@ -16,6 +16,8 @@ const Acompanhamento = () => {
 
   useEffect(() => {
 
+    document.title = "Acompanhamento"
+
     const handleExibirTab = () => {
       const tabs = document.querySelectorAll(".tabContainer");
       tabs.forEach((tab) => {

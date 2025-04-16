@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 const Regulamento = () => {
+  useEffect(() => {
+    document.title = "Regulamento"
+  })
     return (
       <div>
         <h1>Bem-vindo ao Regulamento do site</h1>
