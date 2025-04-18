@@ -92,7 +92,17 @@ async function createTables(conn: mysql.Connection) {
             Data_Acao DATETIME DEFAULT CURRENT_TIMESTAMP,
             User_ID INT,
             FOREIGN KEY (User_ID) REFERENCES Users(User_ID) ON DELETE SET NULL
-        ) ENGINE=InnoDB`
+        ) ENGINE=InnoDB`,
+
+        `CREATE TABLE IF NOT EXISTS Notificacoes (
+            Notificacao_ID INT AUTO_INCREMENT PRIMARY KEY,
+            Titulo VARCHAR(100) NOT NULL,
+            Mensagem TEXT NOT NULL,
+            Status ENUM('lida', 'pendente') DEFAULT 'pendente',
+            Data_Criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+            User_ID INT NOT NULL,
+            FOREIGN KEY (User_ID) REFERENCES Users(User_ID) ON DELETE CASCADE
+        ) ENGINE=InnoDB`,
     ];
 
     for (const [index, query] of queries.entries()) {
@@ -223,6 +233,36 @@ async function insertSeeds(conn: mysql.Connection) {
             );
         }
         console.log('Respostas inseridas/verificadas');
+
+        const notificacoes = [
+            {
+                Titulo: 'Bem-vindo ao Auris!',
+                Mensagem: 'Sua conta foi criada com sucesso. Aproveite a plataforma!',
+                Status: 'lida',
+                User_ID: 1
+            },
+            {
+                Titulo: 'Nova manifestação recebida',
+                Mensagem: 'Você recebeu uma nova manifestação para análise.',
+                Status: 'pendente',
+                User_ID: 1
+            },
+            {
+                Titulo: 'Resposta recebida',
+                Mensagem: 'Sua manifestação "Solicitação de material" recebeu uma resposta.',
+                Status: 'pendente',
+                User_ID: 3
+            }
+        ];
+        
+        for (const notificacao of notificacoes) {
+            await conn.query(
+                'INSERT IGNORE INTO Notificacoes SET ?',
+                notificacao
+            );
+        }
+        console.log('Notificações inseridas/verificadas');
+        
 
     } catch (err) {
         console.error('Erro ao inserir seeds:', err);
