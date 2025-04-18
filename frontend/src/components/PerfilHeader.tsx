@@ -27,7 +27,7 @@ const PerfilHeader = () => {
             <AvatarImage src="/pudim.png" alt="Ícone do Usuário" />
             <AvatarFallback>PN</AvatarFallback>
           </Avatar>
-          <p className="font-medium nome">Username</p>
+          <p className="font-medium username">Username</p>
           </div>
 
           <DropdownMenuItem asChild className="mt-1 rounded-[12px] item-dropdown">

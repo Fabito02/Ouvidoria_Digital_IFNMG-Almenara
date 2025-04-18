@@ -49,10 +49,10 @@ const Home = () => {
 
       <section className="hero-banner bg-gray-100 py-12">
         <div className="max-w-5xl mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold mb-4 frase-impactante">
+          <h1 className="text-5xl font-bold mb-4 frase-impactante">
             Sua voz é importante!
           </h1>
-          <p className="mb-6">
+          <p className="mb-6 text-gray-600">
             Compartilhe aqui suas críticas, elogios, denúncias, sugestões ou
             necessidades.
           </p>

@@ -1,6 +1,8 @@
 import { Icon } from "@iconify-icon/react";
 import Button from "./buttons/Button";
 import "./Footer.css";
+import { Link } from "react-router-dom";
+import { Target } from "lucide-react";
 
 const Footer = () => {
   const sections = [
@@ -13,6 +15,7 @@ const Footer = () => {
         { name: "Informações e FAQs", link: "/informacoes" },
         { name: "Políticas e Regulamentos", link: "/regulamento" },
       ],
+      target: ""
     },
     {
       title: "Desenvolvedores",
@@ -22,6 +25,7 @@ const Footer = () => {
         { name: "Pablo Messias - Design", link: "https://github.com/PabloMessias007/" },
         { name: "Bruno Araújo - Design", link: "https://github.com/EoBrunin/" },
       ],
+      target: "blank"
     },
   ];
 
@@ -45,14 +49,14 @@ const Footer = () => {
               <ul className="space-y-2">
                 {section.items.map((item, i) => (
                   <li key={i}>
-                    <a
-                      href={item.link}
+                    <Link
+                      to={item.link}
                       className="text-white hover:text-gray-400 text-sm"
-                      target="_blank"
+                      target={section.target}
                       rel="noopener noreferrer"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

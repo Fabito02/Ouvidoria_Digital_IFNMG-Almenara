@@ -16,7 +16,7 @@ const Registrar = () => {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
           <div className="col-lg-5 box">
-            <h1 className="title">Bem Vindo!</h1>
+            <h1 className="title-login">Bem Vindo!</h1>
             <p className="subtitle mt-4">
               Caso você já possua uma conta,<br />
               entre com o botão abaixo
@@ -26,7 +26,7 @@ const Registrar = () => {
                 outline
                 full_rounded
                 color="white"
-                className="mt-2"
+                className="mt-4"
               >
                 LOGIN
               </Button>
@@ -45,7 +45,7 @@ const Registrar = () => {
                 />
               </div>
 
-              <p className="mb-4">ou use seu e-mail para entrar</p>
+              <p className="mb-4">ou use seu e-mail para registrar</p>
 
               <form className="px-15">
                 <div className="relative mb-3">

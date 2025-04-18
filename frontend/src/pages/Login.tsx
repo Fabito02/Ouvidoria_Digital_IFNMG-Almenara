@@ -16,7 +16,7 @@ const Login = () => {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
           <div className="col-lg-5 box">
-            <h1 className="title">Bem Vindo!</h1>
+            <h1 className="title-login">Bem Vindo!</h1>
             <p className="subtitle mt-4">
               Caso você não possua uma conta,<br />
               crie com o botão abaixo
@@ -26,7 +26,7 @@ const Login = () => {
                 outline
                 full_rounded
                 color="white"
-                className="mt-2"
+                className="mt-4"
               >
                 REGISTRAR
               </Button>

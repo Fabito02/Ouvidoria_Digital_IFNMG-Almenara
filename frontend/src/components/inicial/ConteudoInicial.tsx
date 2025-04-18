@@ -31,12 +31,12 @@ const ConteudoHome = () => {
 
   return (
     <BlankLayout>
-      <Link to="/login">
+      <Link to="/login" className="z-100">
         <Button texto="login" className="login-btn" />
       </Link>
       <img src="/home/auris.svg" alt="Logo Auris" className="logo-auris" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 animar tela px-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 animar tela primeira-tela px-20">
         <div className="textos text-right coluna-tela">
           <h1 className="title">Auris – Ouvidoria Digital</h1>
             <p className="complemento flex flex-col items-center lg:items-end">
