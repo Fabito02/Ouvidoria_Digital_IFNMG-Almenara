@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Button } from "react-bootstrap";
+import { Button } from "@/components/ui/button"
 import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
 import "./Acompanhamento.css";
 import { BlankLayout } from "../../components/BlankLayout/BlankLayout";
@@ -22,9 +22,9 @@ const Acompanhamento = () => {
       const tabs = document.querySelectorAll(".tabContainer");
       tabs.forEach((tab) => {
         if (tab.id === `tab-${abaSelecionada}`) {
-          tab.classList.remove("d-none");
+          tab.classList.remove("hidden");
         } else {
-          tab.classList.add("d-none");
+          tab.classList.add("hidden");
         }
       });
     };
@@ -46,7 +46,7 @@ const Acompanhamento = () => {
 
   return (
     <BlankLayout showFooter={false} showHeader={true} showNavbar={true} removeBodyPadding={false}>   
-      <Container fluid className="corpoDoSite">
+      <div className="corpoDoSite">
         <div className={`barraLateral ${expandido ? "expandido" : ""}`}>
           <Button
             onClick={toggleSidebar}
@@ -69,25 +69,25 @@ const Acompanhamento = () => {
         </div>
 
         <div className={`conteudo ${expandido ? "escurecido" : ""}`} onClick={() => setExpandido(false)}>
-          <Container className="conteudoContainer">
-            <div className="tabContainer d-none" id="tab-0">
+            <div className="conteudoContainer">
+            <div className="tabContainer hidden" id="tab-0">
               <Geral />
             </div>
-            <div className="tabContainer d-none" id="tab-1">
+            <div className="tabContainer hidden" id="tab-1">
               <Reclamacoes />
             </div>
-            <div className="tabContainer d-none" id="tab-2">
+            <div className="tabContainer hidden" id="tab-2">
               <Elogios />
             </div>
-            <div className="tabContainer d-none" id="tab-3">
+            <div className="tabContainer hidden" id="tab-3">
               <Denuncias />
             </div>
-            <div className="tabContainer d-none" id="tab-4">
+            <div className="tabContainer hidden" id="tab-4">
               <Sugestoes />
             </div>
-          </Container>
+          </div>
         </div>
-      </Container>
+      </div>
     </BlankLayout>
   );
 };
