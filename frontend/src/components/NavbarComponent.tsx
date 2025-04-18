@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./NavbarComponent.css";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "./ui/dropdown-menu";
@@ -6,30 +6,31 @@ import { Icon } from "@iconify-icon/react";
 
 const NavbarComponent = () => {
   const [isVisible, setIsVisible] = useState(true);
-  let lastScrollY = 0;
+  const lastScrollY = useRef(0);
 
-  const handleScroll = () => {
-    if (window.scrollY > lastScrollY) {
+  const handleScroll = useCallback(() => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY.current) {
       setIsVisible(false);
     } else {
       setIsVisible(true);
     }
-    lastScrollY = window.scrollY;
-  };
+    lastScrollY.current = currentScrollY;
+  }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   return (
     <nav
       className={`fixed top-[65px] left-0 w-full z-50 bg-white border-t border-b py-1.5 lg:flex justify-between mx-auto px-4 transition-transform duration-300 ease-in-out ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
-      style={{height: "45px"}}
+      style={{ height: "45px" }}
     >
       <div className="hidden lg:flex space-x-4 justify-center w-full">
         <Link to="/home" className="link-navbar">HOME</Link>

@@ -37,7 +37,7 @@ const Perfil = () => {
   return (
     <BlankLayout showFooter={false} showHeader={true} showNavbar={true}>
       <div className="py-10 px-4 max-w-3xl mx-auto">
-        <Card className="p-6 border-0 card-configuracoes shadow-none">
+        <Card className="p-2 border-0 card-configuracoes shadow-none">
           <CardContent className="flex flex-col gap-6">
             <div className="flex justify-center">
               <div className="relative w-40 h-40 rounded-full overflow-hidden">

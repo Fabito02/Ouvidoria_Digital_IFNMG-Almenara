@@ -2,7 +2,6 @@ import { Icon } from "@iconify-icon/react";
 import Button from "./buttons/Button";
 import "./Footer.css";
 import { Link } from "react-router-dom";
-import { Target } from "lucide-react";
 
 const Footer = () => {
   const sections = [
@@ -20,7 +19,7 @@ const Footer = () => {
     {
       title: "Desenvolvedores",
       items: [
-        { name: "Fabiano Júnior - Design/Frontend", link: "https://github.com/Fabito02/" },
+        { name: "Fabiano Júnior - Design, Frontend, Backend", link: "https://github.com/Fabito02/" },
         { name: "Francisco Rodrigues - Design", link: "https://github.com/FranSRodrigues/" },
         { name: "Pablo Messias - Design", link: "https://github.com/PabloMessias007/" },
         { name: "Bruno Araújo - Design", link: "https://github.com/EoBrunin/" },

@@ -36,7 +36,7 @@ const ConteudoHome = () => {
       </Link>
       <img src="/home/auris.svg" alt="Logo Auris" className="logo-auris" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 animar tela primeira-tela px-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 animar tela primeira-tela px-[7vw]">
         <div className="textos text-right coluna-tela">
           <h1 className="title">Auris – Ouvidoria Digital</h1>
             <p className="complemento flex flex-col items-center lg:items-end">
@@ -52,7 +52,7 @@ const ConteudoHome = () => {
       </div>
 
       <div className="bg-cinza">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 animar tela px-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 animar tela px-[7vw]">
           <div className="textos text-right coluna-tela">
             <h1 className="title">Locais mais bem avaliados do campus:</h1>
             <p className="complemento">
@@ -65,7 +65,7 @@ const ConteudoHome = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 animar tela px-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 animar tela px-[7vw]">
         <div className="imagem col-inverso coluna-tela">
           <img src="/home/img2.svg" alt="Homem utilizando o computador" className="imagemCol" />
         </div>
@@ -77,7 +77,7 @@ const ConteudoHome = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 animar tela px-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 animar tela px-[7vw]">
         <div className="textos text-right coluna-tela">
           <h1 className="title">Escutamos agora para melhorar sempre!</h1>
           <p className="complemento">
@@ -90,7 +90,7 @@ const ConteudoHome = () => {
       </div>
 
       <div className="bg-cinza">
-        <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 animar tela px-20">
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 animar tela px-[7vw]">
           <div className="column textos coluna-tela">
             <div className="title">Venha fazer parte da mudança!</div>
             <p className="complemento">

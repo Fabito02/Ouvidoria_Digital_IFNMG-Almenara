@@ -42,8 +42,6 @@ const Home = () => {
     fetchData()
   }, [])
 
-  const showIndicators = window.innerWidth > 662
-
   return (
     <div className="ouvidoria-home">
 
