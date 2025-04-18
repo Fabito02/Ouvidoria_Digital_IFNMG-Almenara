@@ -1,5 +1,6 @@
 import Search from "../components/Search";
 import PerfilHeader from "../components/PerfilHeader";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -9,7 +10,7 @@ const Header = () => {
         height: "auto",
         padding: "5px",
         position: "fixed",
-        backgroundColor: "rgb(255 255 255 / 80%)",
+        backgroundColor: "rgb(255 255 255 / 87%)",
         backdropFilter: "blur(15px)",
         top: 0,
         display: "flex",
@@ -18,14 +19,22 @@ const Header = () => {
         zIndex: 100,
       }}
     >
-      <a href="/">
+      <Link to="/">
         <img
-          className="ifnmg-imagem"
-          src={window.innerWidth <= 768 ? "/IFNMG.png" : "/IFNMG - Almenara.png"}
+          className="ifnmg-imagem pr-2"
+          src={
+            window.innerWidth <= 768 ? "/IFNMG.png" : "/IFNMG - Almenara.png"
+          }
           alt="IFNMG - Almenara"
-          style={{ maxHeight: "55px", height: "100%", marginRight: "10px" }}
-        ></img>
-      </a>
+          style={{
+            maxHeight: "55px",
+            minHeight: "55px",
+            width: "auto",
+            marginRight: "10px",
+            objectFit: "contain",
+          }}
+        />
+      </Link>
       <Search />
       <PerfilHeader />
     </header>

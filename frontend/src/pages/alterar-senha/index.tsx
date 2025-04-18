@@ -1,76 +1,75 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Card, Form } from "react-bootstrap";
-import Button from "../../components/buttons/Button";
-import { BlankLayout } from "../../components/BlankLayout/BlankLayout";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import Button from "@/components/buttons/Button";
+import { BlankLayout } from "@/components/BlankLayout/BlankLayout";
 
 const AlterarSenha = () => {
   useEffect(() => {
-    document.title = "Alterar Senha"
-  })
+    document.title = "Alterar Senha";
+  }, []);
+
   const [senhaAtual, setSenhaAtual] = useState("");
   const [novaSenha, setNovaSenha] = useState("");
   const [confirmacao, setConfirmacao] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({
-      senhaAtual,
-      novaSenha,
-      confirmacao,
-    });
+    console.log({ senhaAtual, novaSenha, confirmacao });
   };
 
   return (
     <BlankLayout showFooter={false}>
-        <Container className="py-5">
-        <Row className="justify-content-center">
-            <Col xs={12} md={8} lg={6}>
-            <Card className="shadow-sm p-4 float-card">
-                <h1 className="mb-4 text-center muted">Alterar Senha</h1>
-                <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3">
-                    <Form.Label>Senha Atual</Form.Label>
-                    <Form.Control
-                    type="password"
-                    value={senhaAtual}
-                    onChange={(e) => setSenhaAtual(e.target.value)}
-                    placeholder="••••••••"
-                    />
-                </Form.Group>
+      <div className="max-w-md mx-auto py-10 px-4">
+        <div className="bg-white rounded-lg p-6">
+          <h1 className="text-3xl font-semibold text-center mb-6">
+            Alterar Senha
+          </h1>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="space-y-1">
+              <Label htmlFor="senhaAtual">Senha Atual</Label>
+              <Input
+                id="senhaAtual"
+                type="password"
+                value={senhaAtual}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSenhaAtual(e.target.value)}
+                placeholder="••••••••"
+                required
+              />
+            </div>
 
-                <Form.Group className="mb-3">
-                    <Form.Label>Nova Senha</Form.Label>
-                    <Form.Control
-                    type="password"
-                    value={novaSenha}
-                    onChange={(e) => setNovaSenha(e.target.value)}
-                    placeholder="••••••••"
-                    />
-                </Form.Group>
+            <div className="space-y-1">
+              <Label htmlFor="novaSenha">Nova Senha</Label>
+              <Input
+                id="novaSenha"
+                type="password"
+                value={novaSenha}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNovaSenha(e.target.value)}
+                placeholder="••••••••"
+                required
+              />
+            </div>
 
-                <Form.Group className="mb-4">
-                    <Form.Label>Confirmar Nova Senha</Form.Label>
-                    <Form.Control
-                    type="password"
-                    value={confirmacao}
-                    onChange={(e) => setConfirmacao(e.target.value)}
-                    placeholder="••••••••"
-                    />
-                </Form.Group>
-
-                <div className="text-end">
-                    <Button
-                    texto="Salvar Nova Senha"
-                    icon="material-symbols:lock"
-                    type="submit"
-                    />
-                </div>
-                </Form>
-            </Card>
-            </Col>
-        </Row>
-        </Container>
+            <div className="space-y-1">
+              <Label htmlFor="confirmacao">Confirmar Nova Senha</Label>
+              <Input
+                id="confirmacao"
+                type="password"
+                value={confirmacao}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setConfirmacao(e.target.value)}
+                placeholder="••••••••"
+                required
+              />
+            </div>
+            <Button
+              type="submit"
+              texto="Salvar Nova Senha"
+              icon="material-symbols:lock"
+              className="w-full"
+            />
+          </form>
+        </div>
+      </div>
     </BlankLayout>
   );
 };

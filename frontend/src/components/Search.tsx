@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Input } from "../components/ui/input";
+import { Button } from '../components/ui/button';
 import { Icon } from '@iconify-icon/react';
+import { toast } from 'sonner';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import CustomToast from './CustomToast';
 import './Search.css';
 
 const SearchBar = () => {
@@ -13,11 +14,8 @@ const SearchBar = () => {
     browserSupportsSpeechRecognition,
     isMicrophoneAvailable
   } = useSpeechRecognition();
-  
+
   const [searchQuery, setSearchQuery] = useState('');
-  const [showToast, setShowToast] = useState(false);
-  const [toastMessage, setToastMessage] = useState('');
-  const [toastVariant, setToastVariant] = useState<'primary' | 'success' | 'danger' | 'warning' | 'info'>('primary');
 
   useEffect(() => {
     if (transcript) {
@@ -35,17 +33,14 @@ const SearchBar = () => {
   };
 
   const toggleListening = () => {
-
     if (!browserSupportsSpeechRecognition) {
-      setToastMessage('Seu navegador não suporta reconhecimento de voz.');
-      setToastVariant('info');
-      setShowToast(true);
-    } else if (!isMicrophoneAvailable) {
-      setToastMessage('Microfone não disponível. Você ainda pode digitar sua pesquisa.');
-      setToastVariant('info');
-      setShowToast(true);
+      toast.info('Seu navegador não suporta reconhecimento de voz.');
+      return;
     }
-
+    if (!isMicrophoneAvailable) {
+      toast.warning('Microfone não disponível. Você ainda pode digitar sua pesquisa.');
+      return;
+    }
     if (listening) {
       SpeechRecognition.stopListening();
     } else {
@@ -55,75 +50,59 @@ const SearchBar = () => {
         language: 'pt-BR'
       }).catch((error?: unknown) => {
         console.error('Erro ao iniciar reconhecimento de voz:', error);
-        setToastMessage('Erro ao acessar o microfone. Você ainda pode digitar sua pesquisa.');
-        setToastVariant('info');
-        setShowToast(true);
+        toast.error('Erro ao acessar o microfone. Você ainda pode digitar sua pesquisa.');
       });
     }
   };
 
   return (
-    <div className='container-search'>
-      <Form 
-        onSubmit={handleSearchSubmit} 
-        className="d-flex align-items-center position-relative search-bar-customizado"
-        style={{marginRight: '45px'}}
+    <div className="container-search">
+      <form
+        onSubmit={handleSearchSubmit}
+        className="flex items-center relative search-bar-customizado"
+        style={{ marginRight: '45px' }}
       >
-        
-        <Form.Control
+        <Input
           type="search"
           placeholder="Pesquisar..."
           value={searchQuery}
           onChange={handleSearchChange}
-          className="flex-grow-1"
+          className="flex-grow"
           style={{
             borderRadius: '14px',
-            paddingLeft: '20px',
-            paddingRight: '38px',
-            border: 'none',
             fontSize: '15px',
             height: '38px',
           }}
         />
 
-          <Button
-            type="submit"
-            variant="link"
-            className='submit-button'
-          >
-            <Icon 
-              icon="material-symbols:search"
-              style={{
-                fontSize: '22px',
-              }}
-            />
-          </Button>
-        
-          <Icon 
-            icon={listening ? "material-symbols:mic-off" : "material-symbols:mic"}
-            className="position-absolute microphone-icon"
-            onClick={toggleListening}
-            style={{
-              fontSize: '22px',
-              right: '10px',
-              color: listening ? 'var(--color-secondary)' : '#00000066',
-              cursor: 'pointer',
-            }}
-            aria-label={listening ? "Parar gravação" : "Iniciar gravação"}
-            role="button"
-            tabIndex={0}
+        <Button
+          type="submit"
+          variant="ghost"
+          className="submit-button"
+          size="icon"
+        >
+          <Icon
+            icon="material-symbols:search"
+            style={{ fontSize: '22px' }}
           />
-        
-      </Form>
-      
-      <CustomToast
-        show={showToast}
-        onClose={() => setShowToast(false)}
-        message={toastMessage}
-        variant={toastVariant}
-      />
+        </Button>
+
+        <Icon
+          icon={listening ? "material-symbols:mic-off" : "material-symbols:mic"}
+          className="absolute right-2 microphone-icon"
+          onClick={toggleListening}
+          style={{
+            fontSize: '22px',
+            color: listening ? 'var(--color-secondary)' : '#00000066',
+            cursor: 'pointer',
+          }}
+          aria-label={listening ? "Parar gravação" : "Iniciar gravação"}
+          role="button"
+          tabIndex={0}
+        />
+      </form>
     </div>
   );
-}
+};
 
 export default SearchBar;

@@ -1,33 +1,30 @@
-import { Row, Col, Card, Container } from 'react-bootstrap';
-import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
 import "./CardInfo.css";
 
 type CardInfoProps = {
-    conteudo_cards: Array<{
-        total: number;
-        titulo: string;
-        cor?: string;
-    }>;
-}
-
-const CardInfo = (conteudo_cards: CardInfoProps) => {
-
-  return (
-      <section className="info-cards py-5">
-        <Container>
-          <Row className="justify-content-center g-4">
-            {conteudo_cards.conteudo_cards.map((card) => (
-                <Col xs={12} md={6} lg={3} className="d-flex justify-content-center">
-                  <Card className={`card-info shadow-sm w-100 ${card.cor? card.cor : "primary"}`}>
-                  <h2 className="total mt-2">{card.total}</h2>
-                  <h2 className="titulo-card-info text-muted">{card.titulo}</h2>
-                  </Card>
-                </Col>
-            ))}
-            </Row>
-        </Container>
-      </section>
-  );
+  conteudo_cards: Array<{
+    total: number;
+    titulo: string;
+    cor?: string;
+  }>;
 };
 
-export default CardInfo;
+export default function CardInfo({ conteudo_cards }: CardInfoProps) {
+  return (
+    <section className="info-cards py-3">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {conteudo_cards.map((card, index) => (
+            <div
+              key={index}
+              className={`card-info shadow-sm ${card.cor ?? "primary"}`}
+            >
+              <h1 className="total">{card.total}</h1>
+              <h2 className="titulo-card-info  text-gray-200 mt-13">{card.titulo}</h2>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

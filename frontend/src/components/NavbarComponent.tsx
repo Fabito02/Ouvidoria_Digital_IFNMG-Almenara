@@ -1,39 +1,68 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
-import './NavbarComponent.css';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./NavbarComponent.css";
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "./ui/dropdown-menu";
+import { Icon } from "@iconify-icon/react";
 
 const NavbarComponent = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  let lastScrollY = 0;
+
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY) {
+      setIsVisible(false);
+    } else {
+      setIsVisible(true);
+    }
+    lastScrollY = window.scrollY;
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Navbar expand="lg" style={{ zIndex: 2 }} className='lineBottom lineTop'>
-      <Container className="d-flex justify-content-end">
-        <Navbar.Toggle  
-          style={{
-            position:"relative",
-            borderRadius:'8px',
-            marginBottom:'5px',
-            border:'none',
-            outline:'none',
-          }} />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav
-            className="d-flex justify-content-center"
-            style={{
-              display: 'flex',
-              width: '100%',
-              gap: '15px',
-            }}
-          >
-            <Link className="link-navbar" to="/home" style={{ backgroundColor: '#ffffff' }}>HOME</Link>
-            <Link className="link-navbar" to="/fale-conosco" style={{ backgroundColor: '#ffffff' }}>FALE CONOSCO</Link>
-            <Link className="link-navbar" to="/acompanhamento" style={{ backgroundColor: '#ffffff' }}>ACOMPANHAMENTO</Link>
-            <Link className="link-navbar" to="/informacoes" style={{ backgroundColor: '#ffffff' }}>INFORMAÇÕES E FAQs</Link>
-            <Link className="link-navbar" to="/regulamento" style={{ backgroundColor: '#ffffff' }}>POLÍTICAS E REGULAMENTOS</Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <nav
+      className={`fixed top-[65px] left-0 w-full z-50 bg-white border-t border-b py-1.5 lg:flex justify-between mx-auto px-4 transition-transform duration-300 ease-in-out ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+      style={{height: "45px"}}
+    >
+      <div className="hidden lg:flex space-x-4 justify-center w-full">
+        <Link to="/home" className="link-navbar">HOME</Link>
+        <Link to="/fale-conosco" className="link-navbar">FALE CONOSCO</Link>
+        <Link to="/acompanhamento" className="link-navbar">ACOMPANHAMENTO</Link>
+        <Link to="/informacoes" className="link-navbar">INFORMAÇÕES E FAQs</Link>
+        <Link to="/regulamento" className="link-navbar">POLÍTICAS E REGULAMENTOS</Link>
+      </div>
+      <div className="lg:hidden ml-auto flex items-center justify-end">
+        <DropdownMenu>
+          <DropdownMenuTrigger className="focus:outline-none">
+            <Icon icon="heroicons-solid:menu-alt-3" height="30px" />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="menu-mobile-content mt-1 mr-2" sideOffset={5}>
+            <Link to="/home">
+              <DropdownMenuItem className="link-navbar-menu">HOME</DropdownMenuItem>
+            </Link>
+            <Link to="/fale-conosco">
+              <DropdownMenuItem className="link-navbar-menu">FALE CONOSCO</DropdownMenuItem>
+            </Link>
+            <Link to="/acompanhamento">
+              <DropdownMenuItem className="link-navbar-menu">ACOMPANHAMENTO</DropdownMenuItem>
+            </Link>
+            <Link to="/informacoes">
+              <DropdownMenuItem className="link-navbar-menu">INFORMAÇÕES E FAQs</DropdownMenuItem>
+            </Link>
+            <Link to="/regulamento">
+              <DropdownMenuItem className="link-navbar-menu">POLÍTICAS E REGULAMENTOS</DropdownMenuItem>
+            </Link>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+    </nav>
   );
 };
 

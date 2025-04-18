@@ -1,75 +1,24 @@
-.dropdown-menu {
-  border-radius: 16px !important;
-  margin-top: 10px !important;
-  display: flex;
-  align-items: center;
-  border: 0 !important;
-}
-
-.dropdown-menu .dropdown-item {
-  color: rgb(102, 102, 102) !important;
-  margin: 5px;
-  width: auto;
-  display: flex;
-  align-items: center;
-  height: 50px !important;
-  padding: 10px;
-  height: 35px;
-  margin: 0 8px 0 8px !important;
-  border-radius: 12px;
-  width: 210px;
-  text-wrap: wrap;
-  line-height: 1;
-}
-
-.dropdown-menu .dropdown-item:hover {
-  background-color: #0000000a;
-}
-
-.dropdown-menu .dropdown-item:hover .iconMenu {
-  background-color: #cbcbcb !important;
-}
-
-.dropdown-menu .dropdown-item .iconMenu {
-  aspect-ratio: 1 / 1;
-  margin-right: 10px !important;
-}
-
-.dropdown-menu {
-  transform: translateY(45px) !important;
-  transition: all 0.2s !important;
-  opacity: 0;
-  display: block !important;
-}
-
-.dropdown-menu.show {
-  opacity: 1;
-  transform: translateY(50px) !important;
-}
-
-.botao-notificacao {
-  position: relative;
-  cursor: pointer;
-}
-
-.botao-notificacao.active ::after {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: 4px;
-  width: 12px;
-  height: 12px;
-  border: 2.5px solid white;
-  background-color: var(--color-primary);
-  transform: translateX(10px);
-  border-radius: 12px;
-}
-
 .iconMenu {
-  background-color: #dcdcdc;
+  background-color: var(--color-cinza-semitransparente-claro);
   padding: 10px;
   border-radius: 50%;
   transition: all 0.3s ease;
+  color: rgb(113, 113, 113) !important;
+}
+
+.item-dropdown {
+  transition: all 0.3s ease;
+}
+
+.item-dropdown:hover {
+  background-color: var(--color-cinza-semitransparente-claro);
+}
+
+.link_item {
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.686);
 }
 
 .topDropdown {
@@ -84,7 +33,29 @@
 .nome {
   display: flex;
   align-items: center;
-  height: 100%;
   margin-right: 10px;
   margin-left: 5px;
+}
+
+.botao-notificacao {
+  position: relative;
+  cursor: pointer;
+}
+
+.botao-notificacao.active ::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 4px;
+  width: 12px;
+  aspect-ratio: 1/1;
+  border: 2.5px solid white;
+  background-color: var(--color-primary);
+  transform: translateX(10px);
+  border-radius: 12px;
+}
+
+.menu-opcoes {
+  background-color: rgb(255 255 255 / 87%);
+  backdrop-filter: blur(15px);
 }

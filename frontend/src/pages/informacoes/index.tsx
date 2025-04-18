@@ -1,16 +1,16 @@
-import { Container, Row, Col, Card } from "react-bootstrap";
-import "./Informacoes.css";
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect } from "react"
+import { Link } from "react-router-dom"
+import { Card } from "@/components/ui/card"
+import "./Informacoes.css"
 
 const Informacoes = [
   {
     title: "Como posso entrar em contato com a Ouvidoria do IFNMG Almenara?",
     content: (
       <>
-        Você pode entrar em contato através do{" "}
-        <Link className="link" to="/fale-conosco">formulário online</Link> disponível no site da
-        ouvidoria, por e-mail (<a className="link" href="mailto:6n9GK@example.com">ouvidoria.almenara@ifnmg.edu.br</a>), por telefone (<a className="link" href="tel: +55 33 4402-8922">+55 33 4402-8922</a>) ou pessoalmente
+        Você pode entrar em contato através do {" "}
+        <Link className="text-primary underline" to="/fale-conosco">formulário online</Link> disponível no site da
+        ouvidoria, por e-mail (<a className="text-primary underline" href="mailto:ouvidoria.almenara@ifnmg.edu.br">ouvidoria.almenara@ifnmg.edu.br</a>), por telefone (<a className="text-primary underline" href="tel:+553344028922">+55 33 4402-8922</a>) ou pessoalmente
         no setor da Ouvidoria no campus, de segunda a sexta-feira, das 8h às
         17h.
       </>
@@ -20,9 +20,7 @@ const Informacoes = [
     title: "Quanto tempo leva para receber uma resposta da Ouvidoria?",
     content: (
       <>
-        O prazo máximo para resposta é de 20 dias corridos, prorrogáveis por mais 10 dias mediante justificativa, conforme estabelece o <a className="link" href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/decreto/d10153.htm">Decreto nº 10.153/2019</a>, posteriormente alterado pelo decreto <a className="link" href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/decreto/d10890.htm">Decreto nº 10.890/2021
-
-</a>. Ainda assim, buscamos responder o mais rápido possível, geralmente em até 3 dias úteis.
+        O prazo máximo para resposta é de 20 dias corridos, prorrogáveis por mais 10 dias mediante justificativa, conforme estabelece o <a className="text-primary underline" href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/decreto/d10153.htm">Decreto nº 10.153/2019</a>, posteriormente alterado pelo decreto <a className="text-primary underline" href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/decreto/d10890.htm">Decreto nº 10.890/2021</a>. Ainda assim, buscamos responder o mais rápido possível, geralmente em até 3 dias úteis.
       </>
     ),
   },
@@ -45,7 +43,7 @@ const Informacoes = [
     title: "Como acompanho o andamento da minha manifestação?",
     content: (
       <>
-        Ao registrar sua manifestação, você pode acompanhar o andamento através do sistema, em <a href="/minhas-manifestacoes" className="link">Minhas manifestações</a> ou entrar em contato diretamente com a Ouvidoria para solicitar informações."
+        Ao registrar sua manifestação, você pode acompanhar o andamento através do sistema, em <a href="/minhas-manifestacoes" className="text-primary underline">Minhas manifestações</a> ou entrar em contato diretamente com a Ouvidoria para solicitar informações.
       </>
     ),
   },
@@ -59,38 +57,34 @@ const Informacoes = [
     content:
       "O atendimento presencial ocorre de segunda a sexta-feira, das 8h às 12h e das 14h às 17h, no prédio administrativo do campus, sala da Ouvidoria.",
   },
-];
+]
 
 export default function Faq() {
-    useEffect(() => {
-      document.title = "Informações e FAQs"
-    })
+  useEffect(() => {
+    document.title = "Informações e FAQs"
+  }, [])
 
   return (
-    <Container className="mb-5">
-      <Row className="rowFaq">
-        <Col lg={6} md={12} className="colTop">
-          <img src="/faq/FAQ.svg" alt="Imagem representando o FAQ" className="imagemFaq" />
-        </Col>
-        <Col lg={6} md={12} className="colTop">
-          <div className="textoTopo">
-            <h1 className="title align-center">Perguntas Frequentes</h1>
-            <p className="text-muted subtitle">
-              Aqui você pode encontrar as principais perguntas frequentes sobre a Ouvidoria do IFNMG Almenara.
-            </p>
-          </div>
-        </Col>
-      </Row>
-      <Row className="g-5 mt-1 linha-faq">
+    <section className="max-w-7xl mx-auto px-4 py-8">
+      <div className="grid md:grid-cols-2 gap-6 items-center mb-24">
+        <div className="w-full flex justify-center mt-5">
+          <img src="/faq/FAQ.svg" alt="Imagem representando o FAQ" className="w-3/4" />
+        </div>
+        <div className="text-center md:text-left mt-5">
+          <h1 className="title">Perguntas Frequentes</h1>
+          <p className="text-muted-foreground mt-2 subtitle">
+            Aqui você pode encontrar as principais perguntas frequentes sobre a Ouvidoria do IFNMG Almenara.
+          </p>
+        </div>
+      </div>
+      <div className="grid md:grid-cols-2 gap-6">
         {Informacoes.map((faq, index) => (
-          <Col key={index} md={6} className="position-relative">
-            <Card className="p-4 faq-card shadow-sm">
-              <h5 className="fw-bold">{faq.title}</h5>
-              <p className="text-muted">{faq.content}</p>
-            </Card>
-          </Col>
+          <Card key={index} className="p-6 faq-card">
+            <h4 className="text-[18px] font-semibold">{faq.title}</h4>
+            <p className="text-base text-muted-foreground leading-relaxed">{faq.content}</p>
+          </Card>
         ))}
-      </Row>
-    </Container>
-  );
+      </div>
+    </section>
+  )
 }

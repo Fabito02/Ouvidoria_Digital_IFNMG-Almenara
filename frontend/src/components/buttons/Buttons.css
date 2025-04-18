@@ -138,25 +138,27 @@
 
 .button-outline {
   border-radius: 11px !important;
-  display: table;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent !important;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .button {
   border-radius: 11px !important;
-  display: table;
-  margin: 0 auto;
   color: white !important;
-}
-
-.button-outline > .icon-button,
-.button > .icon-button {
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent !important;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .icon-button {
   font-size: 22px;
-  transform: translateY(-1px);
 }
 
 .icon-button.left {

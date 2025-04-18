@@ -1,16 +1,16 @@
-import { Row, Col, Container, Form } from "react-bootstrap";
-import Button from "../../components/buttons/Button";
-import { useEffect, useState, useRef } from "react";
-import Quill from "quill";
-import "quill/dist/quill.snow.css";
+import { useEffect, useRef, useState } from "react"
+import Quill from "quill"
+import "quill/dist/quill.snow.css"
+import { Input } from "../../components/ui/input"
+import { Checkbox } from "../../components/ui/checkbox"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../components/ui/select"
+import Button from "../../components/buttons/Button"
 
 const Denuncia = () => {
-  const [anonimo, setAnonimo] = useState(false);
-
-  const editorRef = useRef<Quill | null>(null);
+  const [anonimo, setAnonimo] = useState(false)
+  const editorRef = useRef<Quill | null>(null)
 
   useEffect(() => {
-    
     document.title = "Enviar denúncia"
 
     if (!editorRef.current) {
@@ -30,139 +30,96 @@ const Denuncia = () => {
             ["clean"],
           ],
         },
-      });
+      })
     }
-  }, []);
+  }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const editor = document.querySelector("#editor") as HTMLElement;
-    const content = editor.innerHTML;
-    console.log(content);
-  };
+    e.preventDefault()
+    const editor = document.querySelector("#editor") as HTMLElement
+    const content = editor.innerHTML
+    console.log(content)
+  }
 
-  return (
-    <Container className="mt-5 mb-5">
-      <h1 className="mb-5 title">Denúncia</h1>
-      <Form onSubmit={handleSubmit}>
-        <span>Deseja fazer a denúncia de forma anônima?</span>
-        <Form.Group controlId="formAnonimo" className="mb-3">
-          <Form.Check
-            type="checkbox"
-            onChange={(e) => setAnonimo(e.target.checked)}
-          />
-        </Form.Group>
+return (
+  <div className="max-w-5xl mx-auto px-4">
+    <form onSubmit={handleSubmit} className="space-y-6 mt-10 mb-5">
+      <h1 className="text-4xl font-semibold mb-10">Denúncia</h1>
 
-        {!anonimo && (
-          <>
-            <Row className="mb-3">
-              <Col md={6}>
-                <Form.Group controlId="formNome">
-                  <Form.Label>Nome</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Digite seu nome"
-                    required
-                  />
-                </Form.Group>
-              </Col>
-              <Col md={6}>
-                <Form.Group controlId="formEmail">
-                  <Form.Label>E-mail</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="Digite seu e-mail"
-                    required
-                  />
-                </Form.Group>
-              </Col>
-            </Row>
+      <div>
+        <h3 className="mb-1">Deseja fazer a denúncia de forma anônima?</h3>
+        <Checkbox id="anonimo" checked={anonimo} onCheckedChange={(checked: boolean) => setAnonimo(checked)} />
+      </div>
 
-            <Row className="mb-3">
-              <Col md={6}>
-                <Form.Group controlId="formTelefone">
-                  <Form.Label>Telefone</Form.Label>
-                  <Form.Control type="tel" placeholder="(00) 00000-0000" />
-                </Form.Group>
-              </Col>
-            </Row>
-          </>
-        )}
+      {!anonimo && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <h3 className="mb-1">Nome</h3>
+            <Input id="nome" type="text" placeholder="Digite seu nome" required />
+          </div>
+          <div>
+            <h3 className="mb-1">E-mail</h3>
+            <Input id="email" type="email" placeholder="Digite seu e-mail" required />
+          </div>
+          <div className="md:col-span-1">
+            <h3 className="mb-1">Telefone</h3>
+            <Input id="telefone" type="tel" placeholder="(00) 00000-0000" />
+          </div>
+        </div>
+      )}
 
-        <Row className="mb-3">
-          <Col md={6}>
-            <Form.Group controlId="formTipoDenuncia">
-              <Form.Label>Tipo de Denúncia</Form.Label>
-              <Form.Select defaultValue="">
-                <option value="">Selecione...</option>
-                <option value="assedio-moral">Assédio Moral</option>
-                <option value="assedio-sexual">Assédio Sexual</option>
-                <option value="discriminacao">
-                  Discriminação (Racial, de Gênero, etc.)
-                </option>
-                <option value="violencia">Violência ou Agressão Física</option>
-                <option value="ameaça">Ameaça ou Intimidação</option>
-                <option value="bullying">Bullying ou Cyberbullying</option>
-                <option value="negligencia">
-                  Negligência ou Abuso de Autoridade
-                </option>
-                <option value="corrupcao">
-                  Corrupção, Fraude ou Irregularidades
-                </option>
-                <option value="abuso-poder">Abuso de Poder</option>
-                <option value="desvios-eticos">
-                  Desvios de Conduta ou Ética
-                </option>
-                <option value="infraestrutura-perigosa">
-                  Infraestrutura Perigosa ou Insegura
-                </option>
-                <option value="conduta-inadequada">
-                  Conduta Inadequada de Docentes ou Servidores
-                </option>
-                <option value="higiene">
-                  Falta de Higiene em Ambientes Críticos
-                </option>
-                <option value="descarte-irregular">
-                  Descarte Irregular de Resíduos
-                </option>
-                <option value="outros">Outros</option>
-              </Form.Select>
-            </Form.Group>
-          </Col>
-        </Row>
+      <div>
+        <h3 className="mb-1">Tipo de Denúncia</h3>
+        <Select name="tipoDenuncia">
+          <SelectTrigger className="custom-select">
+            <SelectValue placeholder="Selecione..." />
+          </SelectTrigger>
+          <SelectContent className="custom-select-content">
+            <SelectItem value="assedio-moral">Assédio Moral</SelectItem>
+            <SelectItem value="assedio-sexual">Assédio Sexual</SelectItem>
+            <SelectItem value="discriminacao">Discriminação (Racial, de Gênero, etc.)</SelectItem>
+            <SelectItem value="violencia">Violência ou Agressão Física</SelectItem>
+            <SelectItem value="ameaça">Ameaça ou Intimidação</SelectItem>
+            <SelectItem value="bullying">Bullying ou Cyberbullying</SelectItem>
+            <SelectItem value="negligencia">Negligência ou Abuso de Autoridade</SelectItem>
+            <SelectItem value="corrupcao">Corrupção, Fraude ou Irregularidades</SelectItem>
+            <SelectItem value="abuso-poder">Abuso de Poder</SelectItem>
+            <SelectItem value="desvios-eticos">Desvios de Conduta ou Ética</SelectItem>
+            <SelectItem value="infraestrutura-perigosa">Infraestrutura Perigosa ou Insegura</SelectItem>
+            <SelectItem value="conduta-inadequada">Conduta Inadequada de Docentes ou Servidores</SelectItem>
+            <SelectItem value="higiene">Falta de Higiene em Ambientes Críticos</SelectItem>
+            <SelectItem value="descarte-irregular">Descarte Irregular de Resíduos</SelectItem>
+            <SelectItem value="outros">Outros</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
 
-        <Form.Group controlId="formTituloDenuncia" className="mb-3">
-          <Form.Label>Título</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Digite o título da denúncia"
-            required
-          />
-        </Form.Group>
+      <div>
+        <h3 className="mb-1">Título</h3>
+        <Input id="titulo" type="text" placeholder="Digite o título da denúncia" required />
+      </div>
 
-        <Form.Group controlId="formDenuncia" className="mb-3">
-          <Form.Label>Descreva sua denúncia</Form.Label>
-          <div
-            id="editor"
-            style={{
-              minHeight: "200px",
-              padding: "5px",
-              borderRadius: "0px 0px 11px 11px",
-            }}
-            className="inputDenuncia"
-          ></div>
-        </Form.Group>
+      <div>
+        <h3 className="mb-1">Descreva sua denúncia</h3>
+        <div
+          id="editor"
+          className="inputDenuncia border border-border bg-background quill-textarea"
+        ></div>
+      </div>
 
-        <Button
-          type="submit"
-          texto="Enviar Denúncia"
-          className="mb-5"
-          icon="material-symbols:send-rounded"
-          iconPosition="right"
-        />
-      </Form>
-    </Container>
-  );
-};
 
-export default Denuncia;
+      <div className="flex justify-start">
+      <Button
+        type="submit"
+        texto="Enviar Denúncia"
+        icon="material-symbols:send-rounded"
+        iconPosition="right"
+      />
+    </div>
+    </form>
+  </div>
+)
+
+}
+
+export default Denuncia

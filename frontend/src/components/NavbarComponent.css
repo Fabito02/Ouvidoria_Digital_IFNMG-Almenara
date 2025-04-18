@@ -6,8 +6,52 @@
   font-size: 14px;
   text-decoration: none;
   transition: all 0.2s !important;
+  cursor: pointer;
 }
 
-.link-navbar:hover {
+.link-navbar-menu {
+  background-color: var(--color-cinza-semitransparente-claro) !important;
+  color: rgb(0, 0, 0, 0.55);
+  border-radius: 12px;
+  padding: 5px 10px;
+  font-size: 14px;
+  height: 35px;
+  text-decoration: none;
+  width: 100%;
+  transition: all 0.2s !important;
+  cursor: pointer;
+}
+
+.link-navbar:hover .link-navbar-menu:hover {
   background-color: #d2ffda !important;
+}
+
+.menu-mobile-content {
+  gap: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+}
+
+nav {
+  position: fixed;
+  top: 65px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: rgb(255 255 255 / 87%);
+  backdrop-filter: blur(15px);
+}
+
+.transition-all {
+  transition: transform 0.3s ease-in-out;
+}
+
+.translate-y-0 {
+  transform: translateY(0);
+}
+
+.-translate-y-full {
+  transform: translateY(-100%);
 }

@@ -1,13 +1,12 @@
-import { Container, Row, Col, Nav } from "react-bootstrap";
-import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
-import "./Footer.css";
+import { Icon } from "@iconify-icon/react";
 import Button from "./buttons/Button";
+import "./Footer.css";
 
 const Footer = () => {
   const sections = [
     {
       title: "Páginas",
-      opcoes: [
+      items: [
         { name: "Página Inicial", link: "/" },
         { name: "Home", link: "/home" },
         { name: "Fale Conosco", link: "/fale-conosco" },
@@ -17,55 +16,54 @@ const Footer = () => {
     },
     {
       title: "Desenvolvedores",
-      opcoes: [
-        {
-          name: "Fabiano Júnior - Design/Frontend",
-          link: "https://github.com/Fabito02/",
-        },
-        {
-          name: "Francisco Rodrigues - Design",
-          link: "https://github.com/FranSRodrigues/",
-        },
-        {
-          name: "Pablo Messias - Design",
-          link: "https://github.com/PabloMessias007/",
-        },
+      items: [
+        { name: "Fabiano Júnior - Design/Frontend", link: "https://github.com/Fabito02/" },
+        { name: "Francisco Rodrigues - Design", link: "https://github.com/FranSRodrigues/" },
+        { name: "Pablo Messias - Design", link: "https://github.com/PabloMessias007/" },
         { name: "Bruno Araújo - Design", link: "https://github.com/EoBrunin/" },
       ],
     },
   ];
 
   return (
-    <Container className="footer-container">
-      <footer className="py-5">
-        <Row>
-          <Col md={2}>
+    <footer className="footer-container">
+      <div className="py-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          <div className="md:col-span-2">
             <img
               src="/Logo - Footer.svg"
               alt="Logo Auris"
-              className="logo-footer p-3"
+              className="logo-footer"
             />
-          </Col>
-          {sections.map((section, index) => (
-            <Col key={index} md={3} className="mb-3">
-              <h5 className="text-white">{section.title}</h5>
-              <Nav className="flex-column">
-                {section.opcoes.map((opcao, i) => (
-                  <Nav.Item key={i} className="mb-2">
-                    <Nav.Link href={opcao.link} className="p-0 text-white">
-                      {opcao.name}
-                    </Nav.Link>
-                  </Nav.Item>
+          </div>
+
+          {sections.map((section, idx) => (
+            <div key={idx} className="md:col-span-3">
+              <h5 className="text-white font-semibold mb-4">
+                {section.title}
+              </h5>
+              <ul className="space-y-2">
+                {section.items.map((item, i) => (
+                  <li key={i}>
+                    <a
+                      href={item.link}
+                      className="text-white hover:text-gray-400 text-sm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.name}
+                    </a>
+                  </li>
                 ))}
-              </Nav>
-            </Col>
+              </ul>
+            </div>
           ))}
 
-          <Col md={4}>
-            <h5 className="text-white">
+          <div className="md:col-span-4">
+            <h5 className="text-white font-semibold mb-4">
               Visite o site oficial do IFNMG - Campus Almenara
             </h5>
-            <p className="text-white">
+            <p className="text-white mb-6 text-sm">
               Encontre informações acadêmicas, administrativas e as últimas
               notícias do campus Almenara.
             </p>
@@ -73,46 +71,47 @@ const Footer = () => {
               href="https://almenara.ifnmg.edu.br/"
               texto="VISITAR SITE"
               icon="mdi:world-wide-web"
+              className="mb-0"
             />
-          </Col>
-        </Row>
+          </div>
+        </div>
 
-        <div className="d-flex justify-content-between py-3 my-4 border-top">
-          <p className="text-white">
+        <div className="mt-8 border-t border-gray-400 pt-6 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-white text-sm">
             &copy; 2025 IFNMG - Campus Almenara. Todos os direitos reservados.
           </p>
-          <ul className="list-unstyled d-flex">
-            <li className="ms-3">
-              <a
-                href="https://www.youtube.com/c/IFNMGCampusAlmenara"
-                className="link-light"
-                aria-label="YouTube"
-              >
-                <Icon icon={"mingcute:youtube-fill"} width="24" height="24" />
-              </a>
-            </li>
-            <li className="ms-3">
-              <a
-                href="https://www.instagram.com/almenara_ifnmg/"
-                className="link-light"
-                aria-label="Instagram"
-              >
-                <Icon icon={"ri:instagram-fill"} width="24" height="24" />
-              </a>
-            </li>
-            <li className="ms-3">
-              <a
-                href="https://www.facebook.com/IFNMGoficial"
-                className="link-light"
-                aria-label="Facebook"
-              >
-                <Icon icon={"ic:baseline-facebook"} width="24" height="24" />
-              </a>
-            </li>
-          </ul>
+          <div className="flex space-x-4 mt-4 md:mt-0">
+            <a
+              href="https://www.youtube.com/c/IFNMGCampusAlmenara"
+              className="text-white hover:text-red-600"
+              aria-label="YouTube"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon icon="mingcute:youtube-fill" width="24" height="24" />
+            </a>
+            <a
+              href="https://www.instagram.com/almenara_ifnmg/"
+              className="text-white hover:text-pink-500"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon icon="ri:instagram-fill" width="24" height="24" />
+            </a>
+            <a
+              href="https://www.facebook.com/IFNMGoficial"
+              className="text-white hover:text-blue-500"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon icon="ic:baseline-facebook" width="24" height="24" />
+            </a>
+          </div>
         </div>
-      </footer>
-    </Container>
+      </div>
+    </footer>
   );
 };
 

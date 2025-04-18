@@ -1,42 +1,71 @@
-import { Button } from "react-bootstrap";
+import { Button as ShadButton } from "../../components/ui/button";
+import { Icon } from "@iconify-icon/react";
+import { ReactNode, CSSProperties } from "react";
 import "./Buttons.css";
-import { ReactNode } from 'react';
-import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
 
 interface ButtonProps {
-  texto?: string | "";
+  texto?: string;
   className?: string;
   type?: "button" | "submit" | "reset";
   children?: ReactNode;
   href?: string;
   icon?: string;
   outline?: boolean;
-  iconPosition?: "left" | "right" | undefined;
+  iconPosition?: "left" | "right";
   onClick?: () => void;
   color?: "primary" | "secondary" | "success" | "danger" | "warning" | "info";
+  style?: CSSProperties;
 }
 
-const iconSeExistir = (icon: string | undefined, iconPosition?: "left" | "right" | undefined) => {
+const iconSeExistir = (icon: string | undefined, iconPosition?: "left" | "right") => {
   if (icon) {
-    return <Icon icon={icon} className={`icon-button ${iconPosition ? iconPosition : "left"}`} />;
+    return <Icon icon={icon} className={`icon-button ${iconPosition ?? "left"}`} />;
   }
   return null;
-}
+};
 
-export default function ButtonNormal({ texto, className, type, children, href, icon, outline, iconPosition, onClick, color = "primary" }: ButtonProps) {
-  return (
-    <Button
-      variant={outline ? "outline-" + color : color}
-      className={`${outline ? "button-outline" : "button"} ${color?  color : "primary"} ${className || ""}`}
-      type={type}
-      href={href}
-      onClick={onClick}
-    >
-      {(iconPosition === "left" || iconPosition === undefined) && iconSeExistir(icon, iconPosition)}
+export default function ButtonNormal({
+  texto,
+  className = "",
+  type = "button",
+  children,
+  href,
+  icon,
+  outline = false,
+  iconPosition = "left",
+  onClick,
+  color = "primary",
+  style,
+}: ButtonProps) {
+  const estilo = `${outline ? "button-outline" : "button"} ${color} ${className}`.trim();
+
+  const conteudo = (
+    <>
+      {iconPosition === "left" && iconSeExistir(icon, iconPosition)}
       {children}
-      {texto?.toUpperCase() || ""}
+      {texto?.toUpperCase()}
       {iconPosition === "right" && iconSeExistir(icon, iconPosition)}
-    </Button>
+    </>
+  );
+
+  const commonProps = {
+    type,
+    onClick,
+    className: estilo,
+    style,
+  };
+
+  if (href) {
+    return (
+      <ShadButton variant="ghost" asChild {...commonProps}>
+        <a href={href}>{conteudo}</a>
+      </ShadButton>
+    );
+  }
+
+  return (
+    <ShadButton variant="ghost" {...commonProps}>
+      {conteudo}
+    </ShadButton>
   );
 }
-
