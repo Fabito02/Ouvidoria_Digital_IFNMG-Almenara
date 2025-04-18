@@ -39,11 +39,11 @@ const NavbarComponent = () => {
         <Link to="/regulamento" className="link-navbar">POLÍTICAS E REGULAMENTOS</Link>
       </div>
       <div className="lg:hidden ml-auto flex items-center justify-end">
-        <DropdownMenu>
+        <DropdownMenu modal={false}>
           <DropdownMenuTrigger className="focus:outline-none">
             <Icon icon="heroicons-solid:menu-alt-3" height="30px" />
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="menu-mobile-content mt-1 mr-2" sideOffset={5}>
+          <DropdownMenuContent className="menu-mobile-content mt-1 mr-2">
             <Link to="/home">
               <DropdownMenuItem className="link-navbar-menu">HOME</DropdownMenuItem>
             </Link>
