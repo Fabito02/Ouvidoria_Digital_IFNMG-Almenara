@@ -13,8 +13,9 @@ interface ButtonProps {
   outline?: boolean;
   iconPosition?: "left" | "right";
   onClick?: () => void;
-  color?: "primary" | "secondary" | "success" | "danger" | "warning" | "info";
+  color?: "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "white";
   style?: CSSProperties;
+  full_rounded?: boolean;
 }
 
 const iconSeExistir = (icon: string | undefined, iconPosition?: "left" | "right") => {
@@ -36,8 +37,9 @@ export default function ButtonNormal({
   onClick,
   color = "primary",
   style,
+  full_rounded
 }: ButtonProps) {
-  const estilo = `${outline ? "button-outline" : "button"} ${color} ${className}`.trim();
+  const estilo = `${outline ? "button-outline" : "button"} ${color} ${className} ${full_rounded ? "full-rounded" : ""}`.trim();
 
   const conteudo = (
     <>

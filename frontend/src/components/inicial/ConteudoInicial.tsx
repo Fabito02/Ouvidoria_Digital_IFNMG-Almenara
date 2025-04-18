@@ -1,9 +1,9 @@
-import { Container, Row, Col } from "react-bootstrap";
-import "./ConteudoInicial.css";
-import Button from "../buttons/Button";
-import MaisBemAvaliados from "../MaisBemAvaliados";
 import { useEffect } from "react";
 import { BlankLayout } from "../BlankLayout/BlankLayout";
+import Button from "../buttons/Button";
+import MaisBemAvaliados from "../MaisBemAvaliados";
+import "./ConteudoInicial.css";
+import { Link } from "react-router-dom";
 
 const ConteudoHome = () => {
   useEffect(() => {
@@ -31,87 +31,76 @@ const ConteudoHome = () => {
 
   return (
     <BlankLayout>
-      <a href="/login">
+      <Link to="/login">
         <Button texto="login" className="login-btn" />
-      </a>
+      </Link>
       <img src="/home/auris.svg" alt="Logo Auris" className="logo-auris" />
-      <Container className=" animar">
-        <Row className="tela">
-          <Col className="textos coluna-tela">
-            <div className="textos text-right">
-              <h1 className="title">Auris – Ouvidoria Digital</h1>
-              <p className="complemento">
-                 Envie sua manifestação na plataforma para construir um IFNMG - Campus Almenara melhor para todos(as).
-              </p>
-              <a href="/login">
-                <Button texto="acessar plataforma" className="plataforma-btn" />
-              </a>
-            </div>
-          </Col>
-          <Col className="imagem coluna-tela">
-            <img src="/home/img1.svg" alt="Homem utilizando o computador" className="imagemCol" />
-          </Col>
-        </Row>
-      </Container>
 
-      <div className="bg-cinza">
-        <Container className="animar">
-          <Row className="tela">
-            <Col className="textos text-right coluna-tela">
-              <h1 className="title">Locais mais bem avaliados do campus:</h1>
-              <p className="complemento">
-                Descubra e valorize os locais mais bem avaliados do campus.
-              </p>
-            </Col>
-            <Col className="imagem coluna-tela">
-              <MaisBemAvaliados />
-            </Col>
-          </Row>
-        </Container>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 animar tela px-20">
+        <div className="textos text-right coluna-tela">
+          <h1 className="title">Auris – Ouvidoria Digital</h1>
+            <p className="complemento flex flex-col items-center lg:items-end">
+              Envie sua manifestação na plataforma para construir um IFNMG - Campus Almenara melhor para todos(as).
+            <Link to="/login" className="mt-4">
+              <Button texto="acessar plataforma" className="plataforma-btn" />
+            </Link>
+          </p>
+        </div>
+        <div className="imagem coluna-tela">
+          <img src="/home/img1.svg" alt="Homem utilizando o computador" className="imagemCol" />
+        </div>
       </div>
 
-      <Container className="animar">
-        <Row className="tela">
-          <Col className="imagem col-inverso coluna-tela">
-            <img src="/home/img2.svg" alt="Homem utilizando o computador" className="imagemCol" />
-          </Col>
-          <Col className="textos coluna-tela">
-            <h1 className="title">O elogio é combustível para a excelência!</h1>
+      <div className="bg-cinza">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 animar tela px-20">
+          <div className="textos text-right coluna-tela">
+            <h1 className="title">Locais mais bem avaliados do campus:</h1>
             <p className="complemento">
-              Conte-nos sobre aquela experiência positiva que merece ser celebrada.
+              Descubra e valorize os locais mais bem avaliados do campus.
             </p>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+          <div className="imagem coluna-tela">
+            <MaisBemAvaliados />
+          </div>
+        </div>
+      </div>
 
-      <Container className="animar">
-        <Row className="tela">
-          <Col className="textos text-right coluna-tela">
-            <h1 className="title">Escutamos agora para melhorar sempre!</h1>
-            <p className="complemento">
-              Seja para valorizar o que dá certo ou ajustar o que pode ser melhorado.
-            </p>
-          </Col>
-          <Col className="imagem coluna-tela">
-            <img src="/home/img3.svg" alt="Homem utilizando o computador" className="imagemCol" />
-          </Col>
-        </Row>
-      </Container>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 animar tela px-20">
+        <div className="imagem col-inverso coluna-tela">
+          <img src="/home/img2.svg" alt="Homem utilizando o computador" className="imagemCol" />
+        </div>
+        <div className="textos coluna-tela">
+          <h1 className="title">O elogio é combustível para a excelência!</h1>
+          <p className="complemento">
+            Conte-nos sobre aquela experiência positiva que merece ser celebrada.
+          </p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 animar tela px-20">
+        <div className="textos text-right coluna-tela">
+          <h1 className="title">Escutamos agora para melhorar sempre!</h1>
+          <p className="complemento">
+            Seja para valorizar o que dá certo ou ajustar o que pode ser melhorado.
+          </p>
+        </div>
+        <div className="imagem coluna-tela">
+          <img src="/home/img3.svg" alt="Homem utilizando o computador" className="imagemCol" />
+        </div>
+      </div>
 
       <div className="bg-cinza">
-        <Container className="animar">
-          <Row className="tela">
-            <Col className="column textos coluna-tela">
-              <div className="title">Venha fazer parte da mudança!</div>
-              <p className="complemento">
-                Acesse a plataforma, compartilhe sua opinião e ajude a construir um ambiente ainda melhor.
-              </p>
-              <a href="/login">
-                <Button texto="acessar plataforma" className="plataforma-btn" />
-              </a>
-            </Col>
-          </Row>
-        </Container>
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 animar tela px-20">
+          <div className="column textos coluna-tela">
+            <div className="title">Venha fazer parte da mudança!</div>
+            <p className="complemento">
+              Acesse a plataforma, compartilhe sua opinião e ajude a construir um ambiente ainda melhor.
+            </p>
+            <Link to="/login">
+              <Button texto="acessar plataforma" className="plataforma-btn" />
+            </Link>
+          </div>
+        </div>
       </div>
     </BlankLayout>
   );

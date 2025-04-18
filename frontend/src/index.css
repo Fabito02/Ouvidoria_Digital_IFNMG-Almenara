@@ -111,9 +111,9 @@ html body[data-scroll-locked] {
 } 
 
 body {
-  margin: 0 !important;
-  padding: 0 !important;
-  padding-top: 110px !important;
+  margin: 0;
+  padding: 0;
+  padding-top: 110px;
 }
 
 ::selection {

@@ -1,69 +1,101 @@
+import Button from "@/components/buttons/Button"
+import { Input } from "@/components/ui/input"
+import { Icon } from "@iconify-icon/react"
+import { BlankLayout } from '../components/BlankLayout/BlankLayout'
+import { useEffect } from 'react'
+import { Link } from "react-router-dom"
 import './LoginERegistrar.css'
-import { Row, Col, Container, Form } from "react-bootstrap";
-import ButtonBootstrap from 'react-bootstrap/Button';
-import Button from '../components/buttons/Button';
-import { Icon } from "@iconify-icon/react";
-import { BlankLayout } from '../components/BlankLayout/BlankLayout';
-import { useEffect } from 'react';
 
 const Registrar = () => {
-    useEffect(() => {
-        document.title = "Registrar"
-    })
-    return (
-      <BlankLayout showFooter={false} showHeader={false} showNavbar={false} removeBodyPadding>
-        <Container>
-            <Row>
-                <Col lg={'5'}>
-                    <div className='box'>
-                        <h1 className='title'>Bem Vindo!</h1>
-                        <p className='subtitle' style={{marginTop: '15px'}}>Caso vocẽ não possua uma conta, <br />
-                        crie a sua a seguir</p>
-                        <a href="/login">
-                            <ButtonBootstrap
-                                variant="outline-light"
-                                className='botaoBranco'
-                            >
-                                LOGIN
-                            </ButtonBootstrap>
-                        </a>
-                    </div>
-                </Col>
-                <Col lg={'7'} className='formulario'>
-                    <h1 className="text-center title2 mb-4">CRIAR CONTA</h1>
-                    <div className="text-center mb-5">
-                        <img src="/google-icon.svg" alt="Google logo" style={{ width: '40px', cursor: 'pointer' }} />
-                    </div>
-                    <p className="text-center mb-4">ou use seu e-mail para entrar</p>
-                    <Form>
-                        <Form.Group className="mb-3" controlId="formPassword" style={{position: 'relative'}}>
-                        <Icon className='iconeForm' icon="material-symbols:group-rounded" />
-                            <Form.Control type="password" placeholder="Nome de Usuário" className='custom-input' />
-                        </Form.Group>
+  useEffect(() => {
+    document.title = "Registrar"
+  })
 
-                        <Form.Group className="mb-3" controlId="formEmail" style={{position: 'relative'}}>
-                            <Icon className='iconeForm' icon="material-symbols:stacked-email-rounded" />
-                            <Form.Control type="email" placeholder="E-mail" className='custom-input' />
-                        </Form.Group>
+  return (
+    <BlankLayout showFooter={false} showHeader={false} showNavbar={false} removeBodyPadding>
+      <div className="container">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+          <div className="col-lg-5 box">
+            <h1 className="title">Bem Vindo!</h1>
+            <p className="subtitle mt-4">
+              Caso você já possua uma conta,<br />
+              entre com o botão abaixo
+            </p>
+            <Link to="/login">
+              <Button 
+                outline
+                full_rounded
+                color="white"
+                className="mt-2"
+              >
+                LOGIN
+              </Button>
+            </Link>
+          </div>
 
-                        <Form.Group className="mb-3" controlId="formPassword" style={{position: 'relative'}}>
-                        <Icon className='iconeForm' icon="material-symbols:password-rounded" />
-                            <Form.Control type="password" placeholder="Senha" className='custom-input' />
-                        </Form.Group>
+          <div className="col-lg-7 formulario">
+            <div className="max-w-md mx-auto w-full">
+              <h1 className="title2 mb-4">CRIAR CONTA</h1>
+              
+              <div className="mb-5">
+                <img 
+                  src="/google-icon.svg" 
+                  alt="Google logo" 
+                  className="w-10 h-10 cursor-pointer mx-auto" 
+                />
+              </div>
 
-                        <Form.Group className="mb-3" controlId="formPassword" style={{position: 'relative'}}>
-                        <Icon className='iconeForm' icon="material-symbols:password-rounded" />
-                            <Form.Control type="password" placeholder="Confirmar senha" className='custom-input' />
-                        </Form.Group>
+              <p className="mb-4">ou use seu e-mail para entrar</p>
 
-                        <Button texto='CRIAR CONTA' className='bt-login'/>
-                    </Form>
-                </Col>
-            </Row>
-        </Container>
-      </BlankLayout>
-    );
-  };
-  
-  export default Registrar;
-  
+              <form className="px-15">
+                <div className="relative mb-3">
+                  <Icon className="iconeForm" icon="material-symbols:group-rounded" />
+                  <Input
+                    className="custom-input"
+                    type="text"
+                    placeholder="Nome de Usuário"
+                  />
+                </div>
+
+                <div className="relative mb-3">
+                  <Icon className="iconeForm" icon="material-symbols:stacked-email-rounded" />
+                  <Input
+                    className="custom-input"
+                    type="email"
+                    placeholder="E-mail"
+                  />
+                </div>
+
+                <div className="relative mb-3">
+                  <Icon className="iconeForm" icon="material-symbols:password-rounded" />
+                  <Input
+                    className="custom-input"
+                    type="password"
+                    placeholder="Senha"
+                  />
+                </div>
+
+                <div className="relative mb-3">
+                  <Icon className="iconeForm" icon="material-symbols:password-rounded" />
+                  <Input
+                    className="custom-input"
+                    type="password"
+                    placeholder="Confirmar senha"
+                  />
+                </div>
+
+                <div className="w-full flex justify-center">
+                  <Button full_rounded style={{ width: "220px" }}>
+                    REGISTRAR
+                  </Button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </BlankLayout>
+  )
+}
+
+export default Registrar
