@@ -1,18 +1,24 @@
-import { useEffect, useRef, useState } from "react"
-import Quill from "quill"
-import "quill/dist/quill.snow.css"
-import { Input } from "../../components/ui/input"
-import { Checkbox } from "../../components/ui/checkbox"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../components/ui/select"
-import Button from "../../components/buttons/Button"
+import { useEffect, useRef, useState } from "react";
+import Quill from "quill";
+import "quill/dist/quill.snow.css";
+import { Input } from "../../components/ui/input";
+import { Checkbox } from "../../components/ui/checkbox";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../../components/ui/select";
+import Button from "../../components/buttons/Button";
 
 const Reclamacao = () => {
-  const [anonimo, setAnonimo] = useState(false)
-  const [tipoReclamacao, setTipoReclamacao] = useState("")
-  const editorRef = useRef<Quill | null>(null)
+  const [anonimo, setAnonimo] = useState(false);
+  const [tipoReclamacao, setTipoReclamacao] = useState("");
+  const editorRef = useRef<Quill | null>(null);
 
   useEffect(() => {
-    document.title = "Enviar reclamação"
+    document.title = "Enviar reclamação";
 
     if (!editorRef.current) {
       editorRef.current = new Quill("#editor", {
@@ -31,16 +37,16 @@ const Reclamacao = () => {
             ["clean"],
           ],
         },
-      })
+      });
     }
-  }, [])
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const editor = document.querySelector("#editor") as HTMLElement
-    const content = editor.innerHTML
-    console.log(content)
-  }
+    e.preventDefault();
+    const editor = document.querySelector("#editor") as HTMLElement;
+    const content = editor.innerHTML;
+    console.log(content);
+  };
 
   return (
     <div className="max-w-5xl mx-auto px-4">
@@ -49,18 +55,33 @@ const Reclamacao = () => {
 
         <div>
           <h3 className="mb-1">Deseja fazer a reclamação de forma anônima?</h3>
-          <Checkbox id="anonimo" checked={anonimo} onCheckedChange={(checked: boolean) => setAnonimo(checked)} />
+          <Checkbox
+            id="anonimo"
+            checked={anonimo}
+            className="data-[state=checked]:bg-[#16aa51] data-[state=checked]:border-[#16aa51]"
+            onCheckedChange={(checked: boolean) => setAnonimo(checked)}
+          />
         </div>
 
         {!anonimo && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <h3 className="mb-1">Nome</h3>
-              <Input id="nome" type="text" placeholder="Digite seu nome" required />
+              <Input
+                id="nome"
+                type="text"
+                placeholder="Digite seu nome"
+                required
+              />
             </div>
             <div>
               <h3 className="mb-1">E-mail</h3>
-              <Input id="email" type="email" placeholder="Digite seu e-mail" required />
+              <Input
+                id="email"
+                type="email"
+                placeholder="Digite seu e-mail"
+                required
+              />
             </div>
             <div className="md:col-span-1">
               <h3 className="mb-1">Telefone</h3>
@@ -71,12 +92,17 @@ const Reclamacao = () => {
 
         <div>
           <h3 className="mb-1">Tipo de Reclamação</h3>
-          <Select name="tipoReclamacao" onValueChange={(value) => setTipoReclamacao(value)}>
+          <Select
+            name="tipoReclamacao"
+            onValueChange={(value) => setTipoReclamacao(value)}
+          >
             <SelectTrigger className="custom-select">
               <SelectValue placeholder="Selecione..." />
             </SelectTrigger>
             <SelectContent className="custom-select-content">
-              <SelectItem value="infraestrutura">Estrutura e Espaços</SelectItem>
+              <SelectItem value="infraestrutura">
+                Estrutura e Espaços
+              </SelectItem>
               <SelectItem value="atendimento">Atendimento</SelectItem>
               <SelectItem value="servico">Serviço</SelectItem>
               <SelectItem value="seguranca">Segurança</SelectItem>
@@ -103,21 +129,39 @@ const Reclamacao = () => {
               <SelectContent className="custom-select-content">
                 <SelectItem value="portaria">Portaria</SelectItem>
                 <SelectItem value="biblioteca">Biblioteca</SelectItem>
-                <SelectItem value="setor-administrativo">Setor Administrativo</SelectItem>
-                <SelectItem value="predio-pedagogico-1">Prédio Pedagógico I</SelectItem>
+                <SelectItem value="setor-administrativo">
+                  Setor Administrativo
+                </SelectItem>
+                <SelectItem value="predio-pedagogico-1">
+                  Prédio Pedagógico I
+                </SelectItem>
                 <SelectItem value="auditório">Auditório</SelectItem>
-                <SelectItem value="semirresidencial">Semirresidencial</SelectItem>
-                <SelectItem value="nucleo-assuntos-estudantis">Núcleo de Assuntos Estudantis</SelectItem>
+                <SelectItem value="semirresidencial">
+                  Semirresidencial
+                </SelectItem>
+                <SelectItem value="nucleo-assuntos-estudantis">
+                  Núcleo de Assuntos Estudantis
+                </SelectItem>
                 <SelectItem value="lanchonete">Lanchonete</SelectItem>
                 <SelectItem value="refeitorio">Refeitório</SelectItem>
-                <SelectItem value="nucleo-estudos-agroecologia">Núcleo de Estudos em Agroecologia</SelectItem>
-                <SelectItem value="predio-pedagogico-2">Prédio Pedagógico II</SelectItem>
-                <SelectItem value="moradia-estudantil">Moradia Estudantil - Residencial</SelectItem>
-                <SelectItem value="laboratorio-solos">Laboratório de Solos</SelectItem>
+                <SelectItem value="nucleo-estudos-agroecologia">
+                  Núcleo de Estudos em Agroecologia
+                </SelectItem>
+                <SelectItem value="predio-pedagogico-2">
+                  Prédio Pedagógico II
+                </SelectItem>
+                <SelectItem value="moradia-estudantil">
+                  Moradia Estudantil - Residencial
+                </SelectItem>
+                <SelectItem value="laboratorio-solos">
+                  Laboratório de Solos
+                </SelectItem>
                 <SelectItem value="ginasio">Ginásio</SelectItem>
                 <SelectItem value="suinocultura">Suinocultura</SelectItem>
                 <SelectItem value="casa-racao">Casa de Ração</SelectItem>
-                <SelectItem value="laboratorio-campo">Laboratório de Campo</SelectItem>
+                <SelectItem value="laboratorio-campo">
+                  Laboratório de Campo
+                </SelectItem>
                 <SelectItem value="bovinocultura">Bovinocultura</SelectItem>
                 <SelectItem value="avicultura">Avicultura</SelectItem>
                 <SelectItem value="casa-maquinas">Casa de Máquinas</SelectItem>
@@ -129,7 +173,12 @@ const Reclamacao = () => {
 
         <div>
           <h3 className="mb-1">Título</h3>
-          <Input id="titulo" type="text" placeholder="Digite o título da reclamação" required />
+          <Input
+            id="titulo"
+            type="text"
+            placeholder="Digite o título da reclamação"
+            required
+          />
         </div>
 
         <div>
@@ -150,7 +199,7 @@ const Reclamacao = () => {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Reclamacao
+export default Reclamacao;

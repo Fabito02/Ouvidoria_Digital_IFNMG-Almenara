@@ -1,23 +1,23 @@
-import { useEffect, useRef, useState } from "react"
-import Quill from "quill"
-import "quill/dist/quill.snow.css"
-import { Input } from "../../components/ui/input"
-import { Checkbox } from "../../components/ui/checkbox"
+import { useEffect, useRef, useState } from "react";
+import Quill from "quill";
+import "quill/dist/quill.snow.css";
+import { Input } from "../../components/ui/input";
+import { Checkbox } from "../../components/ui/checkbox";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../components/ui/select"
-import Button from "../../components/buttons/Button"
+} from "../../components/ui/select";
+import Button from "../../components/buttons/Button";
 
 const Sugestao = () => {
-  const [anonimo, setAnonimo] = useState(false)
-  const editorRef = useRef<Quill | null>(null)
+  const [anonimo, setAnonimo] = useState(false);
+  const editorRef = useRef<Quill | null>(null);
 
   useEffect(() => {
-    document.title = "Enviar sugestão"
+    document.title = "Enviar sugestão";
 
     if (!editorRef.current) {
       editorRef.current = new Quill("#editor", {
@@ -36,16 +36,16 @@ const Sugestao = () => {
             ["clean"],
           ],
         },
-      })
+      });
     }
-  }, [])
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const editor = document.querySelector("#editor") as HTMLElement
-    const content = editor.innerHTML
-    console.log(content)
-  }
+    e.preventDefault();
+    const editor = document.querySelector("#editor") as HTMLElement;
+    const content = editor.innerHTML;
+    console.log(content);
+  };
 
   return (
     <div className="max-w-5xl mx-auto px-4">
@@ -54,18 +54,33 @@ const Sugestao = () => {
 
         <div>
           <h3 className="mb-1">Deseja fazer a sugestão de forma anônima?</h3>
-          <Checkbox id="anonimo" checked={anonimo} onCheckedChange={(checked: boolean) => setAnonimo(checked)} />
+          <Checkbox
+            id="anonimo"
+            checked={anonimo}
+            className="data-[state=checked]:bg-[#16aa51] data-[state=checked]:border-[#16aa51]"
+            onCheckedChange={(checked: boolean) => setAnonimo(checked)}
+          />
         </div>
 
         {!anonimo && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <h3 className="mb-1">Nome</h3>
-              <Input id="nome" type="text" placeholder="Digite seu nome" required />
+              <Input
+                id="nome"
+                type="text"
+                placeholder="Digite seu nome"
+                required
+              />
             </div>
             <div>
               <h3 className="mb-1">E-mail</h3>
-              <Input id="email" type="email" placeholder="Digite seu e-mail" required />
+              <Input
+                id="email"
+                type="email"
+                placeholder="Digite seu e-mail"
+                required
+              />
             </div>
             <div className="md:col-span-1">
               <h3 className="mb-1">Telefone</h3>
@@ -81,14 +96,28 @@ const Sugestao = () => {
               <SelectValue placeholder="Selecione..." />
             </SelectTrigger>
             <SelectContent className="custom-select-content">
-              <SelectItem value="melhoria-infraestrutura">Melhoria na Infraestrutura</SelectItem>
+              <SelectItem value="melhoria-infraestrutura">
+                Melhoria na Infraestrutura
+              </SelectItem>
               <SelectItem value="novos-servicos">Novos Serviços</SelectItem>
-              <SelectItem value="processos-burocraticos">Otimização de Processos</SelectItem>
-              <SelectItem value="eventos-atividades">Sugestão de Eventos e Atividades</SelectItem>
-              <SelectItem value="tecnologia-sistemas">Aprimoramento Tecnológico</SelectItem>
-              <SelectItem value="alimentacao">Sugestões para Alimentação</SelectItem>
-              <SelectItem value="espacos-estudo">Melhoria nos Espaços de Estudo</SelectItem>
-              <SelectItem value="sustentabilidade">Ações de Sustentabilidade</SelectItem>
+              <SelectItem value="processos-burocraticos">
+                Otimização de Processos
+              </SelectItem>
+              <SelectItem value="eventos-atividades">
+                Sugestão de Eventos e Atividades
+              </SelectItem>
+              <SelectItem value="tecnologia-sistemas">
+                Aprimoramento Tecnológico
+              </SelectItem>
+              <SelectItem value="alimentacao">
+                Sugestões para Alimentação
+              </SelectItem>
+              <SelectItem value="espacos-estudo">
+                Melhoria nos Espaços de Estudo
+              </SelectItem>
+              <SelectItem value="sustentabilidade">
+                Ações de Sustentabilidade
+              </SelectItem>
               <SelectItem value="outros">Outros</SelectItem>
             </SelectContent>
           </Select>
@@ -96,7 +125,12 @@ const Sugestao = () => {
 
         <div>
           <h3 className="mb-1">Título</h3>
-          <Input id="titulo" type="text" placeholder="Digite o título da sugestão" required />
+          <Input
+            id="titulo"
+            type="text"
+            placeholder="Digite o título da sugestão"
+            required
+          />
         </div>
 
         <div>
@@ -117,7 +151,7 @@ const Sugestao = () => {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Sugestao
+export default Sugestao;
