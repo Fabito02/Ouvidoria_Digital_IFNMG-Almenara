@@ -80,7 +80,7 @@ export default function Component() {
         <CardContent className="flex-1 pb-0">
           <ChartContainer
         config={chartConfig}
-        className="mx-auto w-full max-h-[450px]"
+        className="mx-auto w-full max-h-[500px]"
           >
         <BarChart
           layout="vertical"
@@ -105,7 +105,7 @@ export default function Component() {
           <Bar
         dataKey="Total"
         fill="var(--color-secondary)"
-        barSize={30}
+        barSize={40}
         radius={[6, 6, 6, 6]}
           />
         </BarChart>
