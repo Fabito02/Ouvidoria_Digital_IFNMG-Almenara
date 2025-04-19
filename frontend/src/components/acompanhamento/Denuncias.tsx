@@ -94,7 +94,7 @@ export default function Component() {
           <YAxis
         type="category"
         dataKey="tipo"
-        width={170}
+        width={120}
         tickLine={false}
         axisLine={false}
           />
