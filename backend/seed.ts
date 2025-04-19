@@ -72,6 +72,7 @@ async function createTables(conn: mysql.Connection) {
             Anonimo BOOLEAN DEFAULT FALSE,
             Local VARCHAR(100),
             Status ENUM('pendente', 'em_andamento', 'concluido') DEFAULT 'pendente',
+            Prioridade ENUM('baixa', 'media', 'alta', 'urgente') DEFAULT 'media', -- Novo campo
             User_ID INT NOT NULL,
             FOREIGN KEY (User_ID) REFERENCES Users(User_ID)
         ) ENGINE=InnoDB`,
@@ -191,6 +192,7 @@ async function insertSeeds(conn: mysql.Connection) {
                 Tipo: 'Infraestrutura',
                 Tipo_manifestacao: 'Reclamação',
                 Local: 'Corredor principal, 2º andar',
+                Prioridade: 'alta',
                 User_ID: 2,
                 Status: 'pendente'
             },
@@ -200,6 +202,7 @@ async function insertSeeds(conn: mysql.Connection) {
                 Tipo: 'Recursos',
                 Tipo_manifestacao: 'Solicitação',
                 Local: 'Biblioteca',
+                Prioridade: 'alta',
                 User_ID: 3,
                 Status: 'em_andamento'
             }

@@ -30,7 +30,7 @@ const ConteudoHome = () => {
   }, []);
 
   return (
-    <BlankLayout>
+    <BlankLayout removeBodyPadding>
       <Link to="/login" className="z-100">
         <Button texto="login" className="login-btn" />
       </Link>

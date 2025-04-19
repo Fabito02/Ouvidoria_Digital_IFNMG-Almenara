@@ -15,12 +15,16 @@
 
   --color-danger: #dc3545;
   --color-danger-hover: #df4755;
+  --color-danger-dark: #a71d2a;
 
   --color-warning: #ffc107;
   --color-warning-hover: #ffcd3a;
 
   --color-success: #32cf5c;
   --color-success-hover: #36d560;
+
+  --color-muted: #6c757d;
+  --color-muted-hover: #7a868f;
 
   --color-cinza-semitransparente-claro: #0000000f;
 

@@ -17,7 +17,7 @@ export default function CardInfo({ conteudo_cards, className }: CardInfoProps) {
           {conteudo_cards.map((card, index) => (
             <div
               key={index}
-              className={`card-info mt-1 flex flex-col shadow-sm ${card.cor ?? "primary"}`}
+              className={`card-info flex flex-col shadow-sm ${card.cor ?? "primary"}`}
             >
               <h1 className="total ml-5">{card.total}</h1>
               <h2 className="titulo-card-info text-gray-400 ml-12 mb-1">{card.titulo}</h2>
