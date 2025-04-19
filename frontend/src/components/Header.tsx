@@ -16,7 +16,7 @@ const Header = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        zIndex: 100,
+        zIndex: 10,
       }}
     >
       <Link to="/">

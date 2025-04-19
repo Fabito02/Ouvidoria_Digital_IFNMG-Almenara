@@ -1,19 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Icon } from "@iconify-icon/react";
 import { BlankLayout } from "../../components/BlankLayout/BlankLayout";
-import { Input } from "../..//components/ui/input";
+import { Input } from "../../components/ui/input";
 import { Card, CardContent } from "../../components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../components/ui/select";
-import  Button from "../../components/buttons/Button";
+import Button from "../../components/buttons/Button";
 import "./Perfil.css";
+import Cropper, { Area } from "react-easy-crop";
+import { getCroppedImg } from "../../utils/cropImage";
 
 const Perfil = () => {
+  const [crop, setCrop] = useState({ x: 0, y: 0 });
+  const [zoom, setZoom] = useState(1);
+  const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
+  const [showCropper, setShowCropper] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+
   useEffect(() => {
     document.title = "Perfil";
   }, []);
 
   const [profilePic, setProfilePic] = useState<string | null>(null);
+  const [originalImage, setOriginalImage] = useState<string | null>(null);
   const [name, setName] = useState("Seu Nome");
   const [email, setEmail] = useState("email@exemplo.com");
   const [phone, setPhone] = useState("(00) 00000-0000");
@@ -24,9 +34,32 @@ const Perfil = () => {
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
-      reader.onloadend = () => setProfilePic(reader.result as string);
+      reader.onloadend = () => {
+        setOriginalImage(null);
+        setTimeout(() => {
+          setOriginalImage(reader.result as string);
+          setShowCropper(true);
+        }, 50);
+      };
       reader.readAsDataURL(file);
     }
+  
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+  
+
+  const onCropComplete = useCallback((_croppedArea: Area, croppedAreaPixels: Area) => {
+    setCroppedAreaPixels(croppedAreaPixels);
+  }, []);
+
+  const handleCropSave = async () => {
+    if (!originalImage || !croppedAreaPixels) return;
+    const cropped = await getCroppedImg(originalImage, croppedAreaPixels);
+    setProfilePic(cropped);
+    setOriginalImage(null);
+    setShowCropper(false);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -41,26 +74,67 @@ const Perfil = () => {
           <CardContent className="flex flex-col gap-6">
             <div className="flex justify-center">
               <div className="relative w-40 h-40 rounded-full overflow-hidden">
-              <img
-                src={profilePic || "/user_placeholder.png"}
-                alt="Foto de perfil"
-                className="w-full h-full object-cover"
-              />
-              <label
-                htmlFor="profilePicInput"
-                className="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer"
-              >
-                <Icon icon="mdi:pencil" width={32} className="text-white" />
-              </label>
-              <input
-                id="profilePicInput"
-                type="file"
-                accept="image/*"
-                onChange={handlePicChange}
-                className="hidden"
-              />
+                <img
+                  src={profilePic || "/user_placeholder.png"}
+                  alt="Foto de perfil"
+                  className="w-full h-full object-cover"
+                />
+                <label
+                  htmlFor="profilePicInput"
+                  className="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer"
+                >
+                  <Icon icon="mdi:pencil" width={32} className="text-white" />
+                </label>
+                <input
+                  id="profilePicInput"
+                  type="file"
+                  accept="image/*"
+                  onChange={handlePicChange}
+                  className="hidden"
+                  ref={fileInputRef}
+                />
               </div>
             </div>
+
+            {showCropper && originalImage && (
+              <div className="fixed inset-0 bg-black/80 z-50 flex flex-col justify-center items-center p-4">
+                <div className="relative w-full max-w-md h-[400px] bg-black rounded-[20px] overflow-hidden">
+
+                  <Cropper
+                    image={originalImage}
+                    crop={crop}
+                    zoom={zoom}
+                    aspect={1}
+                    onCropChange={setCrop}
+                    onZoomChange={setZoom}
+                    onCropComplete={onCropComplete}
+                  />
+                </div>
+                <div className="flex gap-4 mt-4">
+                  <input
+                    type="range"
+                    min={1}
+                    max={3}
+                    step={0.1}
+                    value={zoom}
+                    className="bg-green"
+                    onChange={(e) => setZoom(Number(e.target.value))}
+                  />
+                  <Button
+                    onClick={handleCropSave}
+                    texto="Salvar Recorte"
+                    color="success"
+                    className="bg-blue-500 text-white"
+                  />
+                  <Button
+                    onClick={() => setShowCropper(false)}
+                    texto="Cancelar"
+                    color="danger"
+                    className="bg-red-500 text-white"
+                  />
+                </div>
+              </div>
+            )}
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               <div>
@@ -120,7 +194,11 @@ const Perfil = () => {
                   <Icon icon="mdi:lock-reset" className="mr-2" />
                 </Button>
 
-                <Button type="submit" className="w-[100%] md:w-[50%]" texto="Salvar Alterações">
+                <Button
+                  type="submit"
+                  className="w-[100%] md:w-[50%]"
+                  texto="Salvar Alterações"
+                >
                   <Icon icon="material-symbols-light:save" className="mr-2" />
                 </Button>
               </div>

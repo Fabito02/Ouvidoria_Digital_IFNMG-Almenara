@@ -1,3 +1,11 @@
 .card-configuracoes {
   box-shadow: 0 !important;
 }
+
+.reactEasyCrop_CropArea {
+  border-radius: 1rem;
+}
+
+input[type="range"] {
+  accent-color: var(--color-success);
+}
