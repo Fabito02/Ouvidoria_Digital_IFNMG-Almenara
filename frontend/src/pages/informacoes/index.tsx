@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { Card } from "@/components/ui/card"
 import "./Informacoes.css"
+import AnimarAoVer from "@/components/AnimarAoVer";
 
 const Informacoes = [
   {
@@ -77,14 +78,14 @@ export default function Faq() {
           </p>
         </div>
       </div>
-      <div className="grid md:grid-cols-2 gap-6">
+      <AnimarAoVer className="grid md:grid-cols-2 gap-6">
         {Informacoes.map((faq, index) => (
           <Card key={index} className="p-6 faq-card">
             <h4 className="text-[18px] font-semibold">{faq.title}</h4>
             <p className="text-base text-muted-foreground leading-relaxed">{faq.content}</p>
           </Card>
         ))}
-      </div>
+      </AnimarAoVer>
     </section>
   )
 }

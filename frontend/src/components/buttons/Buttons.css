@@ -186,6 +186,14 @@
   transition: all 0.3s ease;
 }
 
+.button:hover, .button-outline:hover {
+  transform: scale(1.015);
+}
+
+.button:active, .button-outline:active {
+  transform: scale(0.98);
+}
+
 .icon-button {
   font-size: 22px;
 }
